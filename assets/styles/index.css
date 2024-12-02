@@ -1,5 +1,7 @@
 @import url('reset.css') layer(reset);
+@import url('typography.css') layer(typography);
 @import url('vars.css') layer(vars);
 @import url('utopia.css') layer(utopia);
-@import url('typography.css') layer(typography);
 @import url('styles.css') layer(styles);
+
+@layer reset, typography, vars, utopia, styles;
