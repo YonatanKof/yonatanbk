@@ -1,0 +1,103 @@
+@layer vars {
+	:root {
+		--display-width-3xl: 1920px;
+		--display-width-2xl: 1408px;
+		--display-width-xl: 1280px;
+		--display-width-lg: 960px;
+		--display-width-md: 880px;
+		--display-width-sm: 720px;
+		--display-width-xs: 544px;
+		--display-width-2xs: 426px;
+	}
+
+	:root {
+		/* Sizes */
+		--header-height: var(--space-3xl);
+		--header-plus-height: calc(var(--space-3xl) + var(--space-m));
+		--scroll-padding-block: 7rem;
+
+		/* Borders */
+		--border-radius-md: var(--space-xs);
+		--border-radius-sm: var(--space-2xs);
+		--border-radius-xs: var(--space-3xs);
+		--border-radius-none: unset;
+
+		/* Colors */
+		--color-black-main: hsl(180, 25%, 5%);
+		--color-black-slight: color-mix(in hsl, var(--color-black-main) 80%, transparent);
+		--color-black-dim: color-mix(in hsl, var(--color-black-main) 40%, transparent);
+		--color-black-dis: color-mix(in hsl, var(--color-black-main) 10%, transparent);
+		--color-black-hardly: color-mix(in hsl, var(--color-black-main) 3%, transparent);
+		--color-black-none: color-mix(in hsl, var(--color-black-main) 0%, transparent);
+
+		--color-sys-main: hsl(180, 0%, 10%);
+		--color-sys-slight: color-mix(in hsl, var(--color-sys-main) 80%, transparent);
+		--color-sys-dim: color-mix(in hsl, var(--color-sys-main) 40%, transparent);
+		--color-sys-dis: color-mix(in hsl, var(--color-sys-main) 10%, transparent);
+		--color-sys-none: color-mix(in hsl, var(--color-sys-main) 0%, transparent);
+
+		--color-sys-invert-highlight: color-mix(in hsl, var(--color-sys-invert-main) 0%, white);
+		--color-sys-invert-highlight-slight: color-mix(in hsl, var(--color-sys-invert-highlight) 65%, transparent);
+		--color-sys-invert-main: hsl(0, 0%, 90%);
+		--color-sys-invert-slight: color-mix(in hsl, var(--color-sys-invert-main) 80%, transparent);
+		--color-sys-invert-dim: color-mix(in hsl, var(--color-sys-invert-main) 40%, transparent);
+		--color-sys-invert-dis: color-mix(in hsl, var(--color-sys-invert-main) 10%, transparent);
+		--color-sys-invert-none: color-mix(in hsl, var(--color-sys-invert-main) 0%, transparent);
+
+		--color-brand-main: hsl(125, 50%, 25%);
+		--color-brand-slight: color-mix(in hsl, var(--color-brand-main) 80%, transparent);
+		--color-brand-dim: color-mix(in hsl, var(--color-brand-main) 40%, transparent);
+		--color-brand-dis: color-mix(in hsl, var(--color-brand-main) 10%, transparent);
+		--color-brand-none: color-mix(in hsl, var(--color-brand-main) 0%, transparent);
+
+		--color-focus-main: hsl(200, 100%, 35%);
+		--color-focus-slight: color-mix(in hsl, var(--color-focus-main) 80%, transparent);
+		--color-focus-dim: color-mix(in hsl, var(--color-focus-main) 40%, transparent);
+		--color-focus-dis: color-mix(in hsl, var(--color-focus-main) 10%, transparent);
+		--color-focus-none: color-mix(in hsl, var(--color-focus-main) 0%, transparent);
+
+		--color-caution-main: hsl(0, 100%, 40%);
+		--color-success-main: hsl(126, 100%, 25%);
+
+		--content-space: 1rem;
+		--space-md: 1rem;
+		--bg-pre: none;
+
+		--color-shadow: var(--color-black-hardly);
+		--color-overlay: var(--color-black-slight);
+
+		/* prettier-ignore */
+		--shadow-sm-even: 
+		0 0 0.1rem var(--color-shadow), 
+		0 0 0.2rem var(--color-shadow),
+		0 0 0.3rem var(--color-shadow);
+		/* prettier-ignore */
+		--shadow-sm: 
+		0 0.1rem 0.1rem var(--color-shadow), 
+		0 0.2rem 0.2rem var(--color-shadow),
+		0 0.3rem 0.3rem var(--color-shadow);
+		/* prettier-ignore */
+		--shadow-md-even: 
+		0 0 0.2rem var(--color-shadow), 
+		0 0 0.4rem var(--color-shadow),
+		0 0 0.8rem var(--color-shadow);
+		/* prettier-ignore */
+		--shadow-md: 
+		0 0.2rem 0.2rem var(--color-shadow), 
+		0 0.4rem 0.4rem var(--color-shadow),
+		0 0.8rem 0.8rem var(--color-shadow);
+		/* prettier-ignore */
+		--shadow-lg-even: 
+		0 0 0.5rem var(--color-shadow), 
+		0 0 1.5rem var(--color-shadow),
+		0 0 2rem var(--color-shadow);
+		/* prettier-ignore */
+		--shadow-lg: 
+		0 0.25rem 0.5rem var(--color-shadow), 
+		0 0.75rem 1.5rem var(--color-shadow),
+		0 1rem 2rem var(--color-shadow);
+
+		--font-wight--bolder: bolder;
+		--font-size-2xl: 2em;
+	}
+}
