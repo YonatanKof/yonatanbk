@@ -3,7 +3,7 @@
 <template>
 	<section id="connect" class="section">
 		<div class="section-content">
-			<Typography tag="h1" variant="large">Connect</Typography>
+			<Text tag="h1" variant="large">Connect</Text>
 		</div>
 	</section>
 </template>

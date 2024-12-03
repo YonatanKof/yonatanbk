@@ -31,7 +31,7 @@ const variantClasses = computed(() => {
 	font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96;
 	font-size: var(--step-8);
 	text-align: center;
-  line-height: 1.1;
+	line-height: 1.1;
 }
 .heading-small {
 	font-size: 30pt;

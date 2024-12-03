@@ -3,15 +3,15 @@
 <template>
 	<section id="yonatan-kof" class="checked-grid-lines section">
 		<div class="section-content">
-			<Typography tag="h1" variant="large"
+			<Text tag="h1" variant="large"
 				>A full stack Designer <br />
 				Who Leads Design Initiatives
-			</Typography>
+			</Text>
 		</div>
 	</section>
 	<section id="design-connection" class="section">
 		<div class="section-content">
-			<Typography tag="h1" variant="large">Design Connection</Typography>
+			<Text tag="h1" variant="large">Design Connection</Text>
 		</div>
 	</section>
 </template>

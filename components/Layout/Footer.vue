@@ -2,7 +2,7 @@
 
 <template>
 	<footer>
-		<Typography>Component: Footer</Typography>
+		<Text>Component: Footer</Text>
 	</footer>
 </template>
 

@@ -3,7 +3,7 @@
 <template>
 	<section id="work" class="section">
 		<div class="section-content">
-			<Typography tag="h1" variant="large">Work</Typography>
+			<Text tag="h1" variant="large">Work</Text>
 		</div>
 	</section>
 </template>

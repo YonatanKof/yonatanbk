@@ -3,14 +3,14 @@
 <template>
 	<header>
 		<nav>
-			<Typography><a href="#yonatan-kof">Yonatan Kof</a></Typography>
-			<Typography><a href="#work">Work</a></Typography>
-			<Typography><a href="#extra">Extra</a></Typography>
-			<Typography><a href="#connect">Connect</a></Typography>
+			<Text><a href="#yonatan-kof">Yonatan Kof</a></Text>
+			<Text><a href="#work">Work</a></Text>
+			<Text><a href="#extra">Extra</a></Text>
+			<Text><a href="#connect">Connect</a></Text>
 		</nav>
 		<div>
 			<span></span>
-			<Typography>Open For Work</Typography>
+			<Text>Open For Work</Text>
 		</div>
 	</header>
 </template>
