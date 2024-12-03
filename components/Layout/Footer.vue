@@ -2,7 +2,7 @@
 
 <template>
 	<footer>
-		Component: Footer
+		<Typography>Component: Footer</Typography>
 	</footer>
 </template>
 
@@ -13,5 +13,6 @@ footer {
 	justify-content: center;
 	padding: var(--space-m);
 	background-color: var(--color-black-hardly);
+	scroll-snap-align: end;
 }
 </style>
