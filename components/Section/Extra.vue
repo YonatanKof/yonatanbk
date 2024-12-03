@@ -1,8 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="section">
-    Component: Extra
+  <section id="extra" class="section">
+    <div class="section-content">
+			<Typography tag="h1" variant="large">Extra</Typography>
+		</div>
   </section>
 </template>
 
