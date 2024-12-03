@@ -1,31 +1,31 @@
 <template>
 	<div class="main-layout">
 		<LayoutHeader />
-    <!-- <h1>Hi yo</h1> -->
 		<main>
 			<SectionYonatanKof />
 			<SectionWork />
 			<SectionExtra />
 			<SectionConnect />
+			<LayoutFooter />
 		</main>
-		<LayoutFooter />
 	</div>
 </template>
 
 <style scoped>
 .main-layout {
-  /* width: 100%; */
 	height: 100dvh;
 	display: grid;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr;
 }
 main {
-  overflow: auto;
+	overflow: auto;
 	scroll-snap-type: y mandatory;
-	/* scroll-snap-type: both mandatory; */
 	overscroll-behavior-x: contain;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	margin-block-start: calc(var(--header-height) * -1);
 }
-.page-enter-active,
+/* .page-enter-active,
 .page-leave-active,
 .layout-enter-active,
 .layout-leave-active {
@@ -49,5 +49,5 @@ main {
 .pop-leave-to {
 	opacity: 0;
 	transform: translateX(var(--space-8xl));
-}
+} */
 </style>
