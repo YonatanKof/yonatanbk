@@ -12,11 +12,4 @@
 	html, body {
 		font-family: 'Bricolage Grotesque', system-ui, sans-serif;
 	}
-	/* p, h1 {
-		font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 96;
-		transition: font-variation-settings 0.25s ease-in-out;
-	}
-	h1:hover, p:hover {
-		font-variation-settings: 'wght' 600, 'wdth' 75, 'opsz' 12;
-	} */
 }
