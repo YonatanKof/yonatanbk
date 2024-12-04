@@ -17,6 +17,7 @@ const formatText = (kebabText: string) => {
 				:key="section"
 				:href="`#${section}`"
 				:class="{ active: activeSection === section }"
+				:data-section="section"
 			>
 				{{ formatText(section) }}
 			</a>
@@ -54,12 +55,58 @@ span {
 	border-radius: 100%;
 	background-color: green;
 }
+a {
+	color: var(--color-sys-slight);
+	position: relative;
+}
 div p {
 	color: var(--color-sys-dim);
 }
-/* Add active class styling */
 .active {
-	color: red;
-	font-weight: bold;
+	color: var(--color-sys-main);
 }
+
+.active::after {
+	content: '';
+	position: absolute;
+	inset-block-end: calc(var(--space-3xs) * -1);
+	inset-inline-start: 0;
+	width: 100%;
+	height: var(--space-3xs);
+	transition: background-color 1s ease-in;
+}
+
+/* Different colors for each section */
+a[data-section='yonatan-kof'].active::after {
+	background-color: var(--color-brand-blue);
+}
+
+a[data-section='work'].active::after {
+	background-color: var(--color-brand-red-main);
+}
+
+a[data-section='extra'].active::after {
+	background-color: var(--color-brand-green);
+}
+
+a[data-section='connect'].active::after {
+	background-color: var(--color-brand-orange);
+}
+
+/* Optional: match text color with underline */
+/* a[data-section='yonatan-kof'].active {
+	color: var(--color-brand-blue);
+}
+
+a[data-section='work'].active {
+	color: var(--color-brand-red);
+}
+
+a[data-section='extra'].active {
+	color: var(--color-brand-green);
+}
+
+a[data-section='connect'].active {
+	color: var(--color-brand-orange);
+} */
 </style>
