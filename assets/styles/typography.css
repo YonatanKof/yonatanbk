@@ -9,7 +9,15 @@
 		/* wdth 75-100 */
 		/* opsz 12-96 */
 	}
-	html, body {
+	html,
+	body {
 		font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+	}
+	a {
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+		color: inherit;
 	}
 }
