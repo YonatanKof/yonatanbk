@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 const { activeSection } = useActiveSection();
+const navLinks = ref<HTMLAnchorElement[]>([]);
+const sliderPosition = ref({});
 
 const formatText = (kebabText: string) => {
 	return kebabText
@@ -7,17 +9,60 @@ const formatText = (kebabText: string) => {
 		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(' ');
 };
+
+// Function to update slider position
+const updateSliderPosition = (section: string) => {
+	const activeLink = navLinks.value.find((link) => link.dataset.section === section);
+
+	if (activeLink) {
+		const linkRect = activeLink.getBoundingClientRect();
+		const navRect = activeLink.parentElement?.getBoundingClientRect();
+
+		if (navRect) {
+			sliderPosition.value = {
+				width: `${linkRect.width}px`,
+				transform: `translateX(${linkRect.left - navRect.left}px)`,
+				backgroundColor: `var(--color-brand-${getColorForSection(section)})`,
+			};
+		}
+	}
+};
+
+// Helper function to get color based on section
+const getColorForSection = (section: string) => {
+	const colors = {
+		'yonatan-kof': 'blue-main',
+		work: 'red-main',
+		extra: 'green-main',
+		connect: 'orange-main',
+	};
+	return colors[section as keyof typeof colors];
+};
+
+// Set initial position
+onMounted(() => {
+	nextTick(() => {
+		updateSliderPosition(activeSection.value);
+	});
+});
+
+// Watch for changes
+watch(activeSection, (newSection) => {
+	updateSliderPosition(newSection);
+});
 </script>
 
 <template>
 	<header>
 		<nav>
+			<div class="slider" :style="sliderPosition"></div>
 			<a
 				v-for="section in ['yonatan-kof', 'work', 'extra', 'connect']"
 				:key="section"
 				:href="`#${section}`"
 				:class="{ active: activeSection === section }"
 				:data-section="section"
+				ref="navLinks"
 			>
 				{{ formatText(section) }}
 			</a>
@@ -39,15 +84,18 @@ header {
 	backdrop-filter: blur(4px);
 	height: var(--header-height);
 }
+
 nav,
 div {
 	display: flex;
 	align-items: center;
 	gap: var(--space-m);
 }
+
 div {
 	gap: var(--space-xs);
 }
+
 span {
 	display: inline-block;
 	height: var(--space-xs);
@@ -55,58 +103,28 @@ span {
 	border-radius: 100%;
 	background-color: green;
 }
+
 a {
 	color: var(--color-sys-slight);
 	position: relative;
 }
+
 div p {
 	color: var(--color-sys-dim);
 }
-.active {
-	color: var(--color-sys-main);
+
+nav {
+	position: relative;
 }
 
-.active::after {
-	content: '';
+.slider {
 	position: absolute;
-	inset-block-end: calc(var(--space-3xs) * -1);
-	inset-inline-start: 0;
-	width: 100%;
+	inset-block-end: var(--space-m);
 	height: var(--space-3xs);
-	transition: background-color 1s ease-in;
+	transition: all 0.3s ease;
 }
 
-/* Different colors for each section */
-a[data-section='yonatan-kof'].active::after {
-	background-color: var(--color-brand-blue);
+a.active {
+	color: var(--color-sys-slight);
 }
-
-a[data-section='work'].active::after {
-	background-color: var(--color-brand-red-main);
-}
-
-a[data-section='extra'].active::after {
-	background-color: var(--color-brand-green);
-}
-
-a[data-section='connect'].active::after {
-	background-color: var(--color-brand-orange);
-}
-
-/* Optional: match text color with underline */
-/* a[data-section='yonatan-kof'].active {
-	color: var(--color-brand-blue);
-}
-
-a[data-section='work'].active {
-	color: var(--color-brand-red);
-}
-
-a[data-section='extra'].active {
-	color: var(--color-brand-green);
-}
-
-a[data-section='connect'].active {
-	color: var(--color-brand-orange);
-} */
 </style>
