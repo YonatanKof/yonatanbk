@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 				{
 					rel: 'preload',
 					as: 'font',
-					href: '/fonts//fonts/BricolageGrotesque[opsz,wdth,wght].woff2',
+					href: '/fonts/BricolageGrotesque[opsz,wdth,wght].woff2',
 					type: 'font/woff2',
 					crossorigin: 'anonymous',
 				},
