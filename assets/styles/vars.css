@@ -23,9 +23,9 @@
 		--border-radius-none: unset;
 
 		/* Brand Colors */
-		--color-brand-green: hsl(80, 90%, 33%);
-		--color-brand-orange: hsl(40, 90%, 50%);
-		--color-brand-blue: hsl(199, 50%, 45%);
+		--color-brand-green-main: hsl(80, 90%, 33%);
+		--color-brand-orange-main: hsl(40, 90%, 50%);
+		--color-brand-blue-main: hsl(199, 50%, 45%);
 		--color-brand-red-main: hsl(1, 40%, 50%);
 		--color-brand-red-slight: color-mix(in hsl, var(--color-brand-red-main) 80%, transparent);
 		--color-brand-red-dim: color-mix(in hsl, var(--color-brand-red-main) 40%, transparent);
