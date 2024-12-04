@@ -1,12 +1,25 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+const { activeSection } = useActiveSection();
+
+const formatText = (kebabText: string) => {
+	return kebabText
+		.split('-')
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(' ');
+};
+</script>
 
 <template>
 	<header>
 		<nav>
-			<Text><a href="#yonatan-kof">Yonatan Kof</a></Text>
-			<Text><a href="#work">Work</a></Text>
-			<Text><a href="#extra">Extra</a></Text>
-			<Text><a href="#connect">Connect</a></Text>
+			<a
+				v-for="section in ['yonatan-kof', 'work', 'extra', 'connect']"
+				:key="section"
+				:href="`#${section}`"
+				:class="{ active: activeSection === section }"
+			>
+				{{ formatText(section) }}
+			</a>
 		</nav>
 		<div>
 			<span></span>
@@ -22,7 +35,7 @@ header {
 	justify-content: space-between;
 	padding-inline: var(--space-m);
 	background-color: var(--color-sys-invert-dim);
-	backdrop-filter: blur(1px);
+	backdrop-filter: blur(4px);
 	height: var(--header-height);
 }
 nav,
@@ -40,5 +53,13 @@ span {
 	width: var(--space-xs);
 	border-radius: 100%;
 	background-color: green;
+}
+div p {
+	color: var(--color-sys-dim);
+}
+/* Add active class styling */
+.active {
+	color: red;
+	font-weight: bold;
 }
 </style>
