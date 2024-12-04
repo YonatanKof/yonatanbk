@@ -2,10 +2,10 @@
 	<div class="main-layout">
 		<LayoutHeader />
 		<main>
-			<SectionYonatanKof id="yonatan-kof" />
-			<SectionWork id="work" />
-			<SectionExtra id="extra" />
-			<SectionConnect id="connect" />
+			<SectionYonatanKof />
+			<SectionWork />
+			<SectionExtra />
+			<SectionConnect />
 			<LayoutFooter />
 		</main>
 	</div>

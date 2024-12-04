@@ -27,5 +27,7 @@
 	}
 	.section-content {
 		padding: var(--space-m);
+		display: flex;
+		justify-content: center;
 	}
 }
