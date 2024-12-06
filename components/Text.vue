@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+// Define the variant type as a const array first
+const VARIANTS = ['large', 'small', 'text'] as const;
+// Create the type from the array values
+type Variant = (typeof VARIANTS)[number];
 
-type Variant = 'large' | 'small' | 'text';
+const props = withDefaults(
+	defineProps<{
+		tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+		variant?: 'large' | 'small' | 'text';
+	}>(),
+	{
+		tag: 'p',
+		variant: 'text',
+	}
+);
 
-const { tag = 'p', variant = 'text' } = defineProps<{
-	tag?: 'h1' | 'h2' | 'p'; // to h6
-	variant?: Variant;
-}>();
-
+// Type-safe variant classes mapping
 const VARIANT_CLASSES: Record<Variant, string> = {
 	large: 'heading-large', // font-bold text-5xl
 	small: 'heading-small',
@@ -15,7 +23,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
 };
 
 const variantClasses = computed(() => {
-	return VARIANT_CLASSES[variant];
+	return VARIANT_CLASSES[props.variant];
 });
 </script>
 
