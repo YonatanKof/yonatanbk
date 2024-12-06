@@ -20,14 +20,16 @@
 		background-image: radial-gradient(var(--color-sys-invert-highlight) 1px, transparent 1px);
 		background-size: 3px 3px;
 	}
-	.section {
-        min-height: calc(100vh - var(--header-height));
-        scroll-snap-align: start;
+	.section-block {
+		min-height: calc(100vh - var(--header-height));
+		scroll-snap-align: start;
 		padding-block-start: var(--header-height);
 	}
-	.section-content {
+	.padding-center-center {
 		padding: var(--space-m);
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: center; /* Horizontal */
+		align-items: center;
 	}
 }
