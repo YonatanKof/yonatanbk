@@ -3,20 +3,29 @@
 <template>
 	<section id="yonatan-kof">
 		<div id="main-messages" class="section-block">
-			<div class="padding-center-center">
-				<span>
-					<div id="avatar">
-						<NuxtImg src="/images/kof-pic.webp" placeholder />
-						<Text tag="h2" variant="small">Hi, I’m Yonatan Kof </Text>
+			<div class="padding-center-center main-message">
+				<div id="main-messages-top">
+					<span>
+						<div id="avatar">
+							<NuxtImg src="/images/kof-pic.webp" placeholder />
+							<Text tag="h2" variant="small">Hi, I’m Yonatan Kof </Text>
+						</div>
+						<Text class="title" tag="h1" variant="large">A full stack Designer </Text>
+					</span>
+					<span>
+						<Text class="text-end" tag="h1" variant="large">Who Leads Design Initiatives </Text>
+						<Text id="main-message" class="text-end" tag="h2" variant="small">
+							Perfect to Manage design Teams in Startups and Orgs
+						</Text>
+					</span>
+				</div>
+				<div id="main-messages-bottom">
+					<ClientProof />
+					<div>
+						<button>Look me up on Linkedin</button>
+						<button>Contact Me</button>
 					</div>
-					<Text class="title" tag="h1" variant="large">A full stack Designer </Text>
-				</span>
-				<span>
-					<Text class="text-end" tag="h1" variant="large"> Who Leads Design Initiatives </Text>
-					<Text id="main-message" class="text-end" tag="h2" variant="small">
-						Perfect to Manage design Teams in Startups and Orgs
-					</Text>
-				</span>
+				</div>
 			</div>
 		</div>
 		<div id="secondary-messages" class="section-block">
@@ -37,7 +46,6 @@
 	background-image: url('/images/arrow-v1.webp');
 	display: inline-block;
 	width: var(--step-3);
-	/* width: var(--space-m-l); */
 	aspect-ratio: 136/214;
 	background-size: cover;
 	background-position: center;
@@ -53,14 +61,29 @@
 .text-end {
 	text-align: end;
 }
-#main-messages {
-
+#main-messages-bottom {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: var(--space-xl);
+}
+.client-section{
+	width: 20rem
 }
 #avatar,
 #main-messages {
 	color: var(--color-black-slight);
 }
-
+.main-message {
+	display: grid;
+	gap: var(--space-4xl);
+	grid-template-columns: 1fr;
+}
+#main-messages-top{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 #avatar {
 	display: flex;
 	align-items: center;
