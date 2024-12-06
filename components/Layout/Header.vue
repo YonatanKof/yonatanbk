@@ -20,8 +20,8 @@ const updateSliderPosition = (section: string) => {
 
 		if (navRect) {
 			sliderPosition.value = {
-				width: `${linkRect.width}px`,
-				transform: `translateX(${linkRect.left - navRect.left}px)`,
+				width: `calc(0.5rem + ${linkRect.width}px`,
+				transform: `translateX(calc(${linkRect.left - navRect.left }px - 0.25rem))`,
 				backgroundColor: `var(--color-brand-${getColorForSection(section)})`,
 			};
 		}
@@ -121,6 +121,7 @@ nav {
 	position: absolute;
 	inset-block-end: var(--space-m);
 	height: var(--space-3xs);
+	border-radius: var(--border-radius-xs);
 	transition: all 0.3s ease;
 }
 
