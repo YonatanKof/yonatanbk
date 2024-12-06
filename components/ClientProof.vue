@@ -17,9 +17,9 @@ const logos = [
 const containerRef = ref(null);
 const scrollPosition = ref(0);
 const firstSetWidth = ref(0);
-const SCROLL_SPEED = 2;
+const SCROLL_SPEED = 0.5;
 // Keep gap size in pixels for calculation
-const GAP_SIZE = 32; // 2rem = 32px at default font size
+const GAP_SIZE = 24; // 2rem = 32px at default font size
 
 const scrollStyle = computed(() => ({
 	transform: `translateX(${-scrollPosition.value}px)`,
@@ -61,7 +61,7 @@ onMounted(() => {
 
 <template>
 	<div class="client-section">
-		<h4 class="client-title">Among my clients and initiatives</h4>
+		<Text class="client-title" tag="h4" variant="text">Among my clients and initiatives</Text>
 
 		<div class="logo-container" ref="containerRef">
 			<div class="logo-scroll" :style="scrollStyle">
@@ -75,15 +75,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.client-section {
-	margin: 2rem 0;
-}
-
 .client-title {
-	font-size: 1.5rem;
-	font-weight: 500;
-	margin-bottom: 1.5rem;
-	text-align: center;
+	margin-bottom: var(--space-s);
 }
 
 .logo-container {
@@ -95,13 +88,34 @@ onMounted(() => {
 
 .logo-scroll {
 	display: flex;
-	gap: 2rem;
+	gap: 1.5rem;
 	will-change: transform;
 	position: relative;
 }
 
+.logo-container::before {
+	content: '';
+	background: linear-gradient(to left, var(--color-sys-invert-none), var(--color-sys-invert-main));
+	width: 0.5rem;
+	height: 100%;
+	display: inline-block;
+	position: absolute;
+	z-index: 100;
+}
+.logo-container::after {
+	content: '';
+	background: linear-gradient(to right, var(--color-sys-invert-none), var(--color-sys-invert-main));
+	width: 2rem;
+	height: 100%;
+	display: inline-block;
+	position: absolute;
+	z-index: 100;
+	inset-inline-end: 0;
+	inset-block-start: 0;
+}
+
 .client-logo {
-	height: 4rem; /* 64px → 4rem */
+	height: 2rem; /* 64px → 4rem */
 	width: auto;
 	object-fit: contain;
 	flex-shrink: 0;
