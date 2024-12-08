@@ -1,19 +1,19 @@
 <script setup lang="ts"></script>
 
 <template>
-	<section id="yonatan-kof">
+	<section id="yonatan-ben-knaan">
 		<div id="main-messages" class="section-block">
 			<div class="padding-center-center main-message">
 				<div id="main-messages-top">
 					<span>
 						<div id="avatar">
 							<NuxtImg src="/images/kof-pic.webp" placeholder />
-							<Text tag="h2" variant="small">Hi, I’m Yonatan Kof </Text>
+							<Text tag="h2" variant="small">Hi, I’m Yonatan Ben Knaan </Text>
 						</div>
-						<Text class="title" tag="h1" variant="large">A full stack Designer </Text>
+						<Text class="title" tag="h1" variant="large">A full stack designer </Text>
 					</span>
 					<span>
-						<Text class="text-end" tag="h1" variant="large">Who Leads Design Initiatives </Text>
+						<Text class="text-end" tag="h1" variant="large">Who leads design initiatives </Text>
 						<Text id="main-message" class="text-end" tag="h2" variant="small">
 							Perfect to Manage design Teams in Startups and Orgs
 						</Text>
@@ -21,9 +21,9 @@
 				</div>
 				<div id="main-messages-bottom">
 					<ClientProof />
-					<div>
-						<button>Look me up on Linkedin</button>
-						<button>Contact Me</button>
+					<div class="cta-buttons">
+						<Button button-style="secondary" tag="a" href="https://www.linkedin.com/in/yonatankof/" target="_blank" >Look me up on Linkedin</Button>
+						<Button>Contact Me</Button>
 					</div>
 				</div>
 			</div>
@@ -67,8 +67,14 @@
 	justify-content: space-between;
 	gap: var(--space-xl);
 }
-.client-section{
-	width: 20rem
+.cta-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: var(--space-s);
+}
+
+.client-section {
+	width: 20rem;
 }
 #avatar,
 #main-messages {
@@ -79,7 +85,7 @@
 	gap: var(--space-4xl);
 	grid-template-columns: 1fr;
 }
-#main-messages-top{
+#main-messages-top {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

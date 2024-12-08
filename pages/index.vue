@@ -2,7 +2,7 @@
 	<div class="main-layout">
 		<LayoutHeader />
 		<main>
-			<SectionYonatanKof />
+			<SectionYonatanBenKnaan />
 			<SectionWork />
 			<SectionExtra />
 			<SectionConnect />

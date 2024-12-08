@@ -31,7 +31,7 @@ const updateSliderPosition = (section: string) => {
 // Helper function to get color based on section
 const getColorForSection = (section: string) => {
 	const colors = {
-		'yonatan-kof': 'blue-main',
+		'yonatan-ben-knaan': 'blue-main',
 		work: 'red-main',
 		extra: 'green-main',
 		connect: 'orange-main',
@@ -57,7 +57,7 @@ watch(activeSection, (newSection) => {
 		<nav>
 			<div class="slider" :style="sliderPosition"></div>
 			<a
-				v-for="section in ['yonatan-kof', 'work', 'extra', 'connect']"
+				v-for="section in ['yonatan-ben-knaan', 'work', 'extra', 'connect']"
 				:key="section"
 				:href="`#${section}`"
 				:class="{ active: activeSection === section }"
