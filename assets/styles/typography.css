@@ -21,4 +21,10 @@
 		text-decoration: none;
 		color: inherit;
 	}
+	.capitalize {
+		text-transform: capitalize;
+	}
+	.uppercase {
+		text-transform: uppercase;
+	}
 }
