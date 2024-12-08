@@ -35,21 +35,17 @@ const variantClasses = computed(() => {
 
 <style scoped>
 .heading-large {
-	text-transform: capitalize;
 	font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96;
 	font-size: var(--step-7);
 	text-align: center;
 	line-height: 1.1;
 }
 .heading-small {
-	/* text-transform: capitalize; */
 	font-variation-settings: 'wght' 400, 'wdth' 86, 'opsz' 96;
 	font-size: var(--step-4);
-	/* text-align: center; */
 	line-height: 1.1;
 }
 .text {
 	font-variation-settings: 'wght' 400;
-	/* text-decoration: underline; */
 }
 </style>
