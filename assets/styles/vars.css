@@ -34,7 +34,7 @@
 		--color-brand-red-none: color-mix(in hsl, var(--color-brand-red-main) 0%, transparent);
 
 		/* Colors */
-		--color-black-main: hsl(180, 25%, 5%);
+		--color-black-main: hsl(0, 0%, 0%);
 		--color-black-slight: color-mix(in hsl, var(--color-black-main) 80%, transparent);
 		--color-black-dim: color-mix(in hsl, var(--color-black-main) 40%, transparent);
 		--color-black-dis: color-mix(in hsl, var(--color-black-main) 10%, transparent);
