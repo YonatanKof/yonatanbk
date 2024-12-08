@@ -1,5 +1,21 @@
+<script setup>
+import { ModalsContainer, useModal } from 'vue-final-modal';
+import Modal from '~/components/Modal.vue';
+
+
+const { open, close } = useModal({
+	component: Modal,
+	attrs: {
+		onConfirm() {
+			close();
+		},
+	},
+});
+</script>
+
 <template>
 	<section class="section-block padding-center-center">
+		<Button :onClick="open">Open Dialog</Button>
 		<Button buttonSize="small">Small! Primary</Button>
 		<Button>Medium! Primary</Button>
 		<Button buttonSize="large">Large! Primary</Button>
