@@ -39,26 +39,40 @@ const buttonClasses = computed(() => ({
 
 <style scoped>
 /* Base style */
+@keyframes repeating-linear-gradient {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: calc(var(--pattern-size) * 30) 0;
+		/* background-position: 600px 0; */
+	}
+}
 .button {
-	/* --clip-shift: 0.75em; */
 	--clip-shift: var(--space-xs);
 	--clip-clr-i: var(--color-brand-red-main);
 	--clip-clr-ii: var(--color-brand-orange-main);
+
+	--stripe-width: calc(var(--clip-shift) / 1.5);
+	--pattern-size: calc(var(--stripe-width) * 1.4142);
+
 	padding: 1em 1.5em;
 	margin-inline-start: var(--clip-shift);
 	margin-block-end: var(--clip-shift);
 	position: relative;
 	background-color: var(--color-sys-invert-main);
 	box-shadow: inset 0 0 0 0.1em var(--color-sys-dim);
+	transition: all 0.25s ease-out;
 	&::before {
 		content: '';
 		width: auto;
 		height: auto;
-		background-image: repeating-linear-gradient(
+		background: repeating-linear-gradient(
 			135deg,
 			var(--clip-clr-i) 0px calc(var(--clip-shift) / 3),
-			var(--clip-clr-ii) calc(var(--clip-shift) / 3) calc(var(--clip-shift) / 1.5)
+			var(--clip-clr-ii) calc(var(--clip-shift) / 3) calc(var(--stripe-width))
 		);
+		background-size: var(--pattern-size) var(--pattern-size);
 		position: absolute;
 		inset-inline-start: calc(var(--clip-shift) * -1);
 		inset-inline-end: 0;
@@ -73,6 +87,12 @@ const buttonClasses = computed(() => ({
 			0 var(--clip-shift)
 		);
 		z-index: -1;
+	}
+	&:hover {
+		box-shadow: inset 0 0 0 0.2em var(--color-sys-slight);
+		&::before {
+			animation: 5s ease-in-out 0s infinite alternate repeating-linear-gradient;
+		}
 	}
 }
 /* Button Size */
@@ -113,6 +133,5 @@ const buttonClasses = computed(() => ({
 	&::before {
 		content: none;
 	}
-
 }
 </style>
