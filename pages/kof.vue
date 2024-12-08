@@ -1,16 +1,22 @@
-  <template>
-	<div id="block-end">
-		<Text class="text-end" tag="h1" variant="large"> Who Leads Design Initiatives </Text>
-		<Text class="text-end" tag="h2" variant="small">Perfect to Manage design Teams in Startups and Orgs</Text>
-	</div>
+<template>
+	<section class="section-block padding-center-center">
+		<Button buttonSize="small">Small! Primary</Button>
+		<Button>Medium! Primary</Button>
+		<Button buttonSize="large">Large! Primary</Button>
+		<Button buttonStyle="secondary" buttonSize="small">Small! Secondary</Button>
+		<Button buttonStyle="secondary">Medium! Secondary</Button>
+		<Button buttonStyle="secondary" buttonSize="large">Large! Secondary</Button>
+		<Button buttonSize="small" buttonStyle="ghost">Small! Ghost</Button>
+		<Button buttonStyle="ghost">Medium! Ghost</Button>
+		<Button buttonSize="large" buttonStyle="ghost">Large! Ghost</Button>
+		<Button buttonSize="small" buttonStyle="subtle">Small! Subtle</Button>
+		<Button buttonStyle="subtle">Medium! Subtle</Button>
+		<Button buttonSize="large" buttonStyle="subtle">Large! Subtle</Button>
+	</section>
 </template>
 
 <style scoped>
-#block-end {
-	display: flex;
-	flex-direction: column;
-}
-.text-end {
-	text-align: end;
+section {
+	gap: 1rem;
 }
 </style>
