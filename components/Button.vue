@@ -10,6 +10,11 @@ const props = withDefaults(
 		tag?: 'button' | 'a';
 		buttonSize?: ButtonSize;
 		buttonStyle?: ButtonStyle;
+		// Add link-specific props
+		href?: string;
+		target?: string;
+		// Add click handler prop
+		onClick?: () => void;
 	}>(),
 	{
 		tag: 'button',
@@ -29,10 +34,22 @@ const buttonClasses = computed(() => ({
 	[SIZE_CLASSES[props.buttonSize]]: true,
 	[`button-${props.buttonStyle}`]: true,
 }));
+
+// Handle click events
+const handleClick = () => {
+	props.onClick?.();
+};
+
+// Handle keyup events for accessibility
+const handleKeyup = (event: KeyboardEvent) => {
+	if (event.key === 'Enter') {
+		props.onClick?.();
+	}
+};
 </script>
 
 <template>
-	<component :is="tag" :class="buttonClasses">
+	<component :is="tag" :class="buttonClasses" :href="href" :target="target" @click="handleClick" @keyup="handleKeyup">
 		<slot />
 	</component>
 </template>
