@@ -31,6 +31,7 @@
 		flex-direction: column;
 		justify-content: center; /* Horizontal */
 		align-items: center;
+		width: 100%;
 	}
 	.color-slight {
 		color: var(--color-sys-slight);
