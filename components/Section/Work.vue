@@ -3,7 +3,7 @@
 <template>
 	<section id="work" class="section-block">
 		<div class="section-content">
-			<Text tag="h1" variant="large">Work</Text>
+			<Text tag="h1" variant="main-title">Work</Text>
 		</div>
 	</section>
 </template>

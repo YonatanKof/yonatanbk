@@ -8,13 +8,13 @@
 					<span>
 						<div id="avatar">
 							<NuxtImg src="/images/kof-pic.webp" placeholder />
-							<Text tag="h2" variant="small">Hi, I’m Yonatan Ben Knaan </Text>
+							<Text tag="h2" variant="compressed-title">Hi, I’m Yonatan Ben Knaan </Text>
 						</div>
-						<Text class="title" tag="h1" variant="large">A full stack designer </Text>
+						<Text class="title" tag="h1" variant="main-title">A full stack designer </Text>
 					</span>
 					<span>
-						<Text class="text-end" tag="h1" variant="large">Who leads design initiatives </Text>
-						<Text id="main-message" class="text-end" tag="h2" variant="small">
+						<Text class="text-end" tag="h1" variant="main-title">Who leads design initiatives </Text>
+						<Text id="main-message" class="text-end" tag="h2" variant="compressed-title">
 							Perfect to Manage design Teams in Startups and Orgs
 						</Text>
 					</span>
@@ -30,7 +30,7 @@
 		</div>
 		<div id="secondary-messages" class="section-block">
 			<div class="padding-center-center">
-				<Text tag="h1" variant="large">Design Connection</Text>
+				<Text tag="h1" variant="main-title">Design Connection</Text>
 			</div>
 		</div>
 	</section>

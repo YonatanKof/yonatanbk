@@ -1,13 +1,13 @@
 <script setup lang="ts">
 // Define the variant type as a const array first
-const VARIANTS = ['large', 'small', 'text'] as const;
+const VARIANTS = ['main-title', 'compressed-title', 'text'] as const;
 // Create the type from the array values
 type Variant = (typeof VARIANTS)[number];
 
 const props = withDefaults(
 	defineProps<{
 		tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-		variant?: 'large' | 'small' | 'text';
+		variant?: 'main-title' | 'compressed-title' | 'text';
 	}>(),
 	{
 		tag: 'p',
@@ -17,8 +17,8 @@ const props = withDefaults(
 
 // Type-safe variant classes mapping
 const VARIANT_CLASSES: Record<Variant, string> = {
-	large: 'heading-large', // font-bold text-5xl
-	small: 'heading-small',
+	'main-title': 'heading-large', // font-bold text-5xl
+	'compressed-title': 'heading-small',
 	text: 'text',
 };
 

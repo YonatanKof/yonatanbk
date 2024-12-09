@@ -14,7 +14,7 @@ const emit = defineEmits<{
 		content-transition="vfm-fade"
 		swipe-to-close="down"
 	>
-		<h6 class="drag-title">Reasons why DS role fits a glove</h6>
+		<Text tag="h2" variant="compressed-title" class="title">Cool Title</Text>
 		<ul>
 			<li>Working knowledge of complex <em>DS</em></li>
 			<li>Proven ability to lead teams without authority</li>
@@ -29,13 +29,13 @@ const emit = defineEmits<{
 			<!-- <li>Working lean and effective</li> -->
 		</ul>
 		<span>
-			<div><a href="/misc/CV-YonatanBenKnaan-2024.pdf" download>Download CV</a></div>
-			<button class="this-modal-btn" @click="emit('confirm')">Got it</button>
+			<Button button-style="secondary" button-size="small" @click="emit('confirm')">Close Modal</Button>
+			<Button button-size="small" tag="a" href="/misc/CV-YonatanBenKnaan-2024.pdf" target="_blank">Download CV</Button>
 		</span>
 	</VueFinalModal>
 </template>
 
-<style >
+<style>
 .confirm-modal {
 	display: flex;
 	justify-content: center;
@@ -59,7 +59,7 @@ const emit = defineEmits<{
 }
 </style>
 <style scoped>
-.drag-title {
+.title {
 	margin-block: var(--space-s);
 	padding-inline: var(--space-xs);
 }
