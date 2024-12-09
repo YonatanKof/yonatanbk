@@ -67,10 +67,7 @@ watch(activeSection, (newSection) => {
 				{{ formatText(section) }}
 			</a>
 		</nav>
-		<div>
-			<span></span>
-			<Text>Open For Work</Text>
-		</div>
+		<OpenForWork />
 	</header>
 </template>
 
@@ -92,25 +89,17 @@ div {
 	gap: var(--space-m);
 }
 
-div {
-	gap: var(--space-xs);
-}
-
 span {
 	display: inline-block;
 	height: var(--space-xs);
 	width: var(--space-xs);
 	border-radius: 100%;
-	background-color: green;
+	background-color: var(--color-brand-green-main);
 }
 
 a {
 	color: var(--color-sys-slight);
 	position: relative;
-}
-
-div p {
-	color: var(--color-sys-dim);
 }
 
 nav {
