@@ -55,16 +55,15 @@ const handleKeyup = (event: KeyboardEvent) => {
 </template>
 
 <style scoped>
-/* Base style */
 @keyframes repeating-linear-gradient {
 	0% {
 		background-position: 0 0;
 	}
 	100% {
-		background-position: calc(var(--pattern-size) * 30) 0;
-		/* background-position: 600px 0; */
+		background-position: calc(var(--pattern-size) * 10) 0;
 	}
 }
+/* Base style */
 .button {
 	--clip-shift: var(--space-xs);
 	--clip-clr-i: var(--color-brand-red-main);
@@ -78,7 +77,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 	margin-block-end: var(--clip-shift);
 	position: relative;
 	background-color: var(--color-sys-invert-main);
-	box-shadow: inset 0 0 0 0.1em var(--color-sys-dim);
+	box-shadow: inset 0 0 0 0.1em var(--color-sys-slight);
 	transition: all 0.25s ease-out;
 	&::before {
 		content: '';
@@ -106,10 +105,17 @@ const handleKeyup = (event: KeyboardEvent) => {
 		z-index: -1;
 	}
 	&:hover {
-		box-shadow: inset 0 0 0 0.2em var(--color-sys-slight);
+		box-shadow: inset 0 0 0 0.2em var(--color-sys-main);
 		&::before {
-			animation: 5s ease-in-out 0s infinite alternate repeating-linear-gradient;
+			animation: 2s ease-in-out 0s infinite alternate repeating-linear-gradient;
 		}
+	}
+	&:focus,
+	&:focus-visible {
+		box-shadow: inset 0 0 0 0.1em var(--color-brand-red-main), inset 0 0 0 0.2em var(--color-sys-invert-main), inset 0 0 0 0.4em var(--color-focus-slight);
+		/* border: 2px dashed crimson; */
+		/* border-radius: 3px; */
+		outline: none;
 	}
 }
 /* Button Size */
@@ -124,7 +130,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 }
 
 .button-large {
-	font-size: var(--step-2);
+	font-size: var(--step-3);
 	--clip-shift: var(--space-s);
 }
 /* Button Style */
@@ -146,7 +152,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 
 .button-subtle {
 	--clip-shift: 0;
-	box-shadow: inset 0 0 0 0.05em var(--color-sys-dim);
+	box-shadow: inset 0 0 0 0.05em var(--color-sys-slight);
 	&::before {
 		content: none;
 	}
