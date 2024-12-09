@@ -14,19 +14,19 @@ const { open, close } = useModal({
 
 <template>
 	<section id="yonatan-ben-knaan">
-		<div id="main-messages" class="section-block">
+		<div id="main-messages" class="section-block checked-grid-lines">
 			<div class="padding-center-center main-message">
 				<div id="main-messages-top">
 					<span>
 						<div id="avatar">
 							<NuxtImg src="/images/kof-pic.webp" placeholder />
-							<Text tag="h2" variant="compressed-title">Hi, I’m Yonatan Ben Knaan </Text>
+							<Text tag="h2" variant="compressed-title" class="color-slight">Hi, I’m Yonatan Ben Knaan </Text>
 						</div>
 						<Text class="title" tag="h1" variant="main-title">A full stack designer </Text>
 					</span>
 					<span>
 						<Text class="text-end" tag="h1" variant="main-title">Who leads design initiatives </Text>
-						<Text id="main-message" class="text-end" tag="h2" variant="compressed-title">
+						<Text id="main-message" class="text-end color-slight" tag="h2" variant="compressed-title" >
 							Perfect to Manage design Teams in Startups and Orgs
 						</Text>
 					</span>
@@ -90,14 +90,17 @@ const { open, close } = useModal({
 .client-section {
 	width: 20rem;
 }
-#avatar,
+
 #main-messages {
-	color: var(--color-black-slight);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .main-message {
 	display: grid;
 	gap: var(--space-4xl);
 	grid-template-columns: 1fr;
+	padding-block-end: var(--space-4xl);
 }
 #main-messages-top {
 	display: flex;

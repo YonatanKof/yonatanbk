@@ -11,7 +11,7 @@
 	.checked-grid-lines {
 		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
-		background-size: 20px 20px;
+		background-size: var(--space-l) var(--space-l);
 		/* background-color: white; */
 	}
 	.cool-doted-bg {
@@ -31,5 +31,11 @@
 		flex-direction: column;
 		justify-content: center; /* Horizontal */
 		align-items: center;
+	}
+	.color-slight {
+		color: var(--color-sys-slight);
+	}
+	.color-dimmed {
+		color: var(--color-sys-dim);
 	}
 }

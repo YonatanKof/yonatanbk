@@ -61,7 +61,7 @@ onMounted(() => {
 
 <template>
 	<div class="client-section">
-		<Text class="client-title" tag="h4" variant="text">Among my clients and initiatives</Text>
+		<Text class="client-title color-slight" tag="h4" variant="text">Among my clients and initiatives</Text>
 
 		<div class="logo-container" ref="containerRef">
 			<div class="logo-scroll" :style="scrollStyle">
