@@ -11,15 +11,21 @@
 	}
 	html,
 	body {
+		--base-font-settings: 'wght' 400, 'wdth' 95, 'opsz' 22;
 		font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+		font-variation-settings: var(--base-font-settings);
 		font-size: 16px;
 	}
 	a {
 		text-decoration: none;
-	}
-	a:visited {
-		text-decoration: none;
-		color: inherit;
+		&:visited,
+		&:link {
+			text-decoration: none;
+			color: inherit;
+		}
+		&:active {
+			color: inherit;
+		}
 	}
 	.capitalize {
 		text-transform: capitalize;

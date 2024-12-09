@@ -46,6 +46,6 @@ const variantClasses = computed(() => {
 	line-height: 1.1;
 }
 .text {
-	font-variation-settings: 'wght' 400;
+	font-variation-settings: var(--base-font-settings);
 }
 </style>

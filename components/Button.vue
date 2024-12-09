@@ -79,6 +79,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 	background-color: var(--color-sys-invert-main);
 	box-shadow: inset 0 0 0 0.1em var(--color-sys-slight);
 	transition: all 0.25s ease-out;
+	text-align: center;
 	&::before {
 		content: '';
 		width: auto;
@@ -112,10 +113,14 @@ const handleKeyup = (event: KeyboardEvent) => {
 	}
 	&:focus,
 	&:focus-visible {
-		box-shadow: inset 0 0 0 0.1em var(--color-brand-red-main), inset 0 0 0 0.2em var(--color-sys-invert-main), inset 0 0 0 0.4em var(--color-focus-slight);
+		box-shadow: inset 0 0 0 0.1em var(--color-brand-red-main), inset 0 0 0 0.2em var(--color-sys-invert-main),
+			inset 0 0 0 0.4em var(--color-focus-slight);
 		/* border: 2px dashed crimson; */
 		/* border-radius: 3px; */
 		outline: none;
+	}
+	&:target {
+		border: 4px solid rgb(238, 1, 255);
 	}
 }
 /* Button Size */
