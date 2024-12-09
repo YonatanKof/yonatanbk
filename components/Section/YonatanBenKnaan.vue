@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup>
+import { useModal } from 'vue-final-modal';
+import Modal from '~/components/Modal.vue';
+
+const { open, close } = useModal({
+	component: Modal,
+	attrs: {
+		onConfirm() {
+			close();
+		},
+	},
+});
+</script>
 
 <template>
 	<section id="yonatan-ben-knaan">
@@ -22,8 +34,10 @@
 				<div id="main-messages-bottom">
 					<ClientProof />
 					<div class="cta-buttons">
-						<Button button-style="secondary" tag="a" href="https://www.linkedin.com/in/yonatankof/" target="_blank" >Look me up on Linkedin</Button>
-						<Button>Contact Me</Button>
+						<Button button-style="secondary" tag="a" href="https://www.linkedin.com/in/yonatankof/" target="_blank">
+							Look me up on Linkedin
+						</Button>
+						<Button :onClick="open">Contact Me</Button>
 					</div>
 				</div>
 			</div>
