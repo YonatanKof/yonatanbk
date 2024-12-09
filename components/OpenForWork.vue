@@ -20,7 +20,7 @@
 		opacity: 1;
 	}
 	100% {
-		transform: scale(1.25);
+		transform: scale(1.5);
 		opacity: 0;
 	}
 }
@@ -30,6 +30,7 @@
 	align-items: center;
 	gap: var(--space-2xs);
 }
+
 .pulse-wrapper {
 	position: relative;
 	display: inline-block;
@@ -46,6 +47,8 @@ span {
 /* Pulsing circles using pseudo-elements */
 span::before,
 span::after {
+	transform: scale(0.5);
+	opacity: 0;
 	content: '';
 	position: absolute;
 	inset: 0;
@@ -59,7 +62,6 @@ span::after {
 	animation-delay: 1s;
 }
 #open-text {
-	color: var(--color-sys-slight);
-	font-variation-settings: 'wght' 400, 'wdth' 86, 'opsz' 96;
+	color: var(--color-sys-dim);
 }
 </style>
