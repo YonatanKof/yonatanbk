@@ -75,7 +75,7 @@ onUnmounted(() => {
 .content-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-m);
+	/* gap: var(--space-m); */
 }
 
 @media (max-width: 640px) {

@@ -31,6 +31,7 @@ const isActive = ref(props.active);
 const isPaused = ref(false);
 const isMobileView = ref(false);
 let timer = null;
+const shouldShow = ref(false);
 
 const normalizedImages = computed(() => {
 	if (!props.images) return [];
@@ -41,8 +42,11 @@ watch(
 	() => props.active,
 	(newValue) => {
 		isActive.value = newValue;
-		if (newValue && !isPaused.value) {
-			startTimer();
+		if (newValue) {
+			shouldShow.value = true;
+			if (!isPaused.value) {
+				startTimer();
+			}
 		} else {
 			clearTimeout(timer);
 		}
@@ -77,6 +81,12 @@ function handleClick() {
 	}
 }
 
+function handleTransitionEnd(event) {
+	if (!isActive.value && event.propertyName === 'opacity') {
+		shouldShow.value = false;
+	}
+}
+
 function updateViewport() {
 	isMobileView.value = window.innerWidth < 640;
 }
@@ -85,6 +95,7 @@ onMounted(() => {
 	updateViewport();
 	window.addEventListener('resize', updateViewport);
 	if (props.active) {
+		shouldShow.value = true;
 		startTimer();
 	}
 });
@@ -104,16 +115,17 @@ onUnmounted(() => {
 		@touchend.prevent="handleMouseLeave"
 		@click="handleClick"
 	>
-		<Text tag="h3" variant="secondary-title">{{ title }}</Text>
+		<Text tag="h3" variant="secondary-title" :class="{ xxx: !isActive }">{{ title }}</Text>
 		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
-
-		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" v-show="isActive">
+		<!-- Place this v-if below in the subTitle, if you want is out of the DOM-->
+		<!-- v-if="shouldShow" -->
+		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" @transitionend="handleTransitionEnd">
 			{{ subTitle }}
 		</Text>
 
 		<!-- Mobile Image -->
-		<div v-if="isMobileView && images" class="mobile-image-container" v-show="isActive">
-			<template v-for="imageUrl in normalizedImages" :key="index">
+		<div v-if="isMobileView && images" class="mobile-image-container">
+			<template v-for="(imageUrl, idx) in normalizedImages" :key="`${index}-${idx}`">
 				<img :src="imageUrl" :alt="`Image for ${title}`" class="mobile-image" :class="{ 'fade-in': isActive }" />
 			</template>
 		</div>
@@ -131,20 +143,24 @@ onUnmounted(() => {
 	gap: var(--space-s);
 }
 
-.subtitle-container {
-	margin-top: var(--space-m);
+.xxx {
+	color: var(--color-sys-invert-dim);
+	transition: all 0.5s ease;
 }
 
 .subtitle {
-	margin: 0;
 	opacity: 0;
-	transform: translateY(10px);
-	transition: all 0.3s ease;
+	height: 0;
+	transform: translateY(var(--space-xs));
+	transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+	margin-block-end: 0;
 }
 
 .subtitle.visible {
 	opacity: 1;
+	height: max-content;
 	transform: translateY(0);
+	margin-block-end: var(--space-m);
 }
 
 .mobile-image-container {
@@ -154,6 +170,8 @@ onUnmounted(() => {
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 	-webkit-overflow-scrolling: touch;
+	opacity: 0;
+	transition: opacity 0.3s ease;
 }
 
 .mobile-image {
@@ -162,19 +180,21 @@ onUnmounted(() => {
 	object-fit: cover;
 	border-radius: 8px;
 	scroll-snap-align: start;
-	opacity: 0;
 	transform: scale(1.1);
 	transition: all 0.3s ease;
 }
 
 .mobile-image.fade-in {
-	opacity: 1;
 	transform: scale(1);
 }
 
-/* @media (min-width: 640px) {
+.mobile-image-container:has(.mobile-image.fade-in) {
+	opacity: 1;
+}
+
+@media (min-width: 640px) {
 	.mobile-image-container {
 		display: none;
 	}
-} */
+}
 </style>
