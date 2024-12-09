@@ -1,2 +1,6 @@
 @layer styles {
+    hr {
+        width: 100%;
+        border-color: var(--color-sys-dim);
+    }
 }
