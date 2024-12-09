@@ -115,6 +115,6 @@ nav {
 }
 
 a.active {
-	color: var(--color-sys-slight);
+	color: var(--color-sys-main);
 }
 </style>
