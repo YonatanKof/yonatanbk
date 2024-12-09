@@ -23,7 +23,7 @@ const { open, close } = useModal({
 					</div>
 					<Text class="title" tag="h1" variant="main-title">A full stack designer </Text>
 				</span>
-				<span>
+				<span class="span-low">
 					<Text class="text-end" tag="h1" variant="main-title">Who leads design initiatives </Text>
 					<Text id="main-message" class="text-end color-slight" tag="h2" variant="compressed-title">
 						Perfect to Manage design Teams in Startups and Orgs
@@ -47,24 +47,22 @@ const { open, close } = useModal({
 .title {
 	width: fit-content;
 	position: relative;
+	&::before {
+		content: '';
+		background-image: url('/images/arrow-v1.webp');
+		display: inline-block;
+		width: var(--step-3);
+		aspect-ratio: 136/214;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		transform: rotate(115deg);
+		inset-block-end: var(--step-3);
+		inset-inline-start: calc(var(--step-3) * -1);
+	}
 }
-.title::before {
-	content: '';
-	background-image: url('/images/arrow-v1.webp');
-	display: inline-block;
-	width: var(--step-3);
-	aspect-ratio: 136/214;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	position: absolute;
-	transform: rotate(115deg);
-	inset-block-end: var(--step-3);
-	inset-inline-start: calc(var(--step-3) * -1);
-}
-/* span:first-child {
-	color: aquamarine;
-} */
+
 .text-end {
 	text-align: end;
 }
@@ -94,6 +92,7 @@ const { open, close } = useModal({
 	gap: var(--space-4xl);
 	grid-template-columns: 1fr;
 	padding-block-end: var(--space-4xl);
+	max-width: max-content;
 }
 #main-messages-top {
 	display: flex;
@@ -110,5 +109,11 @@ const { open, close } = useModal({
 	border-radius: 100%;
 	width: var(--step-6);
 	height: var(--step-6);
+}
+.span-low {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	gap: var(--space-2xs);
 }
 </style>
