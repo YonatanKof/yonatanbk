@@ -1,28 +1,3 @@
-<template>
-	<div
-		class="content-toggle"
-		@mouseenter="handleMouseEnter"
-		@mouseleave="handleMouseLeave"
-		@touchstart.prevent="handleMouseEnter"
-		@touchend.prevent="handleMouseLeave"
-		@click="handleClick"
-	>
-		<h3 class="title">{{ title }}</h3>
-		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
-
-		<h4 class="subtitle" :class="{ visible: isActive }" v-show="isActive">
-			{{ subTitle }}
-		</h4>
-
-		<!-- Mobile Image -->
-		<div v-if="isMobileView && images" class="mobile-image-container" v-show="isActive">
-			<template v-for="imageUrl in normalizedImages" :key="index">
-				<img :src="imageUrl" :alt="`Image for ${title}`" class="mobile-image" :class="{ 'fade-in': isActive }" />
-			</template>
-		</div>
-	</div>
-</template>
-
 <script setup>
 const props = defineProps({
 	title: {
@@ -120,30 +95,44 @@ onUnmounted(() => {
 });
 </script>
 
+<template>
+	<div
+		class="content-toggle"
+		@mouseenter="handleMouseEnter"
+		@mouseleave="handleMouseLeave"
+		@touchstart.prevent="handleMouseEnter"
+		@touchend.prevent="handleMouseLeave"
+		@click="handleClick"
+	>
+		<Text tag="h3" variant="secondary-title">{{ title }}</Text>
+		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
+
+		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" v-show="isActive">
+			{{ subTitle }}
+		</Text>
+
+		<!-- Mobile Image -->
+		<div v-if="isMobileView && images" class="mobile-image-container" v-show="isActive">
+			<template v-for="imageUrl in normalizedImages" :key="index">
+				<img :src="imageUrl" :alt="`Image for ${title}`" class="mobile-image" :class="{ 'fade-in': isActive }" />
+			</template>
+		</div>
+	</div>
+</template>
+
 <style scoped>
 .content-toggle {
 	width: 100%;
-	max-width: 300px;
 	position: relative;
 	cursor: pointer;
-	padding: 1rem;
-	background-color: #f5f5f5;
-	border-radius: 8px;
 	transition: background-color 0.3s ease;
-}
-
-.content-toggle:hover {
-	background-color: #eef2f7;
-}
-
-.title {
-	margin: 0;
-	font-size: 1.25rem;
-	color: #333;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
 }
 
 .subtitle-container {
-	margin-top: 0.75rem;
+	margin-top: var(--space-m);
 }
 
 .subtitle {
@@ -151,8 +140,6 @@ onUnmounted(() => {
 	opacity: 0;
 	transform: translateY(10px);
 	transition: all 0.3s ease;
-	font-size: 1rem;
-	color: #666;
 }
 
 .subtitle.visible {
@@ -185,9 +172,9 @@ onUnmounted(() => {
 	transform: scale(1);
 }
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
 	.mobile-image-container {
 		display: none;
 	}
-}
+} */
 </style>

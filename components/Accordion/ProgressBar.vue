@@ -1,18 +1,4 @@
-<template>
-	<div class="progress-container" :class="{ hidden: !active }">
-		<div
-			class="progress-bar"
-			:style="{
-				width: `${progress}%`,
-				transition: isPaused ? 'none' : `width ${remainingTime}ms linear`,
-			}"
-		></div>
-	</div>
-</template>
-
 <script setup>
-import { ref, watch, nextTick } from 'vue';
-
 const props = defineProps({
 	active: {
 		type: Boolean,
@@ -58,12 +44,24 @@ watch(() => props.active, updateProgress, { immediate: true });
 watch(() => props.isPaused, updateProgress);
 </script>
 
+<template>
+	<div class="progress-container" :class="{ hidden: !active }">
+		<div
+			class="progress-bar"
+			:style="{
+				width: `${progress}%`,
+				transition: isPaused ? 'none' : `width ${remainingTime}ms linear`,
+			}"
+		></div>
+	</div>
+</template>
+
 <style scoped>
 .progress-container {
 	width: 100%;
-	height: 4px;
-	background-color: #e0e0e0;
-	border-radius: 2px;
+	height: var(--space-3xs);
+	background-color: var(--color-sys-dim);
+	border-radius: var(--border-radius-xs);
 	overflow: hidden;
 	opacity: 1;
 	transition: opacity 0.3s ease;
@@ -77,7 +75,7 @@ watch(() => props.isPaused, updateProgress);
 .progress-bar {
 	height: 100%;
 	width: 0;
-	background-color: #2196f3;
-	border-radius: 2px;
+	background-color: var(--color-sys-invert-main);
+	border-radius: var(--border-radius-xs);
 }
 </style>

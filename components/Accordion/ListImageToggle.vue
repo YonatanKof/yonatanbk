@@ -1,16 +1,3 @@
-<template>
-	<div class="content-images">
-		<div v-for="(imageUrl, index) in currentImages" :key="`${currentIndex}-${index}`" class="image-container">
-			<img
-				:src="imageUrl"
-				:alt="`Image for ${currentItem?.title || 'content'}`"
-				class="content-image"
-				:class="{ 'fade-in': isActive }"
-			/>
-		</div>
-	</div>
-</template>
-
 <script setup>
 import { ref, computed, watch, nextTick } from 'vue';
 
@@ -57,23 +44,34 @@ watch(
 );
 </script>
 
+<template>
+	<div class="content-images">
+		<div v-for="(imageUrl, index) in currentImages" :key="`${currentIndex}-${index}`" class="image-container">
+			<img
+				:src="imageUrl"
+				:alt="`Image for ${currentItem?.title || 'content'}`"
+				class="content-image"
+				:class="{ 'fade-in': isActive }"
+			/>
+		</div>
+	</div>
+</template>
+
 <style scoped>
 .content-images {
 	display: flex;
 	gap: 1rem;
 	justify-content: center;
-	align-items: center;
-	padding: 1rem;
+	align-items: start;
 	width: 100%;
 }
 
 .image-container {
 	flex: 1;
-	max-width: 300px;
 	aspect-ratio: 16/9;
 	overflow: hidden;
-	border-radius: 8px;
-	background-color: #f5f5f5;
+	border-radius: var(--border-radius-md);
+	background-color: var(--color-brand-orange-main);
 }
 
 .content-image {

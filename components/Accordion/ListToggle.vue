@@ -1,23 +1,3 @@
-<template>
-	<div class="content-list-wrapper">
-		<AccordionListImageToggle v-if="!isMobileView" :items="items" :currentIndex="currentIndex" :duration="duration" />
-		<div class="content-list">
-			<AccordionItemToggle
-				v-for="(item, index) in items"
-				:key="index"
-				:title="item.title"
-				:subTitle="item.subTitle"
-				:images="item.images"
-				:active="currentIndex === index"
-				:duration="duration"
-				:index="index"
-				@complete="handleToggleComplete"
-				@select="handleItemSelect"
-			/>
-		</div>
-	</div>
-</template>
-
 <script setup>
 const props = defineProps({
 	items: {
@@ -64,19 +44,38 @@ onUnmounted(() => {
 });
 </script>
 
+<template>
+	<div class="content-list-wrapper">
+		<div class="content-list">
+			<AccordionItemToggle
+				v-for="(item, index) in items"
+				:key="index"
+				:title="item.title"
+				:subTitle="item.subTitle"
+				:images="item.images"
+				:active="currentIndex === index"
+				:duration="duration"
+				:index="index"
+				@complete="handleToggleComplete"
+				@select="handleItemSelect"
+			/>
+		</div>
+		<AccordionListImageToggle v-if="!isMobileView" :items="items" :currentIndex="currentIndex" :duration="duration" />
+	</div>
+</template>
+
 <style scoped>
 .content-list-wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-m);
 	width: 100%;
 }
 
 .content-list {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
-	padding: 1rem;
+	gap: var(--space-m);
 }
 
 @media (max-width: 640px) {
