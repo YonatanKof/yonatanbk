@@ -32,8 +32,8 @@ const updateSliderPosition = (section: string) => {
 const getColorForSection = (section: string) => {
 	const colors = {
 		'yonatan-ben-knaan': 'blue-main',
-		work: 'red-main',
-		extra: 'green-main',
+		'full-stack': 'red-main',
+		work: 'green-main',
 		connect: 'orange-main',
 	};
 	return colors[section as keyof typeof colors];
@@ -57,7 +57,7 @@ watch(activeSection, (newSection) => {
 		<nav>
 			<div class="slider" :style="sliderPosition"></div>
 			<a
-				v-for="section in ['yonatan-ben-knaan', 'work', 'extra', 'connect']"
+				v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
 				:key="section"
 				:href="`#${section}`"
 				:class="{ active: activeSection === section }"

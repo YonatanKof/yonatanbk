@@ -3,8 +3,8 @@
 		<LayoutHeader />
 		<main>
 			<SectionYonatanBenKnaan />
+			<SectionFullStack />
 			<SectionWork />
-			<SectionExtra />
 			<SectionConnect />
 			<LayoutFooter />
 		</main>
