@@ -8,7 +8,7 @@ const props = defineProps({
 				(item) =>
 					typeof item.title === 'string' &&
 					typeof item.subTitle === 'string' &&
-					(Array.isArray(item.images) || typeof item.images === 'string')
+					(Array.isArray(item.components) || typeof item.components === 'object')
 			);
 		},
 	},
@@ -52,7 +52,7 @@ onUnmounted(() => {
 				:key="index"
 				:title="item.title"
 				:subTitle="item.subTitle"
-				:images="item.images"
+				:components="item.components"
 				:active="currentIndex === index"
 				:duration="duration"
 				:index="index"
@@ -60,7 +60,12 @@ onUnmounted(() => {
 				@select="handleItemSelect"
 			/>
 		</div>
-		<AccordionListImageToggle v-if="!isMobileView" :items="items" :currentIndex="currentIndex" :duration="duration" />
+		<AccordionListComponentToggle
+			v-if="!isMobileView"
+			:items="items"
+			:currentIndex="currentIndex"
+			:duration="duration"
+		/>
 	</div>
 </template>
 

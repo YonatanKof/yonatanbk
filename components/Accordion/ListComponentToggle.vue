@@ -10,7 +10,7 @@ const props = defineProps({
 				(item) =>
 					typeof item.title === 'string' &&
 					typeof item.subTitle === 'string' &&
-					(Array.isArray(item.images) || typeof item.images === 'string')
+					(Array.isArray(item.components) || typeof item.components === 'object')
 			);
 		},
 	},
@@ -28,37 +28,23 @@ const isActive = ref(true);
 
 const currentItem = computed(() => props.items[props.currentIndex]);
 
-const currentImages = computed(() => {
-	const images = currentItem.value?.images;
-	return Array.isArray(images) ? images : [images];
+const currentComponents = computed(() => {
+	const components = currentItem.value?.components;
+	return Array.isArray(components) ? components : [components];
 });
-
-watch(
-	() => props.currentIndex,
-	() => {
-		isActive.value = false;
-		nextTick(() => {
-			isActive.value = true;
-		});
-	}
-);
 </script>
 
+
 <template>
-	<div class="content-images">
-		<div v-for="(imageUrl, index) in currentImages" :key="`${currentIndex}-${index}`" class="image-container">
-			<img
-				:src="imageUrl"
-				:alt="`Image for ${currentItem?.title || 'content'}`"
-				class="content-image"
-				:class="{ 'fade-in': isActive }"
-			/>
+	<div class="content-components">
+		<div v-for="(component, index) in currentComponents" :key="`${currentIndex}-${index}`" class="component-container">
+			<component :is="component" class="content-component" :class="{ 'fade-in': isActive }" />
 		</div>
 	</div>
 </template>
 
 <style scoped>
-.content-images {
+.content-components {
 	display: flex;
 	gap: 1rem;
 	justify-content: center;
@@ -66,30 +52,26 @@ watch(
 	width: 100%;
 }
 
-.image-container {
+.component-container {
 	flex: 1;
-	aspect-ratio: 16/9;
 	overflow: hidden;
 	border-radius: var(--border-radius-md);
-	background-color: var(--color-brand-orange-main);
 }
 
-.content-image {
+.content-component {
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
 	opacity: 0;
 	transform: scale(1.1);
 	transition: all 0.3s ease;
 }
 
-.content-image.fade-in {
+.content-component.fade-in {
 	opacity: 1;
 	transform: scale(1);
 }
 
 @media (max-width: 640px) {
-	.content-images {
+	.content-components {
 		display: none;
 	}
 }

@@ -20,8 +20,8 @@ const props = defineProps({
 		type: Number,
 		required: true,
 	},
-	images: {
-		type: [String, Array],
+	components: {
+		type: [Object, Array],
 		default: null,
 	},
 });
@@ -104,6 +104,11 @@ onUnmounted(() => {
 	clearTimeout(timer);
 	window.removeEventListener('resize', updateViewport);
 });
+
+const normalizedComponents = computed(() => {
+	if (!props.components) return [];
+	return Array.isArray(props.components) ? props.components : [props.components];
+});
 </script>
 
 <template>
@@ -117,16 +122,14 @@ onUnmounted(() => {
 	>
 		<Text tag="h3" variant="secondary-title" :class="{ xxx: !isActive }">{{ title }}</Text>
 		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
-		<!-- Place this v-if below in the subTitle, if you want is out of the DOM-->
-		<!-- v-if="shouldShow" -->
 		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" @transitionend="handleTransitionEnd">
 			{{ subTitle }}
 		</Text>
 
-		<!-- Mobile Image -->
-		<div v-if="isMobileView && images" class="mobile-image-container">
-			<template v-for="(imageUrl, idx) in normalizedImages" :key="`${index}-${idx}`">
-				<img :src="imageUrl" :alt="`Image for ${title}`" class="mobile-image" :class="{ 'fade-in': isActive }" />
+		<!-- Mobile Component -->
+		<div v-if="isMobileView && components" class="mobile-component-container">
+			<template v-for="(component, idx) in normalizedComponents" :key="`${index}-${idx}`">
+				<component :is="component" class="mobile-component" :class="{ 'fade-in': isActive }" v-if="shouldShow" />
 			</template>
 		</div>
 	</div>
@@ -163,7 +166,7 @@ onUnmounted(() => {
 	margin-block-end: var(--space-m);
 }
 
-.mobile-image-container {
+.mobile-component-container {
 	margin: 1rem 0;
 	display: flex;
 	gap: 0.5rem;
@@ -174,26 +177,23 @@ onUnmounted(() => {
 	transition: opacity 0.3s ease;
 }
 
-.mobile-image {
+.mobile-component {
 	width: 100%;
-	aspect-ratio: 16/9;
-	object-fit: cover;
-	border-radius: 8px;
 	scroll-snap-align: start;
 	transform: scale(1.1);
 	transition: all 0.3s ease;
 }
 
-.mobile-image.fade-in {
+.mobile-component.fade-in {
 	transform: scale(1);
 }
 
-.mobile-image-container:has(.mobile-image.fade-in) {
+.mobile-component-container:has(.mobile-component.fade-in) {
 	opacity: 1;
 }
 
 @media (min-width: 640px) {
-	.mobile-image-container {
+	.mobile-component-container {
 		display: none;
 	}
 }
