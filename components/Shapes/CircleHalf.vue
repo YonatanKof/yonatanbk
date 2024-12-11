@@ -56,9 +56,6 @@
 	width: var(--size);
 	background-color: var(--color-sys-invert-slight);
 	transition: background-color 0.25s ease-in-out;
-	&:hover {
-		background-color:  var(--color-sys-invert-main);
-	}
 }
 .line-1 {
 	height: calc(calc(var(--line-height) * 2) * var(--em));
@@ -68,12 +65,12 @@
 }
 @keyframes height {
 	0%,
-	10% {
+	5% {
 		--line-height: 1;
 	}
-	90%,
+	95%,
 	100% {
-		--line-height: 3;
+		--line-height: 2;
 	}
 }
 </style>
