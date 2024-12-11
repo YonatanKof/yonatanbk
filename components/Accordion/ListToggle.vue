@@ -30,7 +30,7 @@ function handleItemSelect(index) {
 }
 
 function updateViewport() {
-	isMobileView.value = window.innerWidth < 640;
+	isMobileView.value = window.innerWidth < 544;
 }
 
 onMounted(() => {
@@ -72,20 +72,36 @@ onUnmounted(() => {
 <style scoped>
 .content-list-wrapper {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: var(--space-m);
+	grid-template-columns: repeat(2, auto);
+	gap: var(--space-4xl);
 	width: 100%;
+	height: 48rem;
 }
 
 .content-list {
 	display: flex;
 	flex-direction: column;
-	/* gap: var(--space-m); */
+	gap: var(--space-m);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 880px) {
+	.content-list-wrapper {
+		gap: var(--space-2xl);
+	}
+}
+@media (max-width: 720px) {
+	.content-list-wrapper {
+		gap: var(--space-l);
+	}
+}
+@media (544px <= width <= 640px) {
+	.content-list-wrapper {
+		gap: var(--space-m);
+	}
+}
+/* @media (max-width: 640px) {
 	.content-list-wrapper {
 		gap: 1rem;
 	}
-}
+} */
 </style>

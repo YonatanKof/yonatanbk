@@ -85,7 +85,7 @@ function handleClick() {
 // }
 
 function updateViewport() {
-	isMobileView.value = window.innerWidth < 640;
+	isMobileView.value = window.innerWidth < 544;
 }
 
 onMounted(() => {
@@ -189,7 +189,7 @@ const normalizedComponents = computed(() => {
 	opacity: 1;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 544px) {
 	.mobile-component-container {
 		display: none;
 	}

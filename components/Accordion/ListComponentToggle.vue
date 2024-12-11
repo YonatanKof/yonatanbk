@@ -70,7 +70,7 @@ const currentComponents = computed(() => {
 	transform: scale(1);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 544px) {
 	.content-components {
 		display: none;
 	}
