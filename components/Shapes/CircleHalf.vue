@@ -16,7 +16,7 @@
 }
 .shape-xx {
 	--em: 1em;
-	--size: 40em;
+	--size: var(--shape-size);
 	width: var(--size);
 	height: var(--size);
 	position: relative;
@@ -54,7 +54,7 @@
 .line-2 {
 	
 	width: var(--size);
-	background-color: var(--color-sys-invert-dim);
+	background-color: var(--color-sys-invert-slight);
 	transition: background-color 0.25s ease-in-out;
 	&:hover {
 		background-color:  var(--color-sys-invert-main);
@@ -73,7 +73,7 @@
 	}
 	90%,
 	100% {
-		--line-height: 4;
+		--line-height: 3;
 	}
 }
 </style>

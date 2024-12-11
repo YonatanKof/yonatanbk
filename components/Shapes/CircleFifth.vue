@@ -8,14 +8,13 @@
 <style scoped>
 @property --ls {
 	syntax: '<number>';
-	initial-value: 8;
+	initial-value: 1;
 	inherits: true;
 }
 .shape-zz {
-
-	--px: 1px;
-	--size: 640px;
-	--ls-plus: calc(var(--ls) * var(--px));
+	--em: 1rem;
+	--size: var(--shape-size);
+	--ls-plus: calc(var(--ls) * var(--em));
 
 	width: var(--size);
 	height: var(--size);
@@ -40,62 +39,50 @@
 .line-5 {
 	margin-block-start: -25%;
 	height: 125%;
-	
 }
 .line-1 {
 	background-image: repeating-linear-gradient(
 		45deg,
-		transparent 0,
-		transparent calc(var(--ls-plus) * 16),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 16),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 32)
+		transparent 0 calc(var(--ls-plus) * 2),
+		var(--color-sys-invert-slight) calc(var(--ls-plus) * 2) calc(var(--ls-plus) * 4)
 	);
 }
 .line-2 {
 	background-image: repeating-linear-gradient(
 		45deg,
-		transparent 0,
-		transparent calc(var(--ls-plus) * 8),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 8),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 16)
+		transparent 0 calc(var(--ls-plus) * 1),
+		var(--color-sys-invert-slight) calc(var(--ls-plus) * 1) calc(var(--ls-plus) * 2)
 	);
-	/* background-position: 0 calc(var(--ls-plus) * 4.57); */
 }
 .line-3 {
 	background-image: repeating-linear-gradient(
 		45deg,
-		transparent 0,
-		transparent calc(var(--ls-plus) * 4),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 4),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 8)
+		transparent 0 calc(var(--ls-plus) / 2),
+		var(--color-sys-invert-slight) calc(var(--ls-plus) / 2) calc(var(--ls-plus) * 1)
 	);
-	/* background-position: 0 calc(var(--ls-plus) * 3.675); */
 }
 .line-4 {
 	background-image: repeating-linear-gradient(
 		45deg,
-		transparent 0,
-		transparent calc(var(--ls-plus) * 2),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 2),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 4)
+		transparent 0 calc(var(--ls-plus) / 4),
+		var(--color-sys-invert-slight) calc(var(--ls-plus) / 4) calc(var(--ls-plus) / 2)
 	);
 }
 .line-5 {
 	background-image: repeating-linear-gradient(
 		45deg,
-		transparent 0,
-		transparent var(--ls-plus),
-		var(--color-sys-invert-dim) var(--ls-plus),
-		var(--color-sys-invert-dim) calc(var(--ls-plus) * 2)
+		transparent 0 calc(var(--ls-plus) / 8),
+		var(--color-sys-invert-slight) calc(var(--ls-plus) / 8) calc(var(--ls-plus) / 4)
 	);
-	/* background-position: 0 calc(var(--ls-plus) * 4.57); */
 }
 @keyframes height {
-	from {
-		--ls: 2;
+	0%,
+	5% {
+		--ls: 1;
 	}
-	to {
-		--ls: 16;
+	95%,
+	100% {
+		--ls: 2;
 	}
 }
 </style>
