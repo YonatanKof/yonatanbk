@@ -31,7 +31,7 @@ const isActive = ref(props.active);
 const isPaused = ref(false);
 const isMobileView = ref(false);
 let timer = null;
-const shouldShow = ref(false);
+// const shouldShow = ref(false);
 
 const normalizedImages = computed(() => {
 	if (!props.images) return [];
@@ -42,11 +42,8 @@ watch(
 	() => props.active,
 	(newValue) => {
 		isActive.value = newValue;
-		if (newValue) {
-			shouldShow.value = true;
-			if (!isPaused.value) {
-				startTimer();
-			}
+		if (newValue && !isPaused.value) {
+			startTimer();
 		} else {
 			clearTimeout(timer);
 		}
@@ -81,11 +78,11 @@ function handleClick() {
 	}
 }
 
-function handleTransitionEnd(event) {
-	if (!isActive.value && event.propertyName === 'opacity') {
-		shouldShow.value = false;
-	}
-}
+// function handleTransitionEnd(event) {
+// 	if (!isActive.value && event.propertyName === 'opacity') {
+// 		shouldShow.value = false;
+// 	}
+// }
 
 function updateViewport() {
 	isMobileView.value = window.innerWidth < 640;
@@ -95,7 +92,7 @@ onMounted(() => {
 	updateViewport();
 	window.addEventListener('resize', updateViewport);
 	if (props.active) {
-		shouldShow.value = true;
+		// shouldShow.value = true;
 		startTimer();
 	}
 });
@@ -121,17 +118,17 @@ const normalizedComponents = computed(() => {
 		@click="handleClick"
 	>
 		<Text tag="h3" variant="secondary-title" :class="{ xxx: !isActive }">{{ title }}</Text>
-		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
-		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" @transitionend="handleTransitionEnd">
+		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused"  />
+		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" v-show="isActive" >
 			{{ subTitle }}
 		</Text>
 
 		<!-- Mobile Component -->
-		<div v-if="isMobileView && components" class="mobile-component-container">
+		<!-- <div v-if="isMobileView && components" class="mobile-component-container"  v-show="isActive">
 			<template v-for="(component, idx) in normalizedComponents" :key="`${index}-${idx}`">
-				<component :is="component" class="mobile-component" :class="{ 'fade-in': isActive }" v-if="shouldShow" />
+				<component :is="component" class="mobile-component" :class="{ 'fade-in': isActive }"  />
 			</template>
-		</div>
+		</div> -->
 	</div>
 </template>
 
