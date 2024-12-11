@@ -11,17 +11,18 @@
 <style scoped>
 @property --line-height {
 	syntax: '<number>';
-	initial-value: 32;
+	initial-value: 1;
 	inherits: true;
 }
 .shape-xx {
-	--px: 1px;
-	--size: 640px;
+	--em: 1em;
+	--size: 40em;
 	width: var(--size);
 	height: var(--size);
 	position: relative;
 	clip-path: circle(50%);
 	overflow: hidden;
+	animation: height 10s ease-in-out infinite alternate;
 	& > div {
 		position: absolute;
 		inset: 0;
@@ -44,14 +45,14 @@
 	}
 }
 #s1 {
-	gap: calc(var(--line-height) * var(--px));
+	gap: calc(var(--line-height) * var(--em));
 }
 #s2 {
-	gap: calc(calc(var(--line-height) / 2) * var(--px));
+	gap: calc(calc(var(--line-height) / 2) * var(--em));
 }
 .line-1,
 .line-2 {
-	animation: height 10s ease-in-out infinite alternate;
+	
 	width: var(--size);
 	background-color: var(--color-sys-invert-dim);
 	transition: background-color 0.25s ease-in-out;
@@ -60,19 +61,19 @@
 	}
 }
 .line-1 {
-	height: calc(calc(var(--line-height) * 2) * var(--px));
+	height: calc(calc(var(--line-height) * 2) * var(--em));
 }
 .line-2 {
-	height: calc(var(--line-height) * var(--px));
+	height: calc(var(--line-height) * var(--em));
 }
 @keyframes height {
 	0%,
 	10% {
-		--line-height: 8;
+		--line-height: 1;
 	}
 	90%,
 	100% {
-		--line-height: 64;
+		--line-height: 4;
 	}
 }
 </style>
