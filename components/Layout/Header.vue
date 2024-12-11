@@ -77,7 +77,7 @@ header {
 	align-content: center;
 	justify-content: space-between;
 	padding-inline: var(--space-m);
-	background-color: var(--color-sys-invert-dim);
+	background-color: var(--color-sys-invert-slight);
 	backdrop-filter: blur(4px);
 	height: var(--header-height);
 }

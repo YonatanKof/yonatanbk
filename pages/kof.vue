@@ -14,6 +14,10 @@ const { open, close } = useModal({
 
 <template>
 	<main class="padding-center-center">
+		<div style="background-color: black; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; font-size: var(--step--2);">
+			<ShapesCircleFifth />
+			<ShapesCircleHalf />
+		</div>
 		<OpenForWork />
 		<Text tag="h1" variant="main-title">Main Title</Text>
 		<Text tag="h2" variant="compressed-title">Compressed Title</Text>

@@ -115,8 +115,6 @@ const handleKeyup = (event: KeyboardEvent) => {
 	&:focus-visible {
 		box-shadow: inset 0 0 0 0.1em var(--color-brand-red-main), inset 0 0 0 0.2em var(--color-sys-invert-main),
 			inset 0 0 0 0.4em var(--color-focus-slight);
-		/* border: 2px dashed crimson; */
-		/* border-radius: 3px; */
 		outline: none;
 	}
 	&:target {
@@ -131,7 +129,6 @@ const handleKeyup = (event: KeyboardEvent) => {
 
 .button-medium {
 	font-size: var(--step-1);
-	/* --clip-shift: var(--space-xs); */
 }
 
 .button-large {
