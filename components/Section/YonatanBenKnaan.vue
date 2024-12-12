@@ -34,7 +34,7 @@ const { open, close } = useModal({
 				<ClientProof />
 				<div class="cta-buttons">
 					<Button button-style="secondary" tag="a" href="https://www.linkedin.com/in/yonatankof/" target="_blank">
-						Look me up on Linkedin
+						Hit me on Linkedin
 					</Button>
 					<Button :onClick="open">Contact Me</Button>
 				</div>

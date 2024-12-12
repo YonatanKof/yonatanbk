@@ -3,9 +3,9 @@ import CircleHalf from '/components/Shapes/CircleHalf';
 import CircleFifth from '/components/Shapes/CircleFifth';
 const contentItems = [
 	{
-		title: 'Leading Design',
+		title: 'Design Initiatives',
 		subTitle:
-			"Here's the thing: pushing design initiatives across teams and stakeholders can be a real challenge. But let me tell you, I've been there, done that, and emerged victorious.",
+			"Pushing design initiatives across teams and stakeholders can be a real challenge. But let me tell you, I've been there, done that, and emerged victorious.",
 		components: CircleHalf,
 	},
 	{
@@ -21,15 +21,15 @@ const contentItems = [
 		components: CircleHalf,
 	},
 	{
-		title: 'Design Management',
+		title: 'DesignOps & Mgmt.',
 		subTitle:
 			"Using a blend of team coaching and best-in-class backlog management tools and methods to deliver results that matter, right when they're needed. The best approach to transform your team's efficiency.",
 		components: CircleFifth,
 	},
 	{
-		title: 'DesignOps & Dev',
+		title: 'Execution & Dev',
 		subTitle:
-			'I bridge planning and execution through design systems, leveraging my coding skills to enhance collaboration, streamline design processes and foster a collaborative environment.',
+			'I bridge planning and execution through design systems, leveraging my coding skills and hands-on abilities to enhance collaboration, streamline design processes and foster a collaborative environment.',
 		components: CircleHalf,
 	},
 ];
@@ -42,8 +42,8 @@ const contentItems = [
 				<div class="top-content">
 					<Text tag="h1" variant="main-title">Full Stack Design</Text>
 					<Text variant="large-text" class="this-text">
-						For the last 15+ years my mission is to bridge the gap between users, businesses, and technology through
-						research, design and execution, creating elegant solutions that simplify complexity and enhance lives.
+						For the last 15+ years my mission is to bridge the gap between people, businesses, and technology through
+						research, design and execution; creating elegant solutions that simplify complexity and enhance lives.
 					</Text>
 				</div>
 				<AccordionListToggle :items="contentItems" :duration="10000" />
