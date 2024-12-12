@@ -36,7 +36,7 @@ const contentItems = [
 </script>
 
 <template>
-	<section id="full-stack" class="section-block checked-grid-lines torn">
+	<section id="full-stack" class="section-block checked-grid-lines torn-paper-bottom">
 		<div id="secondary-messages">
 			<div class="wrapper">
 				<div class="top-content">
@@ -71,18 +71,5 @@ const contentItems = [
 .this-text {
 	max-width: 57ch;
 	text-wrap: balance;
-}
-section {
-	position: relative;
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background-color: var(--color-sys-invert-main);
-		mask-image: url(/images/torn-2.webp);
-		mask-size: contain;
-		mask-repeat: no-repeat;
-		mask-position: bottom;
-	}
 }
 </style>

@@ -44,4 +44,19 @@
 	.color-dimmed {
 		color: var(--color-sys-dim);
 	}
+	.torn-paper-bottom {
+		--torn-paper-image: url('/images/torn-2.webp');
+		--torn-paper-bg-color: var(--color-sys-invert-main);
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: var(--torn-paper-bg-color);
+			mask-image: var(--torn-paper-image);
+			mask-size: cover;
+			mask-repeat: no-repeat;
+			mask-position: bottom;
+		}
+	}
 }
