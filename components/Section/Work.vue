@@ -2,7 +2,7 @@
 
 <template>
 	<section id="work" class="section-block">
-		<div class="section-content">
+		<div class="wrapper">
 			<Text tag="h1" variant="main-title">Work</Text>
 		</div>
 	</section>

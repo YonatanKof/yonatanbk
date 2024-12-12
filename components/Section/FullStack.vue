@@ -35,19 +35,17 @@ const contentItems = [
 </script>
 
 <template>
-	<section id="full-stack" class="section-block">
+	<section id="full-stack" class="section-block checked-grid-lines">
 		<div id="secondary-messages">
-			<div class="padding-center-center">
-				<div class="wrapper">
-					<div class="top-content">
-						<Text tag="h1" variant="main-title">Full Stack Design</Text>
-						<Text variant="large-text" class="this-text">
-							For the last 15+ years my mission is to bridge the gap between users, businesses, and technology through
-							research, design and execution, creating elegant solutions that simplify complexity and enhance lives.
-						</Text>
-					</div>
-					<AccordionListToggle :items="contentItems" :duration="10000" />
+			<div class="wrapper">
+				<div class="top-content">
+					<Text tag="h1" variant="main-title">Full Stack Design</Text>
+					<Text variant="large-text" class="this-text">
+						For the last 15+ years my mission is to bridge the gap between users, businesses, and technology through
+						research, design and execution, creating elegant solutions that simplify complexity and enhance lives.
+					</Text>
 				</div>
+				<AccordionListToggle :items="contentItems" :duration="10000" />
 			</div>
 		</div>
 	</section>
@@ -59,14 +57,11 @@ const contentItems = [
 	color: var(--color-sys-invert-main);
 	height: 100%;
 	text-align: start;
-	/* display: flex; */
-	/* align-items: start; */
+	/* mask-image: url(/images/torn-2.webp);
+	mask-size: cover;
+	mask-position: 0 0; */
 }
-.wrapper {
-	padding-block: var(--space-2xl) calc(var(--space-8xl) * 2);
-	width: 100%;
-	max-width: var(--display-width-lg);
-}
+
 .top-content {
 	display: flex;
 	gap: var(--space-s);

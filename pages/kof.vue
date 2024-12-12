@@ -13,8 +13,8 @@ const { open, close } = useModal({
 </script>
 
 <template>
-	<main class="padding-center-center">
-		<div style="background-color: black; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; font-size: var(--step--2);">
+	<main class="wrapper center-center">
+		<div class="this-one">
 			<ShapesCircleFifth />
 			<ShapesCircleHalf />
 		</div>
@@ -56,6 +56,16 @@ const { open, close } = useModal({
 </template>
 
 <style scoped>
+.this-one {
+	background-color: black;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	font-size: var(--step--2);
+	mask-image: url(/images/torn-2.webp);
+	mask-size: contain;
+}
 section {
 	gap: var(--space-xl);
 	display: flex;

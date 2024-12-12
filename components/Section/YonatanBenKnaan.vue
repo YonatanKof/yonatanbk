@@ -14,7 +14,7 @@ const { open, close } = useModal({
 
 <template>
 	<section id="yonatan-ben-knaan" class="section-block checked-grid-lines main-messages">
-		<div class="padding-center-center main-message">
+		<div class="wrapper center-center main-message">
 			<div id="main-messages-top">
 				<span>
 					<div id="avatar">

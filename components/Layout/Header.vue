@@ -54,32 +54,41 @@ watch(activeSection, (newSection) => {
 
 <template>
 	<header>
-		<nav>
-			<div class="slider" :style="sliderPosition"></div>
-			<a
-				v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
-				:key="section"
-				:href="`#${section}`"
-				:class="{ active: activeSection === section }"
-				:data-section="section"
-				ref="navLinks"
-			>
-				{{ formatText(section) }}
-			</a>
-		</nav>
-		<OpenForWork />
+		<span>
+			<nav>
+				<div class="slider" :style="sliderPosition"></div>
+				<a
+					v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
+					:key="section"
+					:href="`#${section}`"
+					:class="{ active: activeSection === section }"
+					:data-section="section"
+					ref="navLinks"
+				>
+					{{ formatText(section) }}
+				</a>
+			</nav>
+			<OpenForWork />
+		</span>
 	</header>
 </template>
 
 <style scoped>
 header {
-	display: flex;
-	align-content: center;
-	justify-content: space-between;
+	z-index: 1000;
+	height: var(--header-height);
 	padding-inline: var(--space-m);
 	background-color: var(--color-sys-invert-slight);
 	backdrop-filter: blur(4px);
-	height: var(--header-height);
+	display: flex;
+	justify-content: center;
+	& > span {
+		max-width: var(--display-width-lg);
+		width: 100%;
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+	}
 }
 
 nav,
@@ -87,14 +96,6 @@ div {
 	display: flex;
 	align-items: center;
 	gap: var(--space-m);
-}
-
-span {
-	display: inline-block;
-	height: var(--space-xs);
-	width: var(--space-xs);
-	border-radius: 100%;
-	background-color: var(--color-brand-green-main);
 }
 
 a {
