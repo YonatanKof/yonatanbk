@@ -12,18 +12,17 @@
 		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: var(--space-l) var(--space-l);
-		/* background-color: white; */
+
 	}
 	.cool-doted-bg {
-		background-color: var(--color-sys-invert-highlight-slight);
-		backdrop-filter: blur(4px);
-		background-image: radial-gradient(var(--color-sys-invert-highlight) 1px, transparent 1px);
+		background-image: radial-gradient(var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: 3px 3px;
 	}
 	.section-block {
 		min-height: 100vh;
 		scroll-snap-type: y mandatory;
 		scroll-snap-align: start;
+
 	}
 	.center-center {
 		display: flex;
@@ -50,11 +49,12 @@
 		position: relative;
 		&::after {
 			content: '';
+			pointer-events: none;
 			position: absolute;
 			inset: 0;
 			background-color: var(--torn-paper-bg-color);
 			mask-image: var(--torn-paper-image);
-			mask-size: cover;
+			mask-size: contain;
 			mask-repeat: no-repeat;
 			mask-position: bottom;
 		}

@@ -13,6 +13,7 @@
 	:root {
 		/* Sizes */
 		--header-height: var(--space-3xl);
+		--header-height: calc(var(--space-l) *3 );
 		--header-plus-height: calc(var(--space-3xl) + var(--space-m));
 		--scroll-padding-block: 7rem;
 		--shape-size: calc(var(--step-8) * 4.5);
