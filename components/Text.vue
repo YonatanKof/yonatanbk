@@ -1,21 +1,31 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+// Define the variant type as a const array first
+const VARIANTS = ['main-title', 'secondary-title', 'compressed-title', 'text', 'large-text'] as const;
+// Create the type from the array values
+type Variant = (typeof VARIANTS)[number];
 
-type Variant = 'large' | 'small' | 'text';
+const props = withDefaults(
+	defineProps<{
+		tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+		variant?: 'main-title' | 'secondary-title' | 'compressed-title' | 'text' | 'large-text';
+	}>(),
+	{
+		tag: 'p',
+		variant: 'text',
+	}
+);
 
-const { tag = 'p', variant = 'text' } = defineProps<{
-	tag?: 'h1' | 'h2' | 'p'; // to h6
-	variant?: Variant;
-}>();
-
+// Type-safe variant classes mapping
 const VARIANT_CLASSES: Record<Variant, string> = {
-	large: 'heading-large', // font-bold text-5xl
-	small: 'heading-small',
+	'main-title': 'heading-large', 
+	'secondary-title': 'heading-medium', 
+	'compressed-title': 'heading-small',
+	'large-text': 'large-text',
 	text: 'text',
 };
 
 const variantClasses = computed(() => {
-	return VARIANT_CLASSES[variant];
+	return VARIANT_CLASSES[props.variant];
 });
 </script>
 
@@ -27,20 +37,26 @@ const variantClasses = computed(() => {
 
 <style scoped>
 .heading-large {
-	text-transform: capitalize;
 	font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96;
-	font-size: var(--step-7);
-	text-align: center;
-	line-height: 1.1;
+	font-size: var(--step-8);
+	line-height: 1;
+}
+.heading-medium {
+	font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96;
+	font-size: var(--step-5);
+	line-height: 1;
 }
 .heading-small {
-	/* text-transform: capitalize; */
 	font-variation-settings: 'wght' 400, 'wdth' 86, 'opsz' 96;
 	font-size: var(--step-4);
-	/* text-align: center; */
-	line-height: 1.1;
+	line-height: 1;
+}
+.large-text {
+	font-variation-settings: var(--base-font-settings);
+	font-size: var(--step-2);
+	font-family: var(--font-body);
 }
 .text {
-	/* text-decoration: underline; */
+	font-variation-settings: var(--base-font-settings);
 }
 </style>

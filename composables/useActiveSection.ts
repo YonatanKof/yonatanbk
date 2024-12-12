@@ -1,5 +1,5 @@
 export const useActiveSection = () => {
-	const activeSection = ref('yonatan-kof');
+	const activeSection = ref('yonatan-ben-knaan');
 
 	onMounted(() => {
 		const observer = new IntersectionObserver(

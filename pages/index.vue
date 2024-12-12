@@ -2,9 +2,9 @@
 	<div class="main-layout">
 		<LayoutHeader />
 		<main>
-			<SectionYonatanKof />
+			<SectionYonatanBenKnaan />
+			<SectionFullStack />
 			<SectionWork />
-			<SectionExtra />
 			<SectionConnect />
 			<LayoutFooter />
 		</main>
