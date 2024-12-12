@@ -11,7 +11,7 @@
 	.checked-grid-lines {
 		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
-		background-size: 20px 20px;
+		background-size: var(--space-l) var(--space-l);
 		/* background-color: white; */
 	}
 	.cool-doted-bg {
@@ -20,14 +20,28 @@
 		background-image: radial-gradient(var(--color-sys-invert-highlight) 1px, transparent 1px);
 		background-size: 3px 3px;
 	}
-	.section {
-        min-height: calc(100vh - var(--header-height));
-        scroll-snap-align: start;
-		padding-block-start: var(--header-height);
+	.section-block {
+		min-height: 100vh;
+		scroll-snap-type: y mandatory;
+		scroll-snap-align: start;
 	}
-	.section-content {
-		padding: var(--space-m);
+	.center-center {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: center; /* Horizontal */
+		align-items: center;
+	}
+	.wrapper {
+		margin-inline: auto;
+		max-width: var(--display-width-lg);
+		padding-inline: var(--space-m);
+		padding-block-start: calc(var(--header-height) + var(--space-m));
+		padding-block-end: var(--space-l);
+	}
+	.color-slight {
+		color: var(--color-sys-slight);
+	}
+	.color-dimmed {
+		color: var(--color-sys-dim);
 	}
 }

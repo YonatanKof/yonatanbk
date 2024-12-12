@@ -20,8 +20,8 @@ const updateSliderPosition = (section: string) => {
 
 		if (navRect) {
 			sliderPosition.value = {
-				width: `${linkRect.width}px`,
-				transform: `translateX(${linkRect.left - navRect.left}px)`,
+				width: `calc(0.5rem + ${linkRect.width}px`,
+				transform: `translateX(calc(${linkRect.left - navRect.left }px - 0.25rem))`,
 				backgroundColor: `var(--color-brand-${getColorForSection(section)})`,
 			};
 		}
@@ -31,9 +31,9 @@ const updateSliderPosition = (section: string) => {
 // Helper function to get color based on section
 const getColorForSection = (section: string) => {
 	const colors = {
-		'yonatan-kof': 'blue-main',
-		work: 'red-main',
-		extra: 'green-main',
+		'yonatan-ben-knaan': 'blue-main',
+		'full-stack': 'red-main',
+		work: 'green-main',
 		connect: 'orange-main',
 	};
 	return colors[section as keyof typeof colors];
@@ -54,35 +54,41 @@ watch(activeSection, (newSection) => {
 
 <template>
 	<header>
-		<nav>
-			<div class="slider" :style="sliderPosition"></div>
-			<a
-				v-for="section in ['yonatan-kof', 'work', 'extra', 'connect']"
-				:key="section"
-				:href="`#${section}`"
-				:class="{ active: activeSection === section }"
-				:data-section="section"
-				ref="navLinks"
-			>
-				{{ formatText(section) }}
-			</a>
-		</nav>
-		<div>
-			<span></span>
-			<Text>Open For Work</Text>
-		</div>
+		<span>
+			<nav>
+				<div class="slider" :style="sliderPosition"></div>
+				<a
+					v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
+					:key="section"
+					:href="`#${section}`"
+					:class="{ active: activeSection === section }"
+					:data-section="section"
+					ref="navLinks"
+				>
+					{{ formatText(section) }}
+				</a>
+			</nav>
+			<OpenForWork />
+		</span>
 	</header>
 </template>
 
 <style scoped>
 header {
-	display: flex;
-	align-content: center;
-	justify-content: space-between;
-	padding-inline: var(--space-m);
-	background-color: var(--color-sys-invert-dim);
-	backdrop-filter: blur(4px);
+	z-index: 1000;
 	height: var(--header-height);
+	padding-inline: var(--space-m);
+	background-color: var(--color-sys-invert-slight);
+	backdrop-filter: blur(4px);
+	display: flex;
+	justify-content: center;
+	& > span {
+		max-width: var(--display-width-lg);
+		width: 100%;
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+	}
 }
 
 nav,
@@ -92,25 +98,9 @@ div {
 	gap: var(--space-m);
 }
 
-div {
-	gap: var(--space-xs);
-}
-
-span {
-	display: inline-block;
-	height: var(--space-xs);
-	width: var(--space-xs);
-	border-radius: 100%;
-	background-color: green;
-}
-
 a {
 	color: var(--color-sys-slight);
 	position: relative;
-}
-
-div p {
-	color: var(--color-sys-dim);
 }
 
 nav {
@@ -121,10 +111,11 @@ nav {
 	position: absolute;
 	inset-block-end: var(--space-m);
 	height: var(--space-3xs);
+	border-radius: var(--border-radius-xs);
 	transition: all 0.3s ease;
 }
 
 a.active {
-	color: var(--color-sys-slight);
+	color: var(--color-sys-main);
 }
 </style>
