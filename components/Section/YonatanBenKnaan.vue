@@ -13,7 +13,7 @@ const { open, close } = useModal({
 </script>
 
 <template>
-	<section id="yonatan-ben-knaan" class="section-block checked-grid-lines main-messages">
+	<section id="yonatan-ben-knaan" class="section-block checked-grid-lines">
 		<div class="wrapper center-center main-message">
 			<div id="main-messages-top">
 				<span>
@@ -82,10 +82,20 @@ const { open, close } = useModal({
 	width: 20rem;
 }
 
-.main-messages {
+section {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: var(--color-brand-red-main);
+		mask-image: url(/images/torn-1.webp);
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: bottom;
+	}
 }
 .main-message {
 	display: grid;
