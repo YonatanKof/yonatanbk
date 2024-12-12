@@ -77,7 +77,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 	margin-block-end: var(--clip-shift);
 	position: relative;
 	background-color: var(--color-sys-invert-main);
-	box-shadow: inset 0 0 0 0.1em var(--color-sys-slight);
+	box-shadow: inset 0 0 0 0.075em var(--color-sys-slight);
 	transition: all 0.25s ease-out;
 	text-align: center;
 	&::before {
@@ -137,7 +137,11 @@ const handleKeyup = (event: KeyboardEvent) => {
 }
 /* Button Style */
 
-/* .button-primary is using default button styles */
+.button-primary {
+	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 12;
+	box-shadow: inset 0 0 0 0.15em var(--color-sys-slight);
+	
+}
 
 .button-secondary {
 	--clip-clr-i: var(--color-sys-dim);

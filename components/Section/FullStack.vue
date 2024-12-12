@@ -62,10 +62,11 @@ const contentItems = [
 
 .top-content {
 	display: flex;
-	gap: var(--space-s);
+	gap: var(--space-m);
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
+	padding-block-start: var(--space-l);
 	padding-block-end: var(--space-2xl);
 }
 .this-text {

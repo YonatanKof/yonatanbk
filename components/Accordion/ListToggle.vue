@@ -75,13 +75,13 @@ onUnmounted(() => {
 	grid-template-columns: repeat(2, auto);
 	gap: var(--space-4xl);
 	width: 100%;
-	height: 48rem;
+	height: 56rem;
 }
 
 .content-list {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-m);
+	gap: var(--space-xs);
 }
 
 @media (max-width: 880px) {
@@ -99,9 +99,4 @@ onUnmounted(() => {
 		gap: var(--space-m);
 	}
 }
-/* @media (max-width: 640px) {
-	.content-list-wrapper {
-		gap: 1rem;
-	}
-} */
 </style>

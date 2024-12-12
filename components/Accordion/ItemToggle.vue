@@ -119,7 +119,7 @@ const normalizedComponents = computed(() => {
 	>
 		<Text tag="h3" variant="secondary-title" :class="{ xxx: !isActive }">{{ title }}</Text>
 		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused"  />
-		<Text variant="large-text" class="subtitle" :class="{ visible: isActive }" v-show="isActive" >
+		<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive" >
 			{{ subTitle }}
 		</Text>
 

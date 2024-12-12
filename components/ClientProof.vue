@@ -1,6 +1,4 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-
 const logos = [
 	'/images/clients/365scores.webp',
 	'/images/clients/Avodata.webp',
@@ -17,7 +15,7 @@ const logos = [
 const containerRef = ref(null);
 const scrollPosition = ref(0);
 const firstSetWidth = ref(0);
-const SCROLL_SPEED = 0.5;
+const SCROLL_SPEED = 0.25;
 // Keep gap size in pixels for calculation
 const GAP_SIZE = 24; // 2rem = 32px at default font size
 

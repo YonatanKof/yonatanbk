@@ -14,7 +14,7 @@ const { open, close } = useModal({
 
 <template>
 	<main class="wrapper center-center">
-		<div class="this-one">
+		<div class="this-one torn-paper-bottom">
 			<ShapesCircleFifth />
 			<ShapesCircleHalf />
 		</div>
@@ -56,6 +56,11 @@ const { open, close } = useModal({
 </template>
 
 <style scoped>
+.torn-paper-bottom{
+	--torn-paper-image: url('/images/torn-3.webp');
+	--torn-paper-bg-color: var(--color-brand-orange-main);
+
+}
 .this-one {
 	background-color: black;
 	padding: 2rem;
@@ -63,8 +68,6 @@ const { open, close } = useModal({
 	flex-direction: column;
 	gap: 2rem;
 	font-size: var(--step--2);
-	mask-image: url(/images/torn-2.webp);
-	mask-size: contain;
 }
 section {
 	gap: var(--space-xl);

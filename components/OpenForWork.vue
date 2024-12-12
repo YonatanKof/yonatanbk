@@ -5,7 +5,7 @@
 		<div class="pulse-wrapper">
 			<span></span>
 		</div>
-		<Text id="open-text">Open For Work</Text>
+		<Text variant="body-small" id="open-text">Open For Work</Text>
 	</div>
 </template>
 
@@ -27,8 +27,9 @@
 .open {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	gap: var(--space-2xs);
+	align-items: flex-start;
+	gap: var(--space-3xs);
+	height: min-content;
 }
 
 .pulse-wrapper {
@@ -63,5 +64,6 @@ span::after {
 }
 #open-text {
 	color: var(--color-sys-dim);
+	font-variation-settings: 'wght' 600;
 }
 </style>

@@ -53,7 +53,7 @@ watch(activeSection, (newSection) => {
 </script>
 
 <template>
-	<header>
+	<header class="cool-doted-bg">
 		<span>
 			<nav>
 				<div class="slider" :style="sliderPosition"></div>
@@ -61,6 +61,7 @@ watch(activeSection, (newSection) => {
 					v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
 					:key="section"
 					:href="`#${section}`"
+					class="body-small"
 					:class="{ active: activeSection === section }"
 					:data-section="section"
 					ref="navLinks"
@@ -75,18 +76,20 @@ watch(activeSection, (newSection) => {
 
 <style scoped>
 header {
+	border-block-end: 1px solid var(--color-brand-red-dim);
 	z-index: 1000;
 	height: var(--header-height);
 	padding-inline: var(--space-m);
-	background-color: var(--color-sys-invert-slight);
+	background-color: var(--color-sys-invert-dim);
 	backdrop-filter: blur(4px);
 	display: flex;
 	justify-content: center;
 	& > span {
-		max-width: var(--display-width-lg);
+		/* max-width: var(--display-width-lg); */
 		width: 100%;
 		display: flex;
-		align-content: center;
+		/* align-content: center; */
+		align-items: center;
 		justify-content: space-between;
 	}
 }
@@ -109,7 +112,7 @@ nav {
 
 .slider {
 	position: absolute;
-	inset-block-end: var(--space-m);
+	inset-block-start: var(--space-m);
 	height: var(--space-3xs);
 	border-radius: var(--border-radius-xs);
 	transition: all 0.3s ease;
