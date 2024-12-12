@@ -21,17 +21,22 @@
 		background-size: 3px 3px;
 	}
 	.section-block {
-		min-height: calc(100vh - var(--header-height));
+		min-height: 100vh;
+		scroll-snap-type: y mandatory;
 		scroll-snap-align: start;
-		padding-block-start: var(--header-height);
 	}
-	.padding-center-center {
-		padding: var(--space-m);
+	.center-center {
 		display: flex;
 		flex-direction: column;
 		justify-content: center; /* Horizontal */
 		align-items: center;
-		max-width: 100%;
+	}
+	.wrapper {
+		margin-inline: auto;
+		max-width: var(--display-width-lg);
+		padding-inline: var(--space-m);
+		padding-block-start: calc(var(--header-height) + var(--space-m));
+		padding-block-end: var(--space-l);
 	}
 	.color-slight {
 		color: var(--color-sys-slight);
