@@ -14,6 +14,15 @@ const { open, close } = useModal({
 
 <template>
 	<main class="wrapper center-center">
+		<Project
+			title="Pepperi"
+			position="Head of Design"
+			year="2018-2024"
+			description="Lead webapp across various roles, designing new products, managing requirements, backlogs and design system, conducting research, while supporting marketing, brand and professional services team."
+			:verticals="['B2B', 'E-commerce', 'Storefront', 'No Code Editor', 'Webpage Builder']"
+			:jobs="['Research', 'Competitive Analysis', 'Stakeholder Mgmt.', 'Backlog Mgmt.', 'Design', 'UX', 'User Testing']"
+			logo="/images/clients-color/Pepperi.webp"
+		/>
 		<div class="this-one torn-paper-bottom">
 			<ShapesCircleFifth />
 			<ShapesCircleHalf />
@@ -56,10 +65,9 @@ const { open, close } = useModal({
 </template>
 
 <style scoped>
-.torn-paper-bottom{
+.torn-paper-bottom {
 	--torn-paper-image: url('/images/torn-3.webp');
 	--torn-paper-bg-color: var(--color-brand-orange-main);
-
 }
 .this-one {
 	background-color: black;

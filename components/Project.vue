@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const PROJECT_ORDER = ['default', 'flip'] as const;
+type ProjectOrder = (typeof PROJECT_ORDER)[number];
+
 const props = defineProps({
 	title: {
 		type: String,
@@ -33,10 +36,17 @@ const props = defineProps({
 		default: null,
 		required: true,
 	},
+	order: {
+		type: String as PropType<ProjectOrder>,
+		default: 'default',
+	},
 });
+const projectClasses = computed(() => ({
+	[`project-${props.order}`]: true,
+}));
 </script>
 <template>
-	<article>
+	<article :class="projectClasses">
 		<div class="project-image-gallery">
 			<NuxtImg class="project-image" src="/images/projects/pepperi-page-builder.webp" placeholder />
 		</div>
@@ -61,9 +71,14 @@ const props = defineProps({
 
 <style scoped>
 article {
-	display: grid;
-	grid-template-columns: 3fr minmax(320px, 2fr);
+	display: flex;
 	gap: var(--space-l);
+}
+.project-default {
+	flex-direction: row;
+}
+.project-flip {
+	flex-direction: row-reverse;
 }
 .project-image-gallery {
 	aspect-ratio: 3 / 2;
