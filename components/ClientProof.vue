@@ -1,15 +1,18 @@
 <script setup>
 const logos = [
+	'/images/clients/JDC.webp',
 	'/images/clients/365scores.webp',
+	'/images/clients/Intel.webp',
 	'/images/clients/Avodata.webp',
-	'/images/clients/Bit.webp',
 	'/images/clients/Gett.webp',
 	'/images/clients/ISOC-IL.webp',
-	'/images/clients/JDC.webp',
+	'/images/clients/SolarEdge.webp',
+	'/images/clients/Bit.webp',
 	'/images/clients/Ministry_of_Labour.webp',
 	'/images/clients/MTNS.webp',
 	'/images/clients/Peace_Now.webp',
 	'/images/clients/Pepperi.webp',
+	'/images/clients/Watchful.webp',
 ];
 
 const containerRef = ref(null);
@@ -17,7 +20,7 @@ const scrollPosition = ref(0);
 const firstSetWidth = ref(0);
 const SCROLL_SPEED = 0.25;
 // Keep gap size in pixels for calculation
-const GAP_SIZE = 24; // 2rem = 32px at default font size
+const GAP_SIZE = 32; // 2rem = 32px at default font size
 
 const scrollStyle = computed(() => ({
 	transform: `translateX(${-scrollPosition.value}px)`,
@@ -59,7 +62,8 @@ onMounted(() => {
 
 <template>
 	<div class="client-section">
-		<Text class="client-title color-slight" tag="h4" variant="text">Among my clients and initiatives</Text>
+		<ShapesCross v-for="index in 4" class="cross" :class="`cross-${index}`" />
+		<Text class="client-title color-slight" tag="h4" variant="body-small">Among my clients and initiatives</Text>
 
 		<div class="logo-container" ref="containerRef">
 			<div class="logo-scroll" :style="scrollStyle">
@@ -73,8 +77,49 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.client-section {
+	height: calc(var(--grid-block) * 3);
+	width: clamp(
+		var(--grid-block),
+		calc(round(var(--grid-block) / var(--grid-block)) * var(--grid-block)),
+		calc(var(--grid-block) * 30)
+	);
+	max-width: calc(calc(var(--grid-block) * 18) + 1px);
+	background-color: var(--color-sys-invert-main);
+	display: grid;
+	grid-template-rows: repeat(3, var(--grid-block));
+	box-shadow: inset 0 0 0 1px var(--color-brand-red-dim);
+	position: relative;
+}
+.cross {
+	position: absolute;
+}
+.cross-1 {
+	inset-inline-start: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+	inset-block-start: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+}
+.cross-2 {
+	inset-inline-end: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+	inset-block-start: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+}
+.cross-3 {
+	inset-inline-end: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+	inset-block-end: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+}
+.cross-4 {
+	inset-inline-start: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+	inset-block-end: calc(calc(var(--grid-block) * -0.25) - 0.5px);
+}
+
 .client-title {
-	margin-bottom: var(--space-s);
+	padding-inline-start: var(--space-2xs);
+	grid-row: 1 / span 1;
+	font-size: var(--step--1);
+	background-color: var(--color-brand-red-hardly);
+	grid-column: revert-layer;
+	justify-self: stretch;
+	align-self: stretch;
+	line-height: calc(var(--grid-block) * 1);
 }
 
 .logo-container {
@@ -82,6 +127,10 @@ onMounted(() => {
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+	grid-row: 2 / span 2;
+	display: flex;
+	align-items: center;
+	border-block-start: 0.75px dashed var(--color-brand-red-slight);
 }
 
 .logo-scroll {
@@ -91,7 +140,7 @@ onMounted(() => {
 	position: relative;
 }
 
-.logo-container::before {
+/* .logo-container::before {
 	content: '';
 	background: linear-gradient(to left, var(--color-sys-invert-none), var(--color-sys-invert-main));
 	width: 0.5rem;
@@ -110,7 +159,7 @@ onMounted(() => {
 	z-index: 100;
 	inset-inline-end: 0;
 	inset-block-start: 0;
-}
+} */
 
 .client-logo {
 	height: 2rem; /* 64px → 4rem */
