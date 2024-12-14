@@ -80,6 +80,9 @@ const handleKeyup = (event: KeyboardEvent) => {
 	box-shadow: inset 0 0 0 0.075em var(--color-sys-slight);
 	transition: all 0.25s ease-out;
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	&::before {
 		content: '';
 		width: auto;
@@ -141,7 +144,6 @@ const handleKeyup = (event: KeyboardEvent) => {
 .button-primary {
 	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 12;
 	box-shadow: inset 0 0 0 0.15em var(--color-sys-slight);
-	
 }
 
 .button-secondary {
