@@ -50,6 +50,7 @@
 		--color-sys-slight: color-mix(in hsl, var(--color-sys-main) 80%, transparent);
 		--color-sys-dim: color-mix(in hsl, var(--color-sys-main) 50%, transparent);
 		--color-sys-dis: color-mix(in hsl, var(--color-sys-main) 15%, transparent);
+		--color-sys-hardly: color-mix(in hsl, var(--color-sys-main) 5%, transparent);
 		--color-sys-none: color-mix(in hsl, var(--color-sys-main) 0%, transparent);
 
 		--color-sys-invert-highlight: color-mix(in hsl, var(--color-sys-invert-main) 0%, white);
