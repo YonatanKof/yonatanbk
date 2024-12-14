@@ -8,6 +8,7 @@ const VARIANTS = [
 	'large-text',
 	'body-medium',
 	'body-small',
+	'body-x-small',
 ] as const;
 // Create the type from the array values
 type Variant = (typeof VARIANTS)[number];
@@ -22,7 +23,8 @@ const props = withDefaults(
 			| 'text'
 			| 'large-text'
 			| 'body-medium'
-			| 'body-small';
+			| 'body-small'
+			| 'body-x-small';
 	}>(),
 	{
 		tag: 'p',
@@ -38,6 +40,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
 	'large-text': 'body body-large',
 	'body-medium': 'body body-medium',
 	'body-small': 'body body-small',
+	'body-x-small': 'body body-x-small',
 	text: 'text',
 };
 
@@ -87,6 +90,10 @@ const variantClasses = computed(() => {
 }
 .body-small {
 	font-size: var(--step-0);
+}
+.body-x-small {
+	font-size: var(--step--1);
+	color: var(--color-sys-slight);
 }
 .text {
 	font-size: var(--step-1);
