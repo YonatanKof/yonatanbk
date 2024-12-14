@@ -80,7 +80,7 @@ header {
 	z-index: 1000;
 	height: var(--header-height);
 	padding-inline: var(--space-m);
-	background-color: var(--color-sys-invert-dim);
+	background-color: var(--color-sys-invert-slight);
 	backdrop-filter: blur(4px);
 	display: flex;
 	justify-content: center;

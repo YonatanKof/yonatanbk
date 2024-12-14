@@ -72,7 +72,7 @@ onUnmounted(() => {
 <style scoped>
 .content-list-wrapper {
 	display: grid;
-	grid-template-columns: repeat(2, auto);
+	grid-template-columns: 1fr var(--shape-size);
 	gap: var(--space-4xl);
 	width: 100%;
 	height: 56rem;

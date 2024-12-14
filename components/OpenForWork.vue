@@ -63,7 +63,6 @@ span::after {
 	animation-delay: 1s;
 }
 #open-text {
-	color: var(--color-sys-dim);
-	font-variation-settings: 'wght' 600;
+	color: var(--color-sys-slight);
 }
 </style>
