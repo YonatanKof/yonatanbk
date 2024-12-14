@@ -12,12 +12,15 @@
 
 	:root {
 		/* Sizes */
+		--grid-block: var(--space-l);
 		--header-height: var(--space-3xl);
-		--header-height: calc(var(--space-l) *3 );
+		--header-height: calc(var(--grid-block) * 3);
 		--header-plus-height: calc(var(--space-3xl) + var(--space-m));
 		--scroll-padding-block: 7rem;
 		--shape-size: calc(var(--step-8) * 4.5);
+	}
 
+	:root {
 		/* Borders */
 		--border-radius-md: var(--space-xs);
 		--border-radius-sm: var(--space-2xs);

@@ -65,7 +65,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 }
 /* Base style */
 .button {
-	--clip-shift: var(--space-xs);
+	--clip-shift: calc(var(--grid-block) / 2);
 	--clip-clr-i: var(--color-brand-red-main);
 	--clip-clr-ii: var(--color-brand-orange-main);
 
@@ -129,6 +129,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 
 .button-medium {
 	font-size: var(--step-1);
+	font-size: calc(var(--grid-block)/1.5);
 }
 
 .button-large {

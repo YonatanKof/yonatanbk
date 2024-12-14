@@ -11,8 +11,8 @@
 	.checked-grid-lines {
 		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
-		background-size: var(--space-l) var(--space-l);
-
+		background-size: var(--grid-block) var(--grid-block);
+		background-position: center top;
 	}
 	.cool-doted-bg {
 		background-image: radial-gradient(var(--color-brand-red-dis) 1px, transparent 1px);
