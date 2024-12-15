@@ -29,12 +29,11 @@ const props = withDefaults(
 			| 'body-medium'
 			| 'body-small'
 			| 'body-x-small';
-		textStyle?: string; // Accept space-separated style classes
+		textStyle?: 'color-slight' | 'color-dim' | 'color-dis' | 'grid-size-big' | 'grid-size-small' | 'text-end';
 	}>(),
 	{
 		tag: 'p',
 		variant: 'text',
-		textStyle: '',
 	}
 );
 
@@ -109,6 +108,9 @@ const computedClasses = computed(() => {
 }
 
 /* New style classes */
+.color-invert-main {
+	color: var(--color-sys-invert-main);
+}
 .color-slight {
 	color: var(--color-sys-slight);
 }
