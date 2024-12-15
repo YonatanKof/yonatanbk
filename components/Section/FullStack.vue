@@ -39,13 +39,12 @@ const contentItems = [
 	<section id="full-stack" class="section-block checked-grid-lines torn-paper-bottom">
 		<div id="secondary-messages">
 			<div class="wrapper">
-				<div class="top-content">
-					<Text tag="h1" variant="main-title" >Full Stack Design</Text>
-					<Text variant="large-text" class="this-text">
-						For the last 15+ years my mission is to bridge the gap between people, businesses, and technology through
-						research, design and execution; creating elegant solutions that simplify complexity and enhance lives.
-					</Text>
-				</div>
+				<TopContent
+					title="Full Stack Design"
+					description="For the last 15+ years my mission is to bridge the gap between people, 
+					businesses, and technology through research, design and execution; creating elegant 
+					solutions that simplify complexity and enhance lives."
+				/>
 				<AccordionListToggle :items="contentItems" :duration="10000" />
 			</div>
 		</div>
@@ -58,16 +57,6 @@ const contentItems = [
 	color: var(--color-sys-invert-main);
 	height: 100%;
 	text-align: start;
-}
-
-.top-content {
-	display: flex;
-	gap: var(--space-m);
-	flex-direction: column;
-	justify-content: center;
-	align-items: start;
-	padding-block-start: var(--space-l);
-	padding-block-end: var(--space-2xl);
 }
 .this-text {
 	max-width: 57ch;
