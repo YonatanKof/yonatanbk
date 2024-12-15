@@ -22,7 +22,20 @@ const images = [
 <template>
 	<main class="wrapper center-center">
 		<Project
-			:imageArray="images"
+			:image-array="[
+				{
+					url: '/images/projects/pepperi/pepperi-personas.webm',
+					name: 'User Personas',
+				},
+				{
+					url: '/images/projects/pepperi/pepperi-design-system.webp',
+					name: 'Design System',
+				},
+				{
+					url: '/images/projects/pepperi/pepperi-page-builder-vid.webm',
+					name: 'Page Builder',
+				},
+			]"
 			title="Pepperi"
 			position="Head of Design"
 			year="2018-2024"
@@ -31,6 +44,7 @@ const images = [
 			:jobs="['Research', 'Competitive Analysis', 'Stakeholder Mgmt.', 'Backlog Mgmt.', 'Design', 'UX', 'User Testing']"
 			logo="/images/clients-color/Pepperi.webp"
 		/>
+		<LayoutContentTop />
 		<div class="this-one torn-paper-bottom">
 			<ShapesCircleFifth />
 			<ShapesCircleHalf />
