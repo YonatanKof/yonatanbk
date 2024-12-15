@@ -24,12 +24,15 @@ const isVideo = (file) => {
 
 <template>
 	<Carousel v-bind="config">
-		<Slide class="slide-img" v-for="slide in props.images" :key="slide">
+		<Slide v-for="slide in props.images" :key="slide">
 			<div class="carousel__item">
-				<video v-if="isVideo(slide)" loop muted autoplay>
-					<source :src="slide" type="video/webm" />
+				<span v-if="slide.name">
+					<Text tag="h4" class="hovering-text" variant="body-small" text-style="color-invert-main">{{ slide.name }}</Text>
+				</span>
+				<video v-if="isVideo(slide.url)" loop muted autoplay>
+					<source :src="slide.url" type="video/webm" />
 				</video>
-				<NuxtImg v-else :src="slide" placeholder />
+				<NuxtImg v-else :src="slide.url" placeholder />
 			</div>
 		</Slide>
 
@@ -40,6 +43,23 @@ const isVideo = (file) => {
 </template>
 
 <style scoped>
+@keyframes rotate {
+	0% {
+		background-color: var(--color-brand-red-main);
+	}
+	25% {
+		background-color: var(--color-brand-green-main);
+	}
+	50% {
+		background-color: var(--color-brand-blue-main);
+	}
+	75% {
+		background-color: var(--color-brand-orange-main);
+	}
+	100% {
+		background-color: var(--color-brand-red-main);
+	}
+}
 .carousel {
 	max-width: calc(var(--space-7xl) * 4);
 	background-color: var(--color-sys-hardly);
@@ -55,17 +75,28 @@ const isVideo = (file) => {
 }
 .carousel__pagination {
 	background-color: var(--color-sys-invert-slight);
-	padding-inline: 0.25em !important;
-	border-radius: 30px;
+	padding-inline: 0.3em !important;
+	border-radius: 4rem;
 }
-
 .carousel__item {
+	position: relative;
 	& video,
 	& img {
 		width: 100%;
 		height: auto;
 		display: flow-root;
 	}
+}
+span {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	animation: 5s linear infinite rotate;
+	border-end-end-radius: var(--border-radius-sm);
+}
+.hovering-text {
+	padding: 0.3em 0.6em;
+	font-variation-settings: 'wght' 800;
 }
 </style>
 
