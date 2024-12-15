@@ -1,11 +1,11 @@
 <script setup>
 import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
 
 const props = defineProps({
 	images: {
-		type: [Array],
-		default: null,
+		type: Array,
+		default: () => [],
 		required: true,
 	},
 });
@@ -15,22 +15,30 @@ const config = {
 	wrapAround: true,
 	pauseAutoplayOnHover: true,
 };
+
+// Function to determine if the file is a video (webm)
+const isVideo = (file) => {
+	return file.toLowerCase().endsWith('.webm');
+};
 </script>
 
 <template>
 	<Carousel v-bind="config">
 		<Slide class="slide-img" v-for="slide in props.images" :key="slide">
 			<div class="carousel__item">
-				<NuxtImg class="ar" :src="slide" placeholder />
+				<video v-if="isVideo(slide)" loop muted autoplay>
+					<source :src="slide" type="video/webm" />
+				</video>
+				<NuxtImg v-else :src="slide" placeholder />
 			</div>
 		</Slide>
 
 		<template #addons>
-			<!-- <Navigation /> -->
 			<Pagination />
 		</template>
 	</Carousel>
 </template>
+
 <style scoped>
 .carousel {
 	/* --carousel-width: 480px; */
