@@ -40,7 +40,7 @@ const contentItems = [
 		<div id="secondary-messages">
 			<div class="wrapper">
 				<div class="top-content">
-					<Text tag="h1" variant="main-title">Full Stack Design</Text>
+					<Text tag="h1" variant="main-title" >Full Stack Design</Text>
 					<Text variant="large-text" class="this-text">
 						For the last 15+ years my mission is to bridge the gap between people, businesses, and technology through
 						research, design and execution; creating elegant solutions that simplify complexity and enhance lives.
