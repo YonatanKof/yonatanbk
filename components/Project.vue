@@ -88,7 +88,7 @@ article {
 }
 .info {
 	max-width: calc(var(--space-7xl) * 3);
-	min-width: calc(var(--space-6xl) * 2);
+	min-width: calc(var(--space-3xl) * 4);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-2xs);
