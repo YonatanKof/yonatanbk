@@ -1,7 +1,7 @@
 <template>
 	<section id="work" class="section-block">
 		<div class="wrapper">
-			<TopContent
+			<LayoutContentTop
 				title="Selected Works"
 				description="As a partner in a design agency, a startup team member, a freelance, and as 
 			corporate man - I've solved all kinds of design problems and have met with all kind of 

@@ -39,7 +39,7 @@ const contentItems = [
 	<section id="full-stack" class="section-block checked-grid-lines torn-paper-bottom">
 		<div id="secondary-messages">
 			<div class="wrapper">
-				<TopContent
+				<LayoutContentTop
 					title="Full Stack Design"
 					description="For the last 15+ years my mission is to bridge the gap between people, 
 					businesses, and technology through research, design and execution; creating elegant 

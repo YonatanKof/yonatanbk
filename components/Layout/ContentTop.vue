@@ -1,14 +1,20 @@
 <script setup lang="ts">
-const props = defineProps<{
-	title?: string;
-	description?: string;
-}>();
+defineProps({
+	title: {
+		type: String,
+		default: 'Proj name!',
+	},
+	description: {
+		type: String,
+		default: 'Proj description!',
+	},
+});
 </script>
 
 <template>
 	<div>
-		<Text tag="h1" variant="main-title" v-html="title" />
-		<Text variant="large-text" class="this-text" v-html="description"/>
+		<Text tag="h1" variant="main-title">{{ title }}</Text>
+		<Text variant="large-text" class="this-text">{{ description }}</Text>
 	</div>
 </template>
 
