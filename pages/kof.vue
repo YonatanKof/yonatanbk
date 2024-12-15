@@ -10,11 +10,19 @@ const { open, close } = useModal({
 		},
 	},
 });
+const images = [
+	'/images/projects/ui-control/card.webp',
+	'/images/projects/ui-control/list.webp',
+	'/images/projects/ui-control/menu.webp',
+	'/images/projects/ui-control/slag.webp',
+	'/images/YonatanBK-Social.jpg',
+];
 </script>
 
 <template>
 	<main class="wrapper center-center">
 		<Project
+			:imageArray="images"
 			title="Pepperi"
 			position="Head of Design"
 			year="2018-2024"

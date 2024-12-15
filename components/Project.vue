@@ -31,7 +31,7 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
-	image: {
+	imageArray: {
 		type: [Array],
 		default: null,
 		required: true,
@@ -47,9 +47,7 @@ const projectClasses = computed(() => ({
 </script>
 <template>
 	<article :class="projectClasses">
-		<div class="project-image-gallery">
-			<NuxtImg class="project-image" src="/images/projects/pepperi-page-builder.webp" placeholder />
-		</div>
+		<Carousel :images="imageArray" />
 		<div class="info">
 			<Text tag="h3" variant="secondary-title">{{ title }}</Text>
 			<div id="meta-data">
@@ -59,7 +57,9 @@ const projectClasses = computed(() => ({
 			</div>
 			<Text variant="body-small">{{ description }}</Text>
 			<div id="verticals">
-				<Text v-for="vertical in verticals" variant="body-x-small"><span class="color-dimmed">#</span>{{ vertical }}</Text>
+				<Text v-for="vertical in verticals" variant="body-x-small"
+					><span class="color-dimmed">#</span>{{ vertical }}</Text
+				>
 			</div>
 			<div id="jobs">
 				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
@@ -73,6 +73,8 @@ const projectClasses = computed(() => ({
 article {
 	display: flex;
 	gap: var(--space-l);
+	/* background-color: lightcoral; */
+    width: 100%;
 }
 .project-default {
 	flex-direction: row;
@@ -80,22 +82,16 @@ article {
 .project-flip {
 	flex-direction: row-reverse;
 }
-.project-image-gallery {
-	aspect-ratio: 3 / 2;
-	aspect-ratio: 5 / 4;
-	overflow: hidden;
-	display: flex;
-	align-items: center;
-	border-radius: var(--border-radius-md);
-}
 .project-image {
 	width: 100%;
 	height: auto;
 }
 .info {
+	max-width: calc(var(--space-7xl) * 3);
+	min-width: calc(var(--space-6xl) * 2);
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-xs);
+	gap: var(--space-2xs);
 }
 #meta-data {
 	display: flex;
@@ -114,10 +110,12 @@ article {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-    font-style: italic;
+	font-style: italic;
+	padding-block-end: var(--space-2xs);
 }
 #verticals {
-    column-gap: var(--space-xs);
+	padding-block-start: var(--space-2xs);
+	column-gap: var(--space-xs);
 	row-gap: var(--space-3xs);
 }
 #jobs {
