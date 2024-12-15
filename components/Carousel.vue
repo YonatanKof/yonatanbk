@@ -41,9 +41,8 @@ const isVideo = (file) => {
 
 <style scoped>
 .carousel {
-	/* --carousel-width: 480px; */
 	max-width: calc(var(--space-7xl) * 4);
-	background-color: var(--color-brand-orange-main);
+	background-color: var(--color-sys-hardly);
 	height: 100%;
 	overflow: hidden;
 	border-radius: var(--border-radius-sm);
@@ -52,21 +51,24 @@ const isVideo = (file) => {
 	--vc-pgn-height: var(--space-2xs);
 	--vc-pgn-border-radius: 20px;
 	--vc-pgn-background-color: var(--color-sys-dim);
-	--vc-pgn-active-color: var(--color-brand-red-main);
+	--vc-pgn-active-color: var(--color-sys-main);
 }
+.carousel__pagination {
+	background-color: var(--color-sys-invert-slight);
+	padding-inline: 0.25em !important;
+	border-radius: 30px;
+}
+
 .carousel__item {
+	& video,
 	& img {
 		width: 100%;
 		height: auto;
 		display: flow-root;
 	}
 }
-/* @media (960px >= width) {
-	.carousel {
-        --carousel-width: 400px;
-	}
-} */
 </style>
+
 <style>
 .carousel__pagination-button--active::after {
 	width: var(--vc-pgn-kof-width);
