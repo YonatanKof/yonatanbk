@@ -18,7 +18,7 @@ export const useActiveSection = () => {
 		);
 
 		// Observe all sections
-		document.querySelectorAll('section').forEach((section) => {
+		document.querySelectorAll('main > section').forEach((section) => {
 			observer.observe(section);
 		});
 
