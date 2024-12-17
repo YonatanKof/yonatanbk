@@ -9,18 +9,23 @@
 			/>
 			<div class="work">
 				<Project
+					id="pepperi"
 					:image-array="[
 						{
-							url: '/images/projects/pepperi/pepperi-personas.webm',
+							url: '/projects/pepperi/design-systems.webm',
+							name: 'Design Systems',
+						},
+						{
+							url: '/projects/pepperi/pepperi-personas.webm',
 							name: 'User Personas',
 						},
 						{
-							url: '/images/projects/pepperi/pepperi-design-system.webp',
-							name: 'Design System',
+							url: '/projects/pepperi/brand.webm',
+							name: 'Brand Guide',
 						},
 						{
-							url: '/images/projects/pepperi/pepperi-page-builder-vid.webm',
-							name: 'Page Builder',
+							url: '/projects/pepperi/pepperi-page-builder-vid.webm',
+							name: 'No Code Webpage Builder',
 						},
 					]"
 					title="Pepperi"
@@ -38,6 +43,40 @@
 						'User Testing',
 					]"
 					logo="/images/clients-color/Pepperi.webp"
+				/>
+				<Project
+					order="flip"
+					id="avodata"
+					:animation-time="3000"
+					:image-array="[
+						{
+							url: '/projects/avodata/ux-research.webp',
+							name: 'UX Research',
+						},
+						{
+							url: '/projects/avodata/user-interviews.webp',
+							name: 'User Interviews',
+						},
+						{
+							url: '/projects/avodata/scoping.webp',
+							name: 'Scoping',
+						},
+						{
+							url: '/projects/avodata/ux.webp',
+							name: 'UX',
+						},
+						{
+							url: '/projects/avodata/reception.webp',
+							name: 'Reception',
+						},
+					]"
+					title="Avodata"
+					position="Freelance"
+					year="2018"
+					description="Data-driven career choices made easy – A project by JCD and Ministry of Labour which includes user interviews, UX research, project scoping, UX concept and wireframes for Israel's growing market place"
+					:verticals="['Education', 'Life Style', 'Self Improvement', 'Government']"
+					:jobs="['Research', 'User Interviews', 'UX']"
+					logo="/projects/avodata/avodata.webp"
 				/>
 			</div>
 		</div>
