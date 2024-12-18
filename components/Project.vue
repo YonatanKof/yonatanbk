@@ -48,6 +48,11 @@ const props = defineProps({
 		type: String,
 		default: 'var(--color-brand-red-main)',
 	},
+	linkTo: {
+		type: Array as PropType<{ url: string; name: string; external?: boolean }[]>,
+		required: false,
+		default: () => [],
+	},
 });
 const projectClasses = computed(() => ({
 	[`project-${props.order}`]: true,
@@ -73,6 +78,11 @@ const projectClasses = computed(() => ({
 				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
 			</div>
 			<NuxtImg class="logo" :src="logo" placeholder />
+			<!-- <div id="links"> -->
+			<Text v-for="link in props.linkTo" variant="body-x-small">
+				<NuxtLink :class="{ external: link.external }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
+			</Text>
+			<!-- </div> -->
 		</div>
 	</article>
 </template>
@@ -120,6 +130,10 @@ article {
 	font-style: italic;
 	padding-block-end: var(--space-2xs);
 }
+#links {
+	display: flex;
+	flex-direction: row;
+}
 #verticals {
 	padding-block-start: var(--space-2xs);
 	column-gap: var(--space-xs);
@@ -136,5 +150,36 @@ article {
 .logo {
 	height: var(--space-l);
 	width: max-content;
+}
+.external::after {
+	content: '';
+	display: inline-block;
+	clip-path: polygon(
+		0% 0%,
+		40% 0%,
+		40% 20%,
+		20% 20%,
+		20% 80%,
+		80% 80%,
+		80% 20%,
+		80% 40%,
+		80% 32.5%,
+		57% 57%,
+		42% 42%,
+		67.5% 20%,
+		60% 20%,
+		60% 0%,
+		100% 0%,
+		100% 40%,
+		80% 40%,
+		80% 60%,
+		100% 60%,
+		100% 100%,
+		0% 100%
+	);
+	background-color: var(--color-focus-main);
+	width: var(--space-2xs);
+	height: var(--space-2xs);
+	margin-inline-start: var(--space-3xs);
 }
 </style>
