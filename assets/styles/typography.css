@@ -9,11 +9,10 @@
 		/* wdth 75-100 */
 		/* opsz 12-96 */
 	}
-	:root{
+	:root {
 		--base-font-settings: 'wght' 300, 'wdth' 100, 'opsz' 12;
 		--font-title: 'Bricolage Grotesque', system-ui, sans-serif;
 		--font-body: system-ui, sans-serif;
-
 	}
 	html,
 	body {
@@ -23,10 +22,9 @@
 	}
 	a {
 		text-decoration: none;
-		&:visited,
-		&:link {
+		color: var(--color-focus-main);
+		&:visited {
 			text-decoration: none;
-			color: inherit;
 		}
 		&:active {
 			color: inherit;
