@@ -10,6 +10,7 @@
 			<div class="work">
 				<Project
 					id="pepperi"
+					highlight-color="#6E960A"
 					:image-array="[
 						{
 							url: '/projects/pepperi/design-systems.webm',
@@ -45,6 +46,7 @@
 					logo="/images/clients-color/Pepperi.webp"
 				/>
 				<Project
+					highlight-color="#0068F5"
 					order="flip"
 					id="avodata"
 					:animation-time="3000"

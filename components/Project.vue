@@ -40,6 +40,14 @@ const props = defineProps({
 		type: String as PropType<ProjectOrder>,
 		default: 'default',
 	},
+	animationTime: {
+		type: Number,
+		default: 5000,
+	},
+	highlightColor: {
+		type: String,
+		default: 'var(--color-brand-red-main)',
+	},
 });
 const projectClasses = computed(() => ({
 	[`project-${props.order}`]: true,
@@ -47,7 +55,7 @@ const projectClasses = computed(() => ({
 </script>
 <template>
 	<article :class="projectClasses">
-		<Carousel :images="imageArray" />
+		<Carousel :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor"/>
 		<div class="info">
 			<Text tag="h3" variant="secondary-title">{{ title }}</Text>
 			<div id="meta-data">
@@ -73,8 +81,7 @@ const projectClasses = computed(() => ({
 article {
 	display: flex;
 	gap: var(--space-l);
-	/* background-color: lightcoral; */
-    width: 100%;
+	width: 100%;
 }
 .project-default {
 	flex-direction: row;
