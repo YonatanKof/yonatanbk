@@ -112,6 +112,38 @@
 						},
 					]"
 				/>
+				<Project
+					highlight-color="#EC1F8E"
+					id="mtns"
+					:animation-time="3000"
+					:image-array="[
+						{
+							url: '/projects/mtns/mtns.webm',
+							name: 'Services',
+						},
+						{
+							url: '/projects/mtns/history.webp',
+							name: 'Flash Back',
+						},
+						{
+							url: '/projects/mtns/members.webp',
+							name: 'Team Members',
+						},
+					]"
+					title="Matnas Interactive"
+					position="Partner"
+					year="2009-2015"
+					description="At Matnas I've supervised daily operations and managed dozens of design projects from start to finish. My role involved leading a team of designers, scoping, budgeting, stakeholder communication, and meeting deadlines at best quality."
+					:verticals="['Branding', 'Desktop', 'Native App', 'WebApp', 'Web', 'E-commerce', 'Education']"
+					:jobs="['Ideation', 'Manager', 'Project Owner', 'Researcher', 'UX/UI Design']"
+					logo="/projects/mtns/logo.webp"
+					:link-to="[
+						{
+							url: 'https://www.flickr.com/photos/matnas/albums/',
+							name: 'MTNS history in photos',
+						},
+					]"
+				/>
 			</div>
 		</div>
 	</section>
