@@ -60,7 +60,7 @@ const projectClasses = computed(() => ({
 </script>
 <template>
 	<article :class="projectClasses">
-		<Carousel :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor"/>
+		<Carousel :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor" />
 		<div class="info">
 			<Text tag="h3" variant="secondary-title">{{ title }}</Text>
 			<div id="meta-data">
@@ -78,11 +78,11 @@ const projectClasses = computed(() => ({
 				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
 			</div>
 			<NuxtImg class="logo" :src="logo" placeholder />
-			<!-- <div id="links"> -->
-			<Text v-for="link in props.linkTo" variant="body-x-small">
-				<NuxtLink :class="{ external: link.external }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
-			</Text>
-			<!-- </div> -->
+			<div id="links">
+				<Text v-for="link in props.linkTo" variant="body-x-small">
+					<NuxtLink :class="{ external: !link.external }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
+				</Text>
+			</div>
 		</div>
 	</article>
 </template>
@@ -91,6 +91,7 @@ const projectClasses = computed(() => ({
 article {
 	display: flex;
 	gap: var(--space-l);
+	flex-direction: row;
 	width: 100%;
 }
 .project-default {
@@ -131,8 +132,10 @@ article {
 	padding-block-end: var(--space-2xs);
 }
 #links {
+	margin-block-start: var(--space-xs);
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	gap: var(--space-3xs);
 }
 #verticals {
 	padding-block-start: var(--space-2xs);
@@ -156,30 +159,42 @@ article {
 	display: inline-block;
 	clip-path: polygon(
 		0% 0%,
-		40% 0%,
-		40% 20%,
-		20% 20%,
-		20% 80%,
-		80% 80%,
-		80% 20%,
-		80% 40%,
-		80% 32.5%,
-		57% 57%,
-		42% 42%,
-		67.5% 20%,
-		60% 20%,
-		60% 0%,
+		33.4% 0%,
+		33.4% 16.7%,
+		16.7% 16.7%,
+		16.7% 83.5%,
+		83.5% 83.5%,
+		83.5% 16.7%,
+		83.5% 33.4%,
+		83.5% 25.05%,
+		50% 57%,
+		42% 50%,
+		75% 16.7%,
+		66.8% 16.7%,
+		66.8% 0%,
 		100% 0%,
-		100% 40%,
-		80% 40%,
-		80% 60%,
-		100% 60%,
+		100% 33.4%,
+		83.5% 33.4%,
+		83.5% 66.8%,
+		100% 66.8%,
 		100% 100%,
 		0% 100%
 	);
-	background-color: var(--color-focus-main);
-	width: var(--space-2xs);
-	height: var(--space-2xs);
-	margin-inline-start: var(--space-3xs);
+	background-color: var(--color-sys-dim);
+	width: calc(var(--space-2xs) * 1.25);
+	height: calc(var(--space-2xs) * 1.25);
+	margin-inline-start: var(--space-2xs);
+}
+@media (720px >= width) {
+	article {
+		gap: var(--space-s);
+	}
+	.project-default,
+	.project-flip {
+		flex-direction: column-reverse;
+	}
+	h3 {
+		font-size: var(--step-6);
+	}
 }
 </style>

@@ -1,13 +1,22 @@
 @layer vars {
-	:root {
-		--display-width-3xl: 1920px;
-		--display-width-2xl: 1408px;
-		--display-width-xl: 1280px;
-		--display-width-lg: 1024px;
-		--display-width-md: 880px;
-		--display-width-sm: 720px;
-		--display-width-xs: 544px;
-		--display-width-2xs: 426px;
+	/* The screen sizes predefined by `@nuxt/image`:
+      'xs': 320,
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      'xxl': 1536,
+      '2xl': 1536
+ */
+	  :root {
+		  --display-width-3xl: 1920px;
+		  --display-width-2xl: 1408px;
+		  --display-width-xl: 1280px;
+		  --display-width-lg: 1024px;
+		  --display-width-md: 880px;
+		  --display-width-sm: 720px;
+		  --display-width-xs: 544px;
+		  --display-width-2xs: 426px;
 	}
 
 	:root {

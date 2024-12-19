@@ -36,9 +36,9 @@ const isVideo = (file) => {
 		<Slide v-for="slide in props.images" :key="slide">
 			<div class="carousel__item">
 				<span v-if="slide.name">
-					<Text tag="h4" class="hovering-text" variant="body-small" text-style="color-invert-main">{{
-						slide.name
-					}}</Text>
+					<Text tag="h4" class="hovering-text" variant="body-x-small" text-style="color-invert-main">
+						{{ slide.name }}
+					</Text>
 				</span>
 				<video v-if="isVideo(slide.url)" loop muted autoplay>
 					<source :src="slide.url" type="video/webm" />
@@ -64,13 +64,14 @@ const isVideo = (file) => {
 	--vc-pgn-border-radius: 20px;
 	--vc-pgn-background-color: var(--color-sys-invert-dim);
 	--vc-pgn-active-color: var(--color-sys-invert-main);
-	max-width: calc(var(--space-7xl) * 4);
+	max-width: calc(var(--space-8xl) * 4);
 	background-color: var(--highlight-color);
 	height: 100%;
 	overflow: hidden;
 	border-radius: var(--border-radius-sm);
 	position: relative;
 	border: var(--border-width) solid var(--highlight-color);
+	cursor: grab;
 }
 .carousel__pagination {
 	background-color: var(--highlight-color);
