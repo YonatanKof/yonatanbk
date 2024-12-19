@@ -115,32 +115,40 @@
 				<Project
 					highlight-color="#EC1F8E"
 					id="mtns"
-					:animation-time="3000"
+					:animation-time="4000"
 					:image-array="[
 						{
-							url: '/projects/mtns/mtns.webm',
+							url: '/projects/mtns/services.webm',
 							name: 'Services',
 						},
 						{
 							url: '/projects/mtns/history.webp',
-							name: 'Flash Back',
+							name: 'Flashback',
 						},
 						{
 							url: '/projects/mtns/members.webp',
 							name: 'Team Members',
 						},
+						{
+							url: '/projects/mtns/clients.webp',
+							name: 'Clients',
+						},
 					]"
 					title="Matnas Interactive"
 					position="Partner"
 					year="2009-2015"
-					description="At Matnas I've supervised daily operations and managed dozens of design projects from start to finish. My role involved leading a team of designers, scoping, budgeting, stakeholder communication, and meeting deadlines at best quality."
-					:verticals="['Branding', 'Desktop', 'Native App', 'WebApp', 'Web', 'E-commerce', 'Education']"
-					:jobs="['Ideation', 'Manager', 'Project Owner', 'Researcher', 'UX/UI Design']"
+					description="At Matnas I've supervised daily operations and managed multiple design projects from start to finish. I lead designers, managed scoping, budgeting, stakeholder communication, and deadlines at best quality."
+					:verticals="['Native App', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop', ]"
+					:jobs="['Ideation', 'Design Manager', 'Business Development', 'Project Owner', 'Researcher', 'UX/UI Design']"
 					logo="/projects/mtns/logo.webp"
 					:link-to="[
 						{
+							url: 'https://dribbble.com/mtns',
+							name: 'Selected projects (Dribbble)',
+						},
+						{
 							url: 'https://www.flickr.com/photos/matnas/albums/',
-							name: 'MTNS history in photos',
+							name: 'History in pics (Flickr)',
 						},
 					]"
 				/>
