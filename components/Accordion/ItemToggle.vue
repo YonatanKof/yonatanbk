@@ -117,7 +117,7 @@ const normalizedComponents = computed(() => {
 		@touchend.prevent="handleMouseLeave"
 		@click="handleClick"
 	>
-		<Text tag="h3" variant="secondary-title" :class="{ xxx: !isActive }">{{ title }}</Text>
+		<Text tag="h3" variant="secondary-title" :class="{ 'dim-it': !isActive }">{{ title }}</Text>
 		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused"  />
 		<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive" >
 			{{ subTitle }}
@@ -143,7 +143,7 @@ const normalizedComponents = computed(() => {
 	gap: var(--space-s);
 }
 
-.xxx {
+.dim-it {
 	color: var(--color-sys-invert-dim);
 	transition: all 0.5s ease;
 }

@@ -21,7 +21,7 @@ const updateSliderPosition = (section: string) => {
 		if (navRect) {
 			sliderPosition.value = {
 				width: `calc(0.5rem + ${linkRect.width}px`,
-				transform: `translateX(calc(${linkRect.left - navRect.left }px - 0.25rem))`,
+				transform: `translateX(calc(${linkRect.left - navRect.left}px - 0.25rem))`,
 				backgroundColor: `var(--color-brand-${getColorForSection(section)})`,
 			};
 		}
@@ -61,7 +61,7 @@ watch(activeSection, (newSection) => {
 					v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
 					:key="section"
 					:href="`#${section}`"
-					class="body-small"
+					class="body body-small"
 					:class="{ active: activeSection === section }"
 					:data-section="section"
 					ref="navLinks"
@@ -120,5 +120,8 @@ nav {
 
 a.active {
 	color: var(--color-sys-main);
+}
+.this-body-small {
+	font-size: 1rem;
 }
 </style>

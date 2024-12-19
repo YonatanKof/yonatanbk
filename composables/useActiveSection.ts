@@ -6,23 +6,25 @@ export const useActiveSection = () => {
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						activeSection.value = entry.target.id;
-						// Update URL hash without triggering scroll
-						history.replaceState(null, '', `#${entry.target.id}`);
+						// Get the closest parent section that's a direct child of main
+						const mainSection = entry.target.closest('main > section');
+						if (mainSection) {
+							activeSection.value = mainSection.id;
+							history.replaceState(null, '', `#${mainSection.id}`);
+						}
 					}
 				});
 			},
 			{
-				threshold: 0.5, // Trigger when section is 50% visible
+				threshold: 0.5,
 			}
 		);
 
-		// Observe all sections
+		// Observe all sections, including nested ones
 		document.querySelectorAll('section').forEach((section) => {
 			observer.observe(section);
 		});
 
-		// Cleanup
 		onUnmounted(() => {
 			observer.disconnect();
 		});

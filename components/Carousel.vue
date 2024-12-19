@@ -1,0 +1,114 @@
+<script setup>
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
+
+const props = defineProps({
+	images: {
+		type: Array,
+		default: () => [],
+		required: true,
+	},
+	animationTime: {
+		type: Number,
+		default: 5000,
+	},
+	highlightColor: {
+		type: String,
+		default: 'var(--color-brand-red-main)',
+	},
+});
+// ↓ used for CCS animation too
+// const animTime = 5000;
+const config = {
+	autoplay: props.animationTime,
+	wrapAround: true,
+	pauseAutoplayOnHover: true,
+};
+
+// Function to determine if the file is a video (webm)
+const isVideo = (file) => {
+	return file.toLowerCase().endsWith('.webm');
+};
+</script>
+
+<template>
+	<Carousel v-bind="config">
+		<Slide v-for="slide in props.images" :key="slide">
+			<div class="carousel__item">
+				<span v-if="slide.name">
+					<Text tag="h4" class="hovering-text" variant="body-x-small" text-style="color-invert-main">
+						{{ slide.name }}
+					</Text>
+				</span>
+				<video loading="lazy" v-if="isVideo(slide.url)" loop muted autoplay>
+					<source :src="slide.url" type="video/webm" />
+				</video>
+				<NuxtImg loading="lazy" v-else :src="slide.url" placeholder />
+			</div>
+		</Slide>
+
+		<template #addons>
+			<Pagination />
+		</template>
+	</Carousel>
+</template>
+
+<style scoped>
+.carousel {
+	--highlight-color: v-bind(highlightColor);
+	--anim-time: calc(v-bind(animationTime) * 1ms);
+	--border-width: var(--space-3xs);
+	--vc-pgn-width: var(--space-2xs);
+	--vc-pgn-kof-width: var(--space-xs);
+	--vc-pgn-height: var(--space-2xs);
+	--vc-pgn-border-radius: 20px;
+	--vc-pgn-background-color: var(--color-sys-invert-dim);
+	--vc-pgn-active-color: var(--color-sys-invert-main);
+	max-width: calc(var(--space-8xl) * 4);
+	background-color: var(--highlight-color);
+	height: 100%;
+	overflow: hidden;
+	border-radius: var(--border-radius-sm);
+	position: relative;
+	border: var(--border-width) solid var(--highlight-color);
+	cursor: grab;
+}
+.carousel__pagination {
+	background-color: var(--highlight-color);
+	padding-inline: 0.2em !important;
+	border-radius: 4rem;
+	bottom: var(--space-xs);
+}
+.carousel__item {
+	position: relative;
+	& video,
+	& img {
+		width: 100%;
+		height: auto;
+		display: flow-root;
+	}
+}
+span {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	background-color: var(--highlight-color);
+	border-end-end-radius: var(--border-radius-sm);
+}
+.hovering-text {
+	padding: calc(0.3em - var(--border-width)) 0.6em 0.3em calc(0.6em - var(--border-width));
+	font-variation-settings: 'wght' 600;
+}
+</style>
+
+<style>
+.carousel__pagination-button--active::after {
+	width: var(--vc-pgn-kof-width);
+}
+
+@media (hover: hover) {
+	.carousel__pagination-button:hover::after {
+		width: var(--vc-pgn-kof-width);
+	}
+}
+</style>

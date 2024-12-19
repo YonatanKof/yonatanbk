@@ -166,4 +166,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 		content: none;
 	}
 }
+a {
+	color: var(--color-sys-main);
+}
 </style>

@@ -18,14 +18,14 @@ const { open, close } = useModal({
 			<div id="main-messages-top">
 				<div id="avatar">
 					<NuxtImg src="/images/kof-pic.webp" placeholder />
-					<Text tag="h2" variant="compressed-title" class="color-slight">Hi, I’m Yonatan Ben Knaan </Text>
+					<Text tag="h2" variant="compressed-title" text-style="color-slight">Hi, I’m Yonatan Ben Knaan </Text>
 				</div>
-				<Text id="main-title-1" tag="h1" variant="main-title">A full stack designer </Text>
+				<Text id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big">A full stack designer </Text>
 			</div>
 
 			<div id="main-messages-bottom">
-				<Text id="main-title-2" class="text-end" tag="h1" variant="main-title">Who leads design initiatives </Text>
-				<Text id="flipping-message" class="text-end color-slight" tag="h2" variant="compressed-title">
+				<Text id="main-title-2" text-style="grid-size-big text-end" tag="h1" variant="main-title">Who leads design initiatives </Text>
+				<Text id="flipping-message" text-style="text-end color-slight" tag="h2" variant="compressed-title">
 					That Manage design Teams in Startups and Orgs
 				</Text>
 			</div>
@@ -49,9 +49,6 @@ const { open, close } = useModal({
 </template>
 
 <style scoped>
-.text-end {
-	text-align: end;
-}
 .cta-buttons {
 	display: flex;
 	flex-direction: row;
