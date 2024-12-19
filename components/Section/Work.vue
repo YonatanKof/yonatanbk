@@ -44,6 +44,24 @@
 						'User Testing',
 					]"
 					logo="/images/clients-color/Pepperi.webp"
+					:link-to="[
+						{
+							url: 'https://www.pepperi.com/',
+							name: 'Visit Pepperi site',
+						},
+						{
+							url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
+							name: 'Explore Pepperi DS',
+						},
+						{
+							url: 'https://brand.pepperi.com/',
+							name: 'Review Pepperi brand guide',
+						},
+						{
+							url: 'https://peppersona.netlify.app/',
+							name: 'Pepperi Persona (via Notion API)',
+						},
+					]"
 				/>
 				<Project
 					highlight-color="#0068F5"
@@ -71,14 +89,28 @@
 							url: '/projects/avodata/reception.webp',
 							name: 'Reception',
 						},
+						{
+							url: '/projects/avodata/avodata.webm',
+							name: 'Try it now',
+						},
 					]"
 					title="Avodata"
 					position="Freelance"
 					year="2018"
 					description="Data-driven career choices made easy – A project by JCD and Ministry of Labour which includes user interviews, UX research, project scoping, UX concept and wireframes for Israel's growing market place"
-					:verticals="['Education', 'Life Style', 'Self Improvement', 'Government']"
+					:verticals="['Gov', 'Education', 'Life Style', 'Self Improvement']"
 					:jobs="['Research', 'User Interviews', 'UX']"
 					logo="/projects/avodata/avodata.webp"
+					:link-to="[
+						{
+							url: 'https://avodata.labor.gov.il/',
+							name: 'Visit Avodata site',
+						},
+						{
+							url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
+							name: 'Review Avodata UX Mockups',
+						},
+					]"
 				/>
 			</div>
 		</div>
