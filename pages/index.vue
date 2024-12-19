@@ -18,9 +18,6 @@
 	grid-template-rows: auto 1fr;
 }
 main {
-	overflow: auto;
-	scroll-snap-type: y mandatory;
-	overscroll-behavior-x: contain;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	margin-block-start: calc(var(--header-height) * -1);

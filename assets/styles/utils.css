@@ -18,12 +18,7 @@
 		background-image: radial-gradient(var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: 3px 3px;
 	}
-	.section-block {
-		min-height: 100vh;
-		scroll-snap-type: y mandatory;
-		scroll-snap-align: start;
 
-	}
 	.center-center {
 		display: flex;
 		flex-direction: column;
