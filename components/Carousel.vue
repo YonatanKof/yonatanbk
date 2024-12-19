@@ -40,10 +40,10 @@ const isVideo = (file) => {
 						{{ slide.name }}
 					</Text>
 				</span>
-				<video v-if="isVideo(slide.url)" loop muted autoplay>
+				<video loading="lazy" v-if="isVideo(slide.url)" loop muted autoplay>
 					<source :src="slide.url" type="video/webm" />
 				</video>
-				<NuxtImg v-else :src="slide.url" placeholder />
+				<NuxtImg loading="lazy" v-else :src="slide.url" placeholder />
 			</div>
 		</Slide>
 
