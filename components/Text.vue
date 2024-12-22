@@ -123,12 +123,23 @@ const computedClasses = computed(() => {
 .text-end {
 	text-align: end;
 }
+.text-center {
+	text-align: center;
+}
 .grid-size-big {
+	/* font-variation-settings: 'wght' 800, 'wdth' 98, 'opsz' 96; */
 	font-size: calc(var(--grid-block) * 3);
 	line-height: calc(var(--grid-block) * 3);
+	text-align: center;
 }
 .grid-size-small {
 	font-size: calc(var(--grid-block) * 1);
 	line-height: calc(var(--grid-block) * 1);
+	text-align: center;
+}
+@supports (background: -webkit-named-image(i)) {
+	.grid-size-big {
+		font-variation-settings: 'wght' 800, 'wdth' 98, 'opsz' 96;
+	}
 }
 </style>
