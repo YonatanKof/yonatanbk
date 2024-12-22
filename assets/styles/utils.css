@@ -8,12 +8,12 @@
 		background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
 		background-color: #f5f5f5;
 	}
-	.checked-grid-lines {
+	/* .checked-grid-lines {
 		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
 			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: var(--grid-block) var(--grid-block);
 		background-position: center top;
-	}
+	} */
 	.cool-doted-bg {
 		background-image: radial-gradient(var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: 3px 3px;

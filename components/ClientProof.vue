@@ -79,12 +79,6 @@ onMounted(() => {
 <style scoped>
 .client-section {
 	height: calc(var(--grid-block) * 3);
-	width: clamp(
-		var(--grid-block),
-		calc(round(var(--grid-block) / var(--grid-block)) * var(--grid-block)),
-		calc(var(--grid-block) * 30)
-	);
-	max-width: calc(calc(var(--grid-block) * 18) + 1px);
 	background-color: var(--color-sys-invert-main);
 	display: grid;
 	grid-template-rows: repeat(3, var(--grid-block));
