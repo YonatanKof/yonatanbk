@@ -18,17 +18,17 @@ const { open, close } = useModal({
 			<div id="main-messages-top">
 				<div id="avatar">
 					<NuxtImg src="/images/kof-pic.webp" placeholder />
-					<Text tag="h2" variant="compressed-title" text-style="color-slight">Hi, I’m Yonatan Ben Knaan </Text>
+					<Text tag="h2" variant="compressed-title" text-style="color-slight">Yonatan Ben Knaan, </Text>
 				</div>
-				<Text id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big">A full stack designer </Text>
+				<Text id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big">a full stack designer </Text>
 			</div>
 
 			<div id="main-messages-bottom">
 				<Text id="main-title-2" text-style="grid-size-big text-end" tag="h1" variant="main-title"
-					>Who leads design initiatives
+					>who leads <span class="no-brake">design initiatives</span>
 				</Text>
 				<Text id="flipping-message" text-style="text-end color-slight" tag="h2" variant="compressed-title">
-					That Manage design Teams in Startups and Orgs
+					that Manage design Teams in Startups and Orgs
 				</Text>
 			</div>
 			<span id="logos-cta">
@@ -66,6 +66,7 @@ const { open, close } = useModal({
 		linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 	background-size: var(--grid-block) var(--grid-block);
 	background-position: center top;
+	/* min-height: 1280px; */
 }
 .main-message {
 	margin-inline: auto;
@@ -73,10 +74,10 @@ const { open, close } = useModal({
 	display: grid;
 	grid-template-columns: 1fr;
 	max-width: calc(var(--grid-block) * var(--grid-num));
-	grid-template-rows: repeat(20, var(--grid-block));
+	grid-template-rows: repeat(24, var(--grid-block));
 	grid-template-columns: repeat(var(--grid-num), var(--grid-block));
 	justify-content: center;
-	transition: max-width 0.5s ease-in-out, grid-template-columns 0.5s ease-in-out ;
+	/* transition: max-width 0.25s ease-in-out, grid-template-columns 0.25s ease-in-out; */
 	/* @media (width <= 1408px) {
 		--grid-num: 37;
 	} */
@@ -95,12 +96,9 @@ const { open, close } = useModal({
 	@media (width <= 896px) {
 		--grid-num: 31;
 	}
-	@media (width <= 768px) {
+	/* @media (width <= 768px) {
 		--grid-num: 27;
-	}
-	@media (width <= 704px) {
-		--grid-num: 25;
-	}
+	} */
 }
 .cta-buttons {
 	display: flex;
@@ -120,6 +118,18 @@ const { open, close } = useModal({
 	display: grid;
 	grid-template-rows: subgrid;
 	grid-template-columns: subgrid;
+	@media (width <= 1216px) {
+		grid-column: 3 / -1;
+	}
+	@media (width <= 960px) {
+		grid-column: 2 / -1;
+	}
+	@media (width <= 768px) {
+		grid-column: 1 / -1;
+	}
+	/* @media (width <= 704px) {
+
+	} */
 }
 #main-messages-bottom {
 	grid-row: 6 / span 5;
@@ -128,6 +138,12 @@ const { open, close } = useModal({
 	grid-template-rows: subgrid;
 	justify-self: center;
 	grid-column: 1 / -1;
+	@media (width <= 1216px) {
+		grid-row: 6 / span 8;
+	}
+	/* @media (width <= 768px) {
+		grid-row: 6 / span 5;
+	} */
 }
 #avatar {
 	grid-row: 1 / span 2;
@@ -143,8 +159,26 @@ const { open, close } = useModal({
 }
 #main-title-1 {
 	grid-row: 3 / span 3;
-	grid-column: 3 / -1;
+	grid-column: 3 / -6;
 	position: relative;
+	@media (width <= 1216px) {
+		grid-column: 4 / -5;
+	}
+	@media (width <= 1152px) {
+		grid-column: 3 / -4;
+	}
+	@media (width <= 960px) {
+		grid-column: 3 / -2;
+	}
+	@media (width <= 896px) {
+		grid-column: 2 / -2;
+	}
+	@media (width <= 768px) {
+		grid-column: 3 / -2;
+	}
+	/* @media (width <= 704px) {
+		grid-column: 3 / -6;
+	} */
 	&::before {
 		content: '';
 		background-image: url('/images/arrow-v1.webp');
@@ -162,17 +196,56 @@ const { open, close } = useModal({
 }
 #main-title-2 {
 	grid-row: 1 / span 3;
+	@media (width <= 1152px) {
+		grid-row: 1 / span 6;
+	}
 }
 #flipping-message {
 	grid-row: 4 / span 2;
 	align-self: center;
+	@media (width <= 1152px) {
+		grid-row: 7 / span 2;
+		text-align: center;
+	}
 }
 #logos-cta {
-	grid-row: 12 / span 3;
+	grid-row: 13 / span 3;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	gap: var(--space-xl);
 	grid-column: 1 / -1;
+	@media (width <= 1152px) {
+		grid-row: 16 / span 3;
+	}
+}
+.client-section {
+	max-width: calc(var(--grid-block) * 20);
+	@media (width <= 1408px) {
+	}
+	@media (width <= 1280px) {
+		
+	}
+	@media (width <= 1216px) {
+		max-width: calc(var(--grid-block) * 18);
+		
+	}
+	@media (width <= 1152px) {
+		max-width: calc(var(--grid-block) * 16);
+		
+	}
+	@media (width <= 960px) {
+		max-width: calc(var(--grid-block) * 14);
+		
+	}
+	@media (width <= 896px) {
+		max-width: calc(var(--grid-block) * 12);
+		/* max-width: calc(var(--grid-block) * 10); */
+		
+	}
+	@media (width <= 768px) {
+		
+	}
+
 }
 </style>
