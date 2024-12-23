@@ -8,6 +8,7 @@
 			<SectionConnect />
 			<LayoutFooter />
 		</main>
+		<OpenForWork class="show" />
 	</div>
 </template>
 
@@ -21,5 +22,14 @@ main {
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	margin-block-start: calc(var(--header-height) * -1);
+}
+.show {
+	display: none;
+	position: absolute;
+	inset-inline-end: var(--space-s);
+	inset-block-end: var(--space-s);
+	@media (width < 520px) {
+		display: inline;
+	}
 }
 </style>

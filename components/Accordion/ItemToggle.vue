@@ -149,10 +149,12 @@ const normalizedComponents = computed(() => {
 }
 
 .dim-it {
-	color: var(--color-sys-invert-dim);
+	color: var(--color-sys-invert-slight);
+	font-variation-settings: 'wght' 500, 'wdth' 100, 'opsz' 12;
 	transition: all 0.5s ease;
 	&:hover {
-		color: var(--color-sys-invert-slight);
+		font-variation-settings: 'wght' 700, 'wdth' 100, 'opsz' 12;
+		color: var(--color-sys-invert-main);
 		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsSURBVHgBxZMBCoAgDEW30fGqw1b3WzVqLWEyFfGBMNT/mMIQPhj+IAQgG2ZmWSXQvs4armHKnEWMSG7aPMerb1xBEK4WvF20dtBJYD/Jq7OC5g7GCBBDswPpfRFc86Cb0aWeR1A8Sct2SPYEmysyuVewiKoAAAAASUVORK5CYII=')
 				8 8,
 			auto;

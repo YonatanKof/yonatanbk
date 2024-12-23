@@ -69,7 +69,7 @@ watch(activeSection, (newSection) => {
 					{{ formatText(section) }}
 				</a>
 			</nav>
-			<OpenForWork />
+			<OpenForWork class="hide" />
 		</span>
 	</header>
 </template>
@@ -123,5 +123,10 @@ a.active {
 }
 .this-body-small {
 	font-size: 1rem;
+}
+.hide {
+	@media (width < 520px) {
+		display: none;
+	}
 }
 </style>

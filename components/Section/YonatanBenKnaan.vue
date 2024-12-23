@@ -18,7 +18,7 @@ const { open, close } = useModal({
 			<div id="main-messages-top">
 				<div id="avatar">
 					<NuxtImg src="/images/kof-pic.webp" placeholder />
-					<Text tag="h2" variant="compressed-title" text-style="color-slight">Yonatan Ben Knaan, </Text>
+					<Text tag="h2" variant="compressed-title" text-style="color-slight">I'm Yonatan <span class="no-brake">Ben Knaan,</span> </Text>
 				</div>
 				<Text class="text-on-big" id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big"
 					>a full stack designer
@@ -36,7 +36,7 @@ const { open, close } = useModal({
 					>design lead
 				</Text>
 				<Text id="flipping-message" text-style="text-end color-slight" tag="h2" variant="compressed-title">
-					that Manage design Teams in <span class="no-brake">Startups and Orgs</span>
+					that Manage design Teams <span class="no-brake">in Startups and Orgs</span>
 				</Text>
 			</div>
 			<span id="logos-cta">
@@ -84,7 +84,6 @@ const { open, close } = useModal({
 		linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 	background-size: var(--grid-block) var(--grid-block);
 	background-position: center top;
-	/* min-height: 1280px; */
 }
 .main-message {
 	margin-inline: auto;
@@ -129,7 +128,7 @@ const { open, close } = useModal({
 		--grid-num: 13;
 		grid-template-rows: repeat(31, var(--grid-block));
 	}
-	@media (width < 400px) {
+	@media (width < 440px) {
 		--grid-num: 11;
 	}
 }
@@ -192,6 +191,7 @@ const { open, close } = useModal({
 		grid-column: 1 / -1;
 	}
 	@media (width < 560px) {
+		gap: var(--space-xs);
 		margin-inline-start: calc(var(--grid-block) * -1);
 	}
 	@media (width < 520px) {
@@ -199,7 +199,11 @@ const { open, close } = useModal({
 	}
 	@media (width < 480px) {
 		margin-inline-start: unset;
-		grid-column: 2 / -1;
+		grid-column: 2 / -2;
+	}
+	@media (width < 440px) {
+		margin-inline-start: unset;
+		grid-column: 1 / -2;
 	}
 }
 #main-title-1 {
@@ -240,6 +244,10 @@ const { open, close } = useModal({
 	@media (width < 480px) {
 		grid-row: 3 / span 6;
 		grid-column: 4 / -4;
+	}	
+	@media (width < 440px) {
+		grid-row: 3 / span 6;
+		grid-column: 3 / -3;
 	}
 	&::before {
 		content: '';
@@ -398,7 +406,7 @@ const { open, close } = useModal({
 			width: calc(var(--grid-block) * 13);
 		}
 	}
-	@media (width < 400px) {
+	@media (width < 440px) {
 		& button {
 			width: calc(var(--grid-block) * 11);
 		}

@@ -25,7 +25,15 @@ div {
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
-	padding-block-start: var(--space-l);
 	padding-block-end: var(--space-2xl);
+	@media (width < 640px) {
+		padding-block-end: var(--space-xl);
+	}
+	@media (width < 544px) {
+		padding-block-end: var(--space-l);
+	}
+}
+p {
+	max-width: 60ch;
 }
 </style>

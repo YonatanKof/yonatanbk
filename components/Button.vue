@@ -78,7 +78,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 	position: relative;
 	background-color: var(--color-sys-invert-main);
 	box-shadow: inset 0 0 0 0.075em var(--color-sys-slight);
-	transition: all 0.25s ease-out;
+	transition: box-shadow 0.25s ease-out;
 	text-align: center;
 	display: flex;
 	align-items: center;
