@@ -5,7 +5,7 @@
 		<div class="pulse-wrapper">
 			<span></span>
 		</div>
-		<Text variant="body-small" id="open-text">Open For Work</Text>
+		<Text variant="body-x-small" class="chip" id="open-text">Open For Work</Text>
 	</div>
 </template>
 
@@ -30,13 +30,25 @@
 	align-items: flex-start;
 	gap: var(--space-3xs);
 	height: min-content;
+	position: relative;
+	backdrop-filter: blur(2px);
 }
 
 .pulse-wrapper {
-	position: relative;
+	position: absolute;
 	display: inline-block;
+	inset-inline-start: calc(var(--space-3xs) * -1);
 	height: var(--space-s);
 	width: var(--space-s);
+	&::before {
+		content: '';
+		display: block;
+		height: var(--space-s);
+		width: var(--space-s);
+		background: radial-gradient(white 0%, transparent 50%);
+		border-radius: 100%;
+		transform: scale(1.5);
+	}
 }
 
 span {
@@ -48,14 +60,14 @@ span {
 /* Pulsing circles using pseudo-elements */
 span::before,
 span::after {
+	content: '';
 	transform: scale(0.5);
 	opacity: 0;
-	content: '';
 	position: absolute;
 	inset: 0;
 	border-radius: 100%;
 	background-color: var(--color-brand-green-main);
-	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Delay the second pulse */
@@ -64,5 +76,7 @@ span::after {
 }
 #open-text {
 	color: var(--color-sys-slight);
+	padding: 0.5em 1em;
+	background-color: var(--color-sys-invert-slight);
 }
 </style>
