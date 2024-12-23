@@ -13,7 +13,7 @@ const { open, close } = useModal({
 </script>
 
 <template>
-	<section id="yonatan-ben-knaan" class="checked-grid-lines torn-paper-bottom">
+	<section id="hello" class="checked-grid-lines torn-paper-bottom">
 		<div class="main-message">
 			<div id="main-messages-top">
 				<div id="avatar">
