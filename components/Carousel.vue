@@ -72,6 +72,11 @@ const isVideo = (file) => {
 	position: relative;
 	border: var(--border-width) solid var(--highlight-color);
 	cursor: grab;
+	&:hover {
+		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLSURBVHgB7ZM5CgAgDASz4vPUx6r/i0fhgVdhJy4kEGaZLqAapjE4cZG2MypDZi7TZscFXeYLvuARgWwPANvyjBdB/LgOaOu79ooH6GUestWY8A0AAAAASUVORK5CYII=')
+				2 2,
+			auto;
+	}
 }
 .carousel__pagination {
 	background-color: var(--highlight-color);

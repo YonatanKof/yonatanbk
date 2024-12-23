@@ -118,8 +118,8 @@ const normalizedComponents = computed(() => {
 		@click="handleClick"
 	>
 		<Text tag="h3" variant="secondary-title" :class="{ 'dim-it': !isActive }">{{ title }}</Text>
-		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused"  />
-		<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive" >
+		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
+		<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive">
 			{{ subTitle }}
 		</Text>
 
@@ -141,11 +141,22 @@ const normalizedComponents = computed(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-s);
+	&:hover {
+		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLSURBVHgB7ZM5CgAgDASz4vPUx6r/i0fhgVdhJy4kEGaZLqAapjE4cZG2MypDZi7TZscFXeYLvuARgWwPANvyjBdB/LgOaOu79ooH6GUestWY8A0AAAAASUVORK5CYII=')
+				8 8,
+			auto;
+	}
 }
 
 .dim-it {
 	color: var(--color-sys-invert-dim);
 	transition: all 0.5s ease;
+	&:hover {
+		color: var(--color-sys-invert-slight);
+		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsSURBVHgBxZMBCoAgDEW30fGqw1b3WzVqLWEyFfGBMNT/mMIQPhj+IAQgG2ZmWSXQvs4armHKnEWMSG7aPMerb1xBEK4WvF20dtBJYD/Jq7OC5g7GCBBDswPpfRFc86Cb0aWeR1A8Sct2SPYEmysyuVewiKoAAAAASUVORK5CYII=')
+				8 8,
+			auto;
+	}
 }
 
 .subtitle {
