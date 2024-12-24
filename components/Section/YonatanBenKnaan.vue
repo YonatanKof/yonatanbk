@@ -18,7 +18,9 @@ const { open, close } = useModal({
 			<div id="main-messages-top">
 				<div id="avatar">
 					<NuxtImg src="/images/kof-pic.webp" placeholder />
-					<Text tag="h2" variant="compressed-title" text-style="color-slight">I'm Yonatan <span class="no-brake">Ben Knaan,</span> </Text>
+					<Text tag="h2" variant="compressed-title" text-style="color-slight"
+						>I'm Yonatan <span class="no-brake">Ben Knaan,</span>
+					</Text>
 				</div>
 				<Text class="text-on-big" id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big"
 					>a full stack designer
@@ -81,7 +83,7 @@ const { open, close } = useModal({
 }
 .checked-grid-lines {
 	background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
-	linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
+		linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 	background-size: var(--grid-block) var(--grid-block);
 	background-position: center top;
 }
@@ -122,13 +124,12 @@ const { open, close } = useModal({
 	}
 	@media (width < 520px) {
 		--grid-num: 15;
-		
 	}
 	@media (width < 480px) {
 		--grid-num: 13;
 		grid-template-rows: repeat(31, var(--grid-block));
 	}
-	@media (width < 420px) {
+	@media (width < 380px) {
 		--grid-num: 11;
 	}
 }
@@ -156,6 +157,7 @@ const { open, close } = useModal({
 	grid-row: 6 / span 5;
 	display: grid;
 	grid-template-rows: subgrid;
+	grid-template-columns: subgrid;
 	grid-column: 1 / -1;
 	@media (width < 1216px) {
 		grid-row: 6 / span 8;
@@ -201,7 +203,7 @@ const { open, close } = useModal({
 		margin-inline-start: unset;
 		grid-column: 2 / -2;
 	}
-	@media (width < 420px) {
+	@media (width < 380px) {
 		margin-inline-start: unset;
 		grid-column: 1 / -2;
 	}
@@ -244,8 +246,8 @@ const { open, close } = useModal({
 	@media (width < 480px) {
 		grid-row: 3 / span 6;
 		grid-column: 4 / -4;
-	}	
-	@media (width < 420px) {
+	}
+	@media (width < 380px) {
 		grid-row: 3 / span 6;
 		grid-column: 3 / -3;
 	}
@@ -260,13 +262,20 @@ const { open, close } = useModal({
 		background-repeat: no-repeat;
 		position: absolute;
 		transform: rotate(115deg);
-		inset-inline-start: calc(var(--grid-block) * -1);
+		inset-inline-start: calc(var(--grid-block) * -1.25);
 	}
 }
 #main-title-2 {
 	grid-row: 1 / span 3;
-	@media (width < 1152px) {
+	position: relative;
+	grid-column: 1 / -2;
+	
+	@media (width < 1344px) {
+		grid-column: 1 / -1;
 		grid-row: 1 / span 6;
+	}
+	@media (width < 1152px) {
+		text-align: center;
 	}
 	@media (width < 704px) {
 		grid-row: 1 / span 3;
@@ -278,23 +287,27 @@ const { open, close } = useModal({
 		font-size: calc(var(--grid-block) * 2.9);
 	}
 	@media (width < 480px) {
-		grid-row: 1 / span 6;	
+		grid-row: 1 / span 6;
 	}
-	
 }
 #flipping-message {
 	grid-row: 4 / span 2;
 	align-self: center;
+	grid-column: 1 / -2;
+	@media (width < 1344px) {
+		grid-column: 1 / -1;
+	}
 	@media (width < 1152px) {
 		grid-row: 7 / span 2;
 		text-align: center;
 	}
 	@media (width < 704px) {
-		grid-row: 4 / span 2;
+		grid-row: 4 / span 3;
+		grid-column: 2 / -2;
 	}
 	@media (width < 640px) {
 		grid-column: 1 / -1;
-		grid-row: 4 / span 3;
+		/* grid-row: 4 / span 3; */
 	}
 	@media (width < 480px) {
 		grid-row: 7 / span 3;
@@ -310,14 +323,8 @@ const { open, close } = useModal({
 		grid-row: 16 / span 3;
 	}
 	@media (width < 704px) {
-		grid-row: 12 / span 7;
-		flex-direction: column-reverse;
-	}
-	@media (width < 640px) {
 		grid-row: 13 / span 7;
-	}
-	@media (width < 520px) {
-		/* grid-row: 16 / span 7; */
+		flex-direction: column-reverse;
 	}
 	@media (width < 480px) {
 		grid-row: 19 / span 10;
@@ -406,7 +413,7 @@ const { open, close } = useModal({
 			width: calc(var(--grid-block) * 13);
 		}
 	}
-	@media (width < 420px) {
+	@media (width < 380px) {
 		& button {
 			width: calc(var(--grid-block) * 11);
 		}
@@ -415,10 +422,4 @@ const { open, close } = useModal({
 		}
 	}
 }
-/* #main-title-1,
-#main-title-2 {
-	@media (width < 640px) {
-		font-size: calc(var(--grid-block) * 2.75);
-	}
-} */
 </style>
