@@ -81,9 +81,10 @@ const { open, close } = useModal({
 }
 .checked-grid-lines {
 	background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
-		linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
+	linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 	background-size: var(--grid-block) var(--grid-block);
 	background-position: center top;
+	padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);;
 }
 .main-message {
 	margin-inline: auto;
