@@ -80,7 +80,7 @@ const computedClasses = computed(() => {
 	line-height: 1;
 }
 .heading-small {
-	font-variation-settings: 'wght' 300, 'wdth' 96, 'opsz' 80;
+	font-variation-settings: 'wght' 300, 'wdth' 96, 'opsz' 96;
 	font-size: var(--step-4);
 	line-height: 1;
 }
@@ -127,7 +127,6 @@ const computedClasses = computed(() => {
 	text-align: center;
 }
 .grid-size-big {
-	/* font-variation-settings: 'wght' 800, 'wdth' 98, 'opsz' 96; */
 	font-size: calc(var(--grid-block) * 3);
 	line-height: calc(var(--grid-block) * 3);
 	text-align: center;
@@ -139,7 +138,7 @@ const computedClasses = computed(() => {
 }
 @supports (background: -webkit-named-image(i)) {
 	.grid-size-big {
-		font-variation-settings: 'wght' 800, 'wdth' 98, 'opsz' 96;
+		font-variation-settings: 'wght' 800, 'wdth' 90, 'opsz' 96;
 	}
 }
 </style>

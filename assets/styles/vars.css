@@ -54,9 +54,9 @@
 		@media (width < 768px) {
 			--grid-block: calc(var(--space-l) * 0.65);
 		}
-		@media (width < 704px) {
+		/* @media (width < 704px) {
 			--grid-block: calc(var(--space-l) * 0.75);
-		}
+		} */
 	}
 
 	:root {

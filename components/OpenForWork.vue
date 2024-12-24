@@ -32,6 +32,7 @@
 	height: min-content;
 	position: relative;
 	backdrop-filter: blur(2px);
+	border-radius: 4rem;
 }
 
 .pulse-wrapper {
@@ -80,3 +81,4 @@ span::after {
 	background-color: var(--color-sys-invert-slight);
 }
 </style>
+

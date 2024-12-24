@@ -147,7 +147,8 @@ article {
 }
 .logo {
 	height: var(--space-l);
-	width: max-content;
+	width: auto;
+	align-self: flex-start;
 }
 .external::after {
 	content: '';
