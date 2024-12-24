@@ -79,8 +79,8 @@ header {
 	border-block-end: 1px solid var(--color-brand-red-dim);
 	z-index: 1000;
 	height: var(--header-height);
-	padding-inline-start: calc(max(var(--space-m), env(safe-area-inset-left)));
-	padding-inline-end: calc(max(var(--space-m), env(safe-area-inset-right)));
+	padding-inline-start: calc(max(var(--space-l), env(safe-area-inset-left)));
+	padding-inline-end: calc(max(var(--space-l), env(safe-area-inset-right)));
 	background-color: var(--color-sys-invert-slight);
 	backdrop-filter: blur(4px);
 	display: flex;

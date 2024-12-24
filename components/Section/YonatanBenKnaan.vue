@@ -84,7 +84,6 @@ const { open, close } = useModal({
 	linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
 	background-size: var(--grid-block) var(--grid-block);
 	background-position: center top;
-	padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);;
 }
 .main-message {
 	margin-inline: auto;
@@ -129,7 +128,7 @@ const { open, close } = useModal({
 		--grid-num: 13;
 		grid-template-rows: repeat(31, var(--grid-block));
 	}
-	@media (width < 440px) {
+	@media (width < 420px) {
 		--grid-num: 11;
 	}
 }
@@ -202,7 +201,7 @@ const { open, close } = useModal({
 		margin-inline-start: unset;
 		grid-column: 2 / -2;
 	}
-	@media (width < 440px) {
+	@media (width < 420px) {
 		margin-inline-start: unset;
 		grid-column: 1 / -2;
 	}
@@ -246,7 +245,7 @@ const { open, close } = useModal({
 		grid-row: 3 / span 6;
 		grid-column: 4 / -4;
 	}	
-	@media (width < 440px) {
+	@media (width < 420px) {
 		grid-row: 3 / span 6;
 		grid-column: 3 / -3;
 	}
@@ -407,7 +406,7 @@ const { open, close } = useModal({
 			width: calc(var(--grid-block) * 13);
 		}
 	}
-	@media (width < 440px) {
+	@media (width < 420px) {
 		& button {
 			width: calc(var(--grid-block) * 11);
 		}

@@ -27,10 +27,10 @@
 	.wrapper {
 		margin-inline: auto;
 		max-width: var(--display-width-lg);
-		padding-inline-start: calc(max(var(--space-m), env(safe-area-inset-left)));
-		padding-inline-end: calc(max(var(--space-m), env(safe-area-inset-right)));
-		padding-block-start: calc(var(--header-height) + var(--space-m));
-		padding-block-end: var(--space-l);
+		padding-inline-start: calc(max(var(--side-space), env(safe-area-inset-left)));
+		padding-inline-end: calc(max(var(--side-space), env(safe-area-inset-right)));
+		padding-block-start: calc(var(--header-height) + var(--side-space));
+		padding-block-end: var(--side-space);
 	}
 	.color-slight {
 		color: var(--color-sys-slight);

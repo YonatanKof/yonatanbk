@@ -1,4 +1,7 @@
 @layer styles {
+	section {
+		padding: unset;
+	}
 	.cursor-default {
 		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB8SURBVHgBnZNbDoAgDARpz6ceVr3fqlATwGoXNyHhgxnKo5JKkMYi90S3ZcowgHD0cBYkdkuRB0wL3mBK8AVTAjs7fgsiiSuwsimJevD5tLREezjZhbES9eB53WlJXUGzkpWoBzOS6H80ufrFegYoW/uNEUmsqiHOldQ5AFJlVttnAJD2AAAAAElFTkSuQmCC')
 				2 2,
