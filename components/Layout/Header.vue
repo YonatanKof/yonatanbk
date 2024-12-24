@@ -86,12 +86,14 @@ header {
 	display: flex;
 	justify-content: center;
 	& > span {
-		/* max-width: var(--display-width-lg); */
 		width: 100%;
 		display: flex;
-		/* align-content: center; */
 		align-items: center;
 		justify-content: space-between;
+	}
+	@media (720px >= width) {
+		padding-inline-start: calc(max(var(--space-m), env(safe-area-inset-left)));
+		padding-inline-end: calc(max(var(--space-m), env(safe-area-inset-right)));
 	}
 }
 
