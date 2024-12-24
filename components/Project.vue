@@ -185,6 +185,9 @@ article {
 	article {
 		gap: var(--space-s);
 	}
+	.info {
+		min-width: unset;
+	}
 	.project-default,
 	.project-flip {
 		flex-direction: column-reverse;

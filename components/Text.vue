@@ -81,7 +81,8 @@ const computedClasses = computed(() => {
 }
 .heading-small {
 	font-variation-settings: 'wght' 300, 'wdth' 96, 'opsz' 96;
-	font-size: var(--step-4);
+	/* font-size: var(--step-4); */
+	font-size: var(--step-3);
 	line-height: 1;
 }
 .body {
@@ -129,12 +130,12 @@ const computedClasses = computed(() => {
 .grid-size-big {
 	font-size: calc(var(--grid-block) * 3);
 	line-height: calc(var(--grid-block) * 3);
-	text-align: center;
+	/* text-align: center; */
 }
 .grid-size-small {
 	font-size: calc(var(--grid-block) * 1);
 	line-height: calc(var(--grid-block) * 1);
-	text-align: center;
+	/* text-align: center; */
 }
 @supports (background: -webkit-named-image(i)) {
 	.grid-size-big {
