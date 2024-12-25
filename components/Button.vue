@@ -126,8 +126,9 @@ const handleKeyup = (event: KeyboardEvent) => {
 }
 /* Button Size */
 .button-small {
-	font-size: var(--step--1);
+	font-size: var(--step-0);
 	--clip-shift: var(--space-2xs);
+	padding: 1.1em 1.4em;
 }
 
 .button-medium {
