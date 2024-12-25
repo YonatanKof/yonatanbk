@@ -4,6 +4,7 @@ const VARIANTS = [
 	'main-title',
 	'secondary-title',
 	'compressed-title',
+	'heading-x-small',
 	'text',
 	'large-text',
 	'body-medium',
@@ -24,6 +25,7 @@ const props = withDefaults(
 			| 'main-title'
 			| 'secondary-title'
 			| 'compressed-title'
+			| 'heading-x-small'
 			| 'text'
 			| 'large-text'
 			| 'body-medium'
@@ -42,6 +44,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
 	'main-title': 'heading-large',
 	'secondary-title': 'heading-medium',
 	'compressed-title': 'heading-small',
+	'heading-x-small': 'heading-x-small',
 	'large-text': 'body body-large',
 	'body-medium': 'body body-medium',
 	'body-small': 'body body-small',
@@ -86,6 +89,11 @@ const computedClasses = computed(() => {
 	@media (width < 976px) {
 		font-size: var(--step-3);
 	}
+}
+.heading-x-small {
+	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 20;
+	font-size: var(--step-1);
+	line-height: 1;
 }
 .body {
 	font-variation-settings: var(--base-font-settings);
