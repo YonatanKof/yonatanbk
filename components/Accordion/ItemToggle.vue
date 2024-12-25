@@ -49,7 +49,22 @@ watch(
 		}
 	}
 );
+function handleTouchStart(event) {
+	event.preventDefault(); // Remove this line
+	if (isActive.value) {
+		isPaused.value = true;
+		clearTimeout(timer);
+	}
+}
 
+function handleTouchEnd(event) {
+	event.preventDefault(); // Remove this line
+	if (isActive.value && isPaused.value) {
+		isPaused.value = false;
+		startTimer();
+	}
+	handleClick(); // Add click handling on touch end
+}
 function startTimer() {
 	clearTimeout(timer);
 	timer = setTimeout(() => {
@@ -113,8 +128,8 @@ const normalizedComponents = computed(() => {
 		class="content-toggle"
 		@mouseenter="handleMouseEnter"
 		@mouseleave="handleMouseLeave"
-		@touchstart.prevent="handleMouseEnter"
-		@touchend.prevent="handleMouseLeave"
+		@touchstart="handleTouchStart"
+		@touchend="handleTouchEnd"
 		@click="handleClick"
 	>
 		<Text tag="h3" variant="secondary-title" :class="{ 'dim-it': !isActive }">{{ title }}</Text>
