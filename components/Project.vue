@@ -150,37 +150,6 @@ article {
 	width: auto;
 	align-self: flex-start;
 }
-.external::after {
-	content: '';
-	display: inline-block;
-	clip-path: polygon(
-		0% 0%,
-		33.4% 0%,
-		33.4% 16.7%,
-		16.7% 16.7%,
-		16.7% 83.5%,
-		83.5% 83.5%,
-		83.5% 16.7%,
-		83.5% 33.4%,
-		83.5% 25.05%,
-		50% 57%,
-		42% 50%,
-		75% 16.7%,
-		66.8% 16.7%,
-		66.8% 0%,
-		100% 0%,
-		100% 33.4%,
-		83.5% 33.4%,
-		83.5% 66.8%,
-		100% 66.8%,
-		100% 100%,
-		0% 100%
-	);
-	background-color: var(--color-sys-dim);
-	width: calc(var(--space-2xs) * 1.25);
-	height: calc(var(--space-2xs) * 1.25);
-	margin-inline-start: var(--space-2xs);
-}
 @media (720px >= width) {
 	article {
 		gap: var(--space-s);
