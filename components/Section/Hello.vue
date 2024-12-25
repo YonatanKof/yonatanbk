@@ -348,14 +348,14 @@ const { open, close } = useModal({
 			grid-row: 13 / span 3;
 		}
 	}
-	@media (width < 720px) {
-		grid-row: 13 / span 7;
-		flex-direction: column-reverse;
-	}
 	@supports (background: -webkit-named-image(i)) {
 		@media (width < 976px) {
 			grid-row: 16 / span 3;
 		}
+	}
+	@media (width < 720px) {
+		grid-row: 13 / span 7;
+		flex-direction: column-reverse;
 	}
 	@media (width < 480px) {
 		grid-row: 19 / span 10;
