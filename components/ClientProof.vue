@@ -79,12 +79,6 @@ onMounted(() => {
 <style scoped>
 .client-section {
 	height: calc(var(--grid-block) * 3);
-	width: clamp(
-		var(--grid-block),
-		calc(round(var(--grid-block) / var(--grid-block)) * var(--grid-block)),
-		calc(var(--grid-block) * 30)
-	);
-	max-width: calc(calc(var(--grid-block) * 18) + 1px);
 	background-color: var(--color-sys-invert-main);
 	display: grid;
 	grid-template-rows: repeat(3, var(--grid-block));
@@ -140,29 +134,9 @@ onMounted(() => {
 	position: relative;
 }
 
-/* .logo-container::before {
-	content: '';
-	background: linear-gradient(to left, var(--color-sys-invert-none), var(--color-sys-invert-main));
-	width: 0.5rem;
-	height: 100%;
-	display: inline-block;
-	position: absolute;
-	z-index: 100;
-}
-.logo-container::after {
-	content: '';
-	background: linear-gradient(to right, var(--color-sys-invert-none), var(--color-sys-invert-main));
-	width: 2rem;
-	height: 100%;
-	display: inline-block;
-	position: absolute;
-	z-index: 100;
-	inset-inline-end: 0;
-	inset-block-start: 0;
-} */
-
 .client-logo {
-	height: 2rem; /* 64px → 4rem */
+	/* height: 2rem; 64px → 4rem */
+	height: var(--grid-block); 
 	width: auto;
 	object-fit: contain;
 	flex-shrink: 0;

@@ -34,7 +34,6 @@ const currentComponents = computed(() => {
 });
 </script>
 
-
 <template>
 	<div class="content-components">
 		<div v-for="(component, index) in currentComponents" :key="`${currentIndex}-${index}`" class="component-container">
@@ -45,11 +44,8 @@ const currentComponents = computed(() => {
 
 <style scoped>
 .content-components {
-	display: flex;
-	gap: 1rem;
-	justify-content: center;
-	align-items: start;
 	width: 100%;
+	padding-block-start: var(--space-m);
 }
 
 .component-container {
@@ -63,16 +59,13 @@ const currentComponents = computed(() => {
 	opacity: 0;
 	transform: scale(1.1);
 	transition: all 0.3s ease;
+	@media (width < 544px) {
+		display: none;
+	}
 }
 
 .content-component.fade-in {
 	opacity: 1;
 	transform: scale(1);
-}
-
-@media (max-width: 544px) {
-	.content-components {
-		display: none;
-	}
 }
 </style>

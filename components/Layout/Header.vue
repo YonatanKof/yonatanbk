@@ -31,8 +31,8 @@ const updateSliderPosition = (section: string) => {
 // Helper function to get color based on section
 const getColorForSection = (section: string) => {
 	const colors = {
-		'yonatan-ben-knaan': 'blue-main',
-		'full-stack': 'red-main',
+		hello: 'blue-main',
+		design: 'red-main',
 		work: 'green-main',
 		connect: 'orange-main',
 	};
@@ -58,7 +58,7 @@ watch(activeSection, (newSection) => {
 			<nav>
 				<div class="slider" :style="sliderPosition"></div>
 				<a
-					v-for="section in ['yonatan-ben-knaan', 'full-stack', 'work', 'connect']"
+					v-for="section in ['hello', 'design', 'work', 'connect']"
 					:key="section"
 					:href="`#${section}`"
 					class="body body-small"
@@ -69,7 +69,7 @@ watch(activeSection, (newSection) => {
 					{{ formatText(section) }}
 				</a>
 			</nav>
-			<OpenForWork />
+			<OpenForWork class="hide" />
 		</span>
 	</header>
 </template>
@@ -79,18 +79,21 @@ header {
 	border-block-end: 1px solid var(--color-brand-red-dim);
 	z-index: 1000;
 	height: var(--header-height);
-	padding-inline: var(--space-m);
+	padding-inline-start: calc(max(var(--space-l), env(safe-area-inset-left)));
+	padding-inline-end: calc(max(var(--space-l), env(safe-area-inset-right)));
 	background-color: var(--color-sys-invert-slight);
 	backdrop-filter: blur(4px);
 	display: flex;
 	justify-content: center;
 	& > span {
-		/* max-width: var(--display-width-lg); */
 		width: 100%;
 		display: flex;
-		/* align-content: center; */
 		align-items: center;
 		justify-content: space-between;
+	}
+	@media (720px >= width) {
+		padding-inline-start: calc(max(var(--space-m), env(safe-area-inset-left)));
+		padding-inline-end: calc(max(var(--space-m), env(safe-area-inset-right)));
 	}
 }
 
@@ -123,5 +126,10 @@ a.active {
 }
 .this-body-small {
 	font-size: 1rem;
+}
+.hide {
+	@media (width < 520px) {
+		display: none;
+	}
 }
 </style>

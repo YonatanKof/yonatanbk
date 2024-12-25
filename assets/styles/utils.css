@@ -8,22 +8,16 @@
 		background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
 		background-color: #f5f5f5;
 	}
-	.checked-grid-lines {
-		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
-			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
-		background-size: var(--grid-block) var(--grid-block);
-		background-position: center top;
+	.chip {
+		padding: 0.25em 0.75em;
+		border: 1px dashed var(--color-brand-red-slight);
+		border-radius: 4rem;
 	}
 	.cool-doted-bg {
 		background-image: radial-gradient(var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: 3px 3px;
 	}
-	.section-block {
-		min-height: 100vh;
-		scroll-snap-type: y mandatory;
-		scroll-snap-align: start;
 
-	}
 	.center-center {
 		display: flex;
 		flex-direction: column;
@@ -33,9 +27,17 @@
 	.wrapper {
 		margin-inline: auto;
 		max-width: var(--display-width-lg);
-		padding-inline: var(--space-m);
-		padding-block-start: calc(var(--header-height) + var(--space-m));
-		padding-block-end: var(--space-l);
+		padding-inline-start: calc(max(var(--side-space), env(safe-area-inset-left)));
+		padding-inline-end: calc(max(var(--side-space), env(safe-area-inset-right)));
+		padding-block-start: calc(var(--header-height) + var(--side-space));
+		padding-block-end: var(--side-space);
+		@media (976px >= width) {
+			--side-space: var(--space-l);
+		}
+		@media (480px >= width) {
+			--side-space: var(--space-m);
+		}
+
 	}
 	.color-slight {
 		color: var(--color-sys-slight);
@@ -46,6 +48,7 @@
 	.torn-paper-bottom {
 		--torn-paper-image: url('/images/torn-2.webp');
 		--torn-paper-bg-color: var(--color-sys-invert-main);
+		padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
 		position: relative;
 		&::after {
 			content: '';

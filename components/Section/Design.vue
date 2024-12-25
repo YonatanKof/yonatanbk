@@ -36,7 +36,7 @@ const contentItems = [
 </script>
 
 <template>
-	<section id="full-stack" class="section-block checked-grid-lines torn-paper-bottom">
+	<section id="design" class="checked-grid-lines torn-paper-bottom">
 		<div id="secondary-messages">
 			<div class="wrapper">
 				<LayoutContentTop

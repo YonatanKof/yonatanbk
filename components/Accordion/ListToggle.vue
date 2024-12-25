@@ -73,30 +73,24 @@ onUnmounted(() => {
 .content-list-wrapper {
 	display: grid;
 	grid-template-columns: 1fr var(--shape-size);
-	gap: var(--space-4xl);
+	gap: var(--space-2xl);
 	width: 100%;
-	height: 56rem;
+	padding-block-end: var(--space-8xl);
+	@media (width < 880px) {
+		gap: var(--space-xl);
+	}
+	@media (width < 720px) {
+		gap: var(--space-l);
+	}
+	@media (width < 544px) {
+		grid-template-columns: 1fr;
+		padding-block-end: var(--space-2xl);
+	}
 }
 
 .content-list {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xs);
-}
-
-@media (max-width: 880px) {
-	.content-list-wrapper {
-		gap: var(--space-2xl);
-	}
-}
-@media (max-width: 720px) {
-	.content-list-wrapper {
-		gap: var(--space-l);
-	}
-}
-@media (544px <= width <= 640px) {
-	.content-list-wrapper {
-		gap: var(--space-m);
-	}
 }
 </style>

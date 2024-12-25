@@ -3,6 +3,8 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/image'],
 	app: {
 		head: {
+			charset: 'utf-8',
+			viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
 			link: [
 				{
 					rel: 'preload',

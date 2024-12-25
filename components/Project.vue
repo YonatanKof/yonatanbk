@@ -145,14 +145,10 @@ article {
 #jobs {
 	gap: var(--space-2xs);
 }
-.chip {
-	padding: 0.25em 0.75em;
-	border: 1px dashed var(--color-brand-red-slight);
-	border-radius: 4rem;
-}
 .logo {
 	height: var(--space-l);
-	width: max-content;
+	width: auto;
+	align-self: flex-start;
 }
 .external::after {
 	content: '';
@@ -188,6 +184,9 @@ article {
 @media (720px >= width) {
 	article {
 		gap: var(--space-s);
+	}
+	.info {
+		min-width: unset;
 	}
 	.project-default,
 	.project-flip {

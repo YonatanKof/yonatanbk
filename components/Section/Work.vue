@@ -1,5 +1,5 @@
 <template>
-	<section id="work" class="section-block">
+	<section id="work">
 		<div class="wrapper">
 			<LayoutContentTop
 				title="Selected Works"
@@ -162,6 +162,5 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xl);
-	padding-block-end: calc(var(--space-8xl) * 2);
 }
 </style>
