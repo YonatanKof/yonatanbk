@@ -22,18 +22,24 @@ const images = [
 <template>
 	<main class="wrapper center-center">
 		<Project
+			id="pepperi"
+			highlight-color="#6E960A"
 			:image-array="[
 				{
-					url: '/images/projects/pepperi/pepperi-personas.webm',
+					url: '/projects/pepperi/design-systems.webm',
+					name: 'Design Systems',
+				},
+				{
+					url: '/projects/pepperi/pepperi-personas.webm',
 					name: 'User Personas',
 				},
 				{
-					url: '/images/projects/pepperi/pepperi-design-system.webp',
-					name: 'Design System',
+					url: '/projects/pepperi/brand.webm',
+					name: 'Brand Guide',
 				},
 				{
-					url: '/images/projects/pepperi/pepperi-page-builder-vid.webm',
-					name: 'Page Builder',
+					url: '/projects/pepperi/pepperi-page-builder-vid.webm',
+					name: 'No Code Webpage Builder',
 				},
 			]"
 			title="Pepperi"
@@ -43,6 +49,30 @@ const images = [
 			:verticals="['B2B', 'E-commerce', 'Storefront', 'No Code Editor', 'Webpage Builder']"
 			:jobs="['Research', 'Competitive Analysis', 'Stakeholder Mgmt.', 'Backlog Mgmt.', 'Design', 'UX', 'User Testing']"
 			logo="/images/clients-color/Pepperi.webp"
+			:link-to="[
+				{
+					url: 'https://www.pepperi.com/',
+					name: 'Visit Pepperi site',
+				},
+				{
+					url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
+					name: 'Explore Pepperi DS',
+				},
+				{
+					url: 'https://brand.pepperi.com/',
+					name: 'Review Pepperi brand guide',
+				},
+				{
+					url: 'https://peppersona.netlify.app/',
+					name: 'Pepperi Persona (via Notion API)',
+				},
+
+				{
+					url: '/kof',
+					name: 'Kof',
+					internal: true,
+				},
+			]"
 		/>
 		<LayoutContentTop />
 		<div class="this-one torn-paper-bottom">

@@ -49,7 +49,7 @@ const props = defineProps({
 		default: 'var(--color-brand-red-main)',
 	},
 	linkTo: {
-		type: Array as PropType<{ url: string; name: string; external?: boolean }[]>,
+		type: Array as PropType<{ url: string; name: string; internal?: boolean }[]>,
 		required: false,
 		default: () => [],
 	},
@@ -80,7 +80,7 @@ const projectClasses = computed(() => ({
 			<NuxtImg class="logo" :src="logo" placeholder />
 			<div id="links">
 				<Text v-for="link in props.linkTo" variant="body-x-small">
-					<NuxtLink :class="{ external: !link.external }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
+					<NuxtLink :class="{ 'external-icon': !link.internal }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
 				</Text>
 			</div>
 		</div>
