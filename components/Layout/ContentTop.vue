@@ -6,7 +6,7 @@ defineProps({
 	},
 	description: {
 		type: String,
-		default: 'Proj description!',
+		default: undefined,
 	},
 });
 </script>
@@ -14,7 +14,7 @@ defineProps({
 <template>
 	<div>
 		<Text tag="h1" variant="main-title">{{ title }}</Text>
-		<Text variant="large-text" class="this-text">{{ description }}</Text>
+		<Text variant="large-text" class="this-text" i-if="description">{{ description }}</Text>
 	</div>
 </template>
 
