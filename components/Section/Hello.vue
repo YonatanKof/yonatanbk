@@ -67,13 +67,13 @@ const { open, close } = useModal({
 	inherits: true;
 }
 .text-on-big {
-	@media (width < 704px) {
+	@media (width < 720px) {
 		display: none;
 	}
 }
 .text-on-small {
 	display: none;
-	@media (width < 704px) {
+	@media (width < 720px) {
 		display: unset;
 	}
 }
@@ -103,13 +103,19 @@ const { open, close } = useModal({
 		--grid-num: 35;
 		grid-template-rows: repeat(24, var(--grid-block));
 	}
-	@media (width < 960px) {
+	@supports (background: -webkit-named-image(i)) {
+		@media (width < 1152px) {
+			--grid-num: 37;
+			grid-template-rows: repeat(23, var(--grid-block));
+		}
+	}
+	@media (width < 976px) {
 		--grid-num: 33;
 	}
 	@media (width < 896px) {
 		--grid-num: 31;
 	}
-	@media (width < 704px) {
+	@media (width < 720px) {
 		--grid-num: 23;
 	}
 	@media (width < 640px) {
@@ -143,7 +149,7 @@ const { open, close } = useModal({
 	@media (width < 1216px) {
 		grid-column: 3 / -1;
 	}
-	@media (width < 960px) {
+	@media (width < 976px) {
 		grid-column: 1 / -1;
 	}
 	@media (width < 768px) {
@@ -162,7 +168,17 @@ const { open, close } = useModal({
 	@media (width < 1216px) {
 		grid-row: 6 / span 8;
 	}
-	@media (width < 704px) {
+	@supports (background: -webkit-named-image(i)) {
+		@media (width < 1216px) {
+			grid-row: 6 / span 5;
+		}
+	}
+	@supports (background: -webkit-named-image(i)) {
+		@media (width < 976px) {
+			grid-row: 6 / span 9;
+		}
+	}
+	@media (width < 720px) {
 		grid-row: 6 / span 6;
 	}
 	/* @media (width < 520px) {
@@ -183,7 +199,7 @@ const { open, close } = useModal({
 		width: calc(var(--grid-block) * 2);
 		height: calc(var(--grid-block) * 2);
 	}
-	@media (width < 704px) {
+	@media (width < 720px) {
 		grid-column: 3 / -1;
 	}
 	@media (width < 640px) {
@@ -200,12 +216,11 @@ const { open, close } = useModal({
 		margin-inline-start: calc(var(--grid-block) * -2);
 	}
 	@media (width < 480px) {
-		margin-inline-start: unset;
-		grid-column: 2 / -2;
+		margin-inline-start: calc(var(--grid-block) * -1.25);
+		grid-column: 2 / -3;
 	}
 	@media (width < 380px) {
-		margin-inline-start: unset;
-		grid-column: 1 / -2;
+		grid-column: 1 / -3;
 	}
 }
 #main-title-1 {
@@ -218,7 +233,7 @@ const { open, close } = useModal({
 	@media (width < 1152px) {
 		grid-column: 3 / -4;
 	}
-	@media (width < 960px) {
+	@media (width < 976px) {
 		grid-column: 3 / -3;
 	}
 	@media (width < 896px) {
@@ -227,7 +242,7 @@ const { open, close } = useModal({
 	@media (width < 768px) {
 		grid-column: 3 / -2;
 	}
-	@media (width < 704px) {
+	@media (width < 720px) {
 		grid-row: 3 / span 6;
 		grid-column: 5 / -5;
 	}
@@ -245,11 +260,10 @@ const { open, close } = useModal({
 	}
 	@media (width < 480px) {
 		grid-row: 3 / span 6;
-		grid-column: 4 / -4;
+		grid-column: 3 / -1;
 	}
 	@media (width < 380px) {
-		grid-row: 3 / span 6;
-		grid-column: 3 / -3;
+		grid-column: 2 / -3;
 	}
 	&::before {
 		content: '';
@@ -269,7 +283,7 @@ const { open, close } = useModal({
 	grid-row: 1 / span 3;
 	position: relative;
 	grid-column: 1 / -2;
-	
+
 	@media (width < 1344px) {
 		grid-column: 1 / -1;
 		grid-row: 1 / span 6;
@@ -277,7 +291,7 @@ const { open, close } = useModal({
 	@media (width < 1152px) {
 		text-align: center;
 	}
-	@media (width < 704px) {
+	@media (width < 720px) {
 		grid-row: 1 / span 3;
 	}
 	@media (width < 640px) {
@@ -287,7 +301,12 @@ const { open, close } = useModal({
 		font-size: calc(var(--grid-block) * 2.9);
 	}
 	@media (width < 480px) {
+		text-align: end;
 		grid-row: 1 / span 6;
+		grid-column: 1 / -3;
+	}
+	@media (width < 380px) {
+		grid-column: 2 / -2;
 	}
 }
 #flipping-message {
@@ -301,16 +320,18 @@ const { open, close } = useModal({
 		grid-row: 7 / span 2;
 		text-align: center;
 	}
-	@media (width < 704px) {
+	@supports (background: -webkit-named-image(i)) {
+		@media (width < 976px) {
+			grid-row: 7 / span 3;
+		}
+	}
+	@media (width < 720px) {
 		grid-row: 4 / span 3;
 		grid-column: 2 / -2;
 	}
-	@media (width < 640px) {
-		grid-column: 1 / -1;
-		/* grid-row: 4 / span 3; */
-	}
 	@media (width < 480px) {
 		grid-row: 7 / span 3;
+		grid-column: 1 / -1;
 	}
 }
 #logos-cta {
@@ -322,9 +343,19 @@ const { open, close } = useModal({
 	@media (width < 1152px) {
 		grid-row: 16 / span 3;
 	}
-	@media (width < 704px) {
+	@supports (background: -webkit-named-image(i)) {
+		@media (width < 1152px) {
+			grid-row: 13 / span 3;
+		}
+	}
+	@media (width < 720px) {
 		grid-row: 13 / span 7;
 		flex-direction: column-reverse;
+	}
+	@supports (background: -webkit-named-image(i)) {
+		@media (width < 976px) {
+			grid-row: 16 / span 3;
+		}
 	}
 	@media (width < 480px) {
 		grid-row: 19 / span 10;
@@ -342,13 +373,13 @@ const { open, close } = useModal({
 	@media (width < 1152px) {
 		max-width: calc(var(--grid-block) * 16);
 	}
-	@media (width < 960px) {
+	@media (width < 976px) {
 		max-width: calc(var(--grid-block) * 14);
 	}
 	@media (width < 896px) {
 		max-width: calc(var(--grid-block) * 12);
 	}
-	@media (width < 704px) {
+	@media (width < 720px) {
 		max-width: 100%;
 	}
 }
@@ -362,7 +393,7 @@ const { open, close } = useModal({
 	& a {
 		width: calc(var(--grid-block) * 8);
 	}
-	@media (width < 704px) {
+	@media (width < 720px) {
 		align-self: flex-end;
 		& button {
 			width: calc(var(--grid-block) * 11);

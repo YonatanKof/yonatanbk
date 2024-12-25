@@ -31,7 +31,7 @@
 		padding-inline-end: calc(max(var(--side-space), env(safe-area-inset-right)));
 		padding-block-start: calc(var(--header-height) + var(--side-space));
 		padding-block-end: var(--side-space);
-		@media (960px >= width) {
+		@media (976px >= width) {
 			--side-space: var(--space-l);
 		}
 		@media (480px >= width) {

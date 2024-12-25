@@ -139,7 +139,7 @@ const computedClasses = computed(() => {
 }
 @supports (background: -webkit-named-image(i)) {
 	.grid-size-big {
-		font-variation-settings: 'wght' 800, 'wdth' 90, 'opsz' 96;
+		font-variation-settings: 'wght' 800, 'wdth' 92, 'opsz' 96;
 	}
 }
 </style>
