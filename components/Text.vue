@@ -5,7 +5,7 @@ const VARIANTS = [
 	'secondary-title',
 	'compressed-title',
 	'heading-x-small',
-	'text',
+	'body',
 	'large-text',
 	'body-medium',
 	'body-small',
@@ -26,7 +26,7 @@ const props = withDefaults(
 			| 'secondary-title'
 			| 'compressed-title'
 			| 'heading-x-small'
-			| 'text'
+			| 'body'
 			| 'large-text'
 			| 'body-medium'
 			| 'body-small'
@@ -35,7 +35,7 @@ const props = withDefaults(
 	}>(),
 	{
 		tag: 'p',
-		variant: 'text',
+		variant: 'body',
 	}
 );
 
@@ -49,7 +49,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
 	'body-medium': 'body body-medium',
 	'body-small': 'body body-small',
 	'body-x-small': 'body body-x-small',
-	text: 'text',
+	body: 'body',
 };
 
 // Compute combined classes from both variant and text styles
@@ -112,10 +112,6 @@ const computedClasses = computed(() => {
 .body-x-small {
 	font-size: var(--step--1);
 	color: var(--color-sys-slight);
-}
-.text {
-	font-size: var(--step-1);
-	font-variation-settings: var(--base-font-settings);
 }
 
 /* New style classes */
