@@ -1,14 +1,126 @@
-<script setup lang="ts"></script>
+<script setup>
+import { useModal } from 'vue-final-modal';
+import Modal from '~/components/Modal.vue';
+
+const { open, close } = useModal({
+	component: Modal,
+	attrs: {
+		onConfirm() {
+			close();
+		},
+	},
+});
+</script>
 
 <template>
 	<section id="connect">
 		<div class="wrapper">
 			<div class="section-content">
-				<Text tag="h1" variant="main-title">Connect</Text>
-				<Text tag="h2" variant="compressed-title">And extra links!</Text>
+				<LayoutContentTop title="Let's do something extraordinary together" />
+				<div class="split">
+					<div class="split-column">
+						<div class="split-column-content">
+							<Text tag="h2" variant="secondary-title" class="capitalize">Nobody reads</Text>
+							<Text variant="body-medium"
+								>Regardless, I write about design, branding, and technology. Have a look, why don’t you?</Text
+							>
+						</div>
+						<div class="split-column-list">
+							<LinkTo
+								href="https://wwape.com/post/design-tokens/"
+								title="Design Tokens"
+								description="A brief intro and visualisation of design tokens"
+							/>
+							<LinkTo
+								href="https://wwape.com/post/target-audience/"
+								title="Target Audience, a Designer's Take"
+								description="Why do we need to know our target audience? What is exactly? How is it used? And how do we define it?"
+								highlight-color="var(--color-brand-green-main)"
+							/>
+							<LinkTo
+								href="https://wwape.com/post/simple-icon-system/"
+								title="Simple Icon System"
+								description="Build a simple SVG icon system with Vue & Nuxt"
+								highlight-color="var(--color-brand-blue-main)"
+							/>
+							<LinkTo
+								href="https://wwape.com/post/flowchart-symbols/"
+								title="Flowchart Symbols"
+								description="A visual cheat sheet to help you effectively convey ideas with flowcharts"
+								highlight-color="var(--color-brand-orange-main)"
+							/>
+						</div>
+					</div>
+					<div class="split-column">
+						<div class="split-column-content">
+							<Text tag="h2" variant="secondary-title" class="capitalize">Connect If you dare!</Text>
+							<Text variant="body-medium">
+								Full-time employment, mentoring, advising, freelance, help with an existential crisis or you just want
+								to get to know me better?
+							</Text>
+							<Text variant="body-medium">
+								Feel free to connect ↓
+							</Text>
+						</div>
+						<div class="cta-buttons">
+							<Button
+								button-size="small"
+								button-style="secondary"
+								tag="a"
+								href="https://www.linkedin.com/in/yonatankof/"
+								target="_blank"
+							>
+								Link to Linkedin
+							</Button>
+
+							<Button button-size="small" :onClick="open">Contact Me</Button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.split {
+	display: flex;
+	gap: var(--space-m);
+	justify-content: space-evenly;
+	@media (width < 720px) {
+		flex-direction: column-reverse;
+	}
+}
+.split-column-content,
+.split-column-list,
+.split-column {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-m);
+	width: 100%;
+}
+/* .split-column:nth-child(2) {
+	min-width: 380px;
+} */
+
+.split-column-list {
+	gap: var(--space-s);
+}
+.split-column-content {
+	gap: var(--space-2xs);
+}
+.cta-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: calc(var(--grid-block) / 2);
+	/* justify-content: flex-end; */
+	/* & button {
+		width: calc(var(--grid-block) * 6);
+		width: 100%;
+	}
+	& a {
+		width: calc(var(--grid-block) * 8);
+		width: 100%;
+	} */
+}
+</style>
