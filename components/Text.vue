@@ -14,7 +14,7 @@ const VARIANTS = [
 type Variant = (typeof VARIANTS)[number];
 
 // Define available text styles
-const TEXT_STYLES = ['color-slight', 'color-dim', 'color-dis', 'grid-size-big', 'grid-size-small', 'text-end'] as const;
+const TEXT_STYLES = ['color-slight', 'color-dim', 'color-dis', 'grid-size-big', 'text-end'] as const;
 type TextStyle = (typeof TEXT_STYLES)[number];
 
 const props = withDefaults(
@@ -29,7 +29,7 @@ const props = withDefaults(
 			| 'body-medium'
 			| 'body-small'
 			| 'body-x-small';
-		textStyle?: 'color-slight' | 'color-dim' | 'color-dis' | 'grid-size-big' | 'grid-size-small' | 'text-end';
+		textStyle?: 'color-slight' | 'color-dim' | 'color-dis' | 'grid-size-big' | 'text-end';
 	}>(),
 	{
 		tag: 'p',
@@ -81,9 +81,11 @@ const computedClasses = computed(() => {
 }
 .heading-small {
 	font-variation-settings: 'wght' 300, 'wdth' 96, 'opsz' 96;
-	/* font-size: var(--step-4); */
-	font-size: var(--step-3);
+	font-size: var(--step-4);
 	line-height: 1;
+	@media (width < 976px) {
+		font-size: var(--step-3);
+	}
 }
 .body {
 	font-variation-settings: var(--base-font-settings);
@@ -130,12 +132,6 @@ const computedClasses = computed(() => {
 .grid-size-big {
 	font-size: calc(var(--grid-block) * 3);
 	line-height: calc(var(--grid-block) * 3);
-	/* text-align: center; */
-}
-.grid-size-small {
-	font-size: calc(var(--grid-block) * 1);
-	line-height: calc(var(--grid-block) * 1);
-	/* text-align: center; */
 }
 @supports (background: -webkit-named-image(i)) {
 	.grid-size-big {

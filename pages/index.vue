@@ -34,6 +34,7 @@ main {
 	position: absolute;
 	inset-inline-end: var(--space-s);
 	inset-block-end: var(--space-s);
+	z-index: 1000;
 	@media (width < 520px) {
 		display: inline;
 	}
