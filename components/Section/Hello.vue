@@ -19,7 +19,7 @@ const { open, close } = useModal({
 				<div id="avatar">
 					<NuxtImg src="/images/kof-pic.webp" placeholder />
 					<Text tag="h2" variant="compressed-title" text-style="color-slight"
-						>I'm Yonatan <span class="no-brake">Ben Knaan,</span>
+						>Yonatan <span class="no-brake">Ben Knaan,</span>
 					</Text>
 				</div>
 				<Text class="text-on-big" id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big"
@@ -38,7 +38,7 @@ const { open, close } = useModal({
 					>design lead
 				</Text>
 				<Text id="flipping-message" text-style="text-end color-slight" tag="h2" variant="compressed-title">
-					that Manage design Teams <span class="no-brake">in Startups and Orgs</span>
+					Managing design Teams <span class="no-brake">in Startups and Orgs</span>
 				</Text>
 			</div>
 			<span id="logos-cta">
