@@ -12,26 +12,50 @@ const emit = defineEmits<{
 		content-class="confirm-modal-content"
 		overlay-transition="vfm-fade"
 		content-transition="vfm-fade"
-		swipe-to-close="down"
+		:click-to-close="false"
 	>
-		<Text tag="h2" variant="compressed-title" class="title">Cool Title</Text>
-		<ul>
-			<li>Working knowledge of complex <em>DS</em></li>
-			<li>Proven ability to lead teams without authority</li>
-			<li>A designer that codes, this site and more</li>
-			<li>Proficient in writing guides and PRDs</li>
-			<!-- <li>In love with parametric design</li> -->
-			<li>Best practices in collaboration and sharing</li>
-			<li>Best practices in backlog management</li>
-			<li>Total control over design and <em>DS</em> tools</li>
-			<li>Hot recommendations – Please ask</li>
-			<li>Turning the <em>DS</em> form an issue to a success</li>
-			<!-- <li>Working lean and effective</li> -->
-		</ul>
-		<span>
-			<Button button-style="secondary" button-size="small" @click="emit('confirm')">Close Modal</Button>
-			<Button button-size="small" tag="a" href="/misc/CV-YonatanBenKnaan-2024.pdf" target="_blank">Download CV</Button>
-		</span>
+		<Text tag="h2" variant="secondary-title" class="title">Let's talk!</Text>
+		<!-- <form name="contact" method="POST" netlify> -->
+		<form name="contact" action="/kof" method="POST" data-netlify="true">
+			<div class="input">
+				<label class="body body-x-small" for="name">Your name?</label>
+				<input type="text" name="name" id="name" placeholder="Don't be shy" required />
+			</div>
+
+			<div class="input">
+				<label class="body body-x-small" for="email">Your email? </label>
+				<input type="email" name="email" id="email" required />
+			</div>
+
+			<div class="input">
+				<label class="body body-x-small" for="phone">
+					Your phone?
+					<p class="hint body body-x-small">Optional</p>
+				</label>
+				<input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+			</div>
+
+			<div class="input">
+				<label class="body body-x-small" for="role">Want do you want to talk about?</label>
+				<select name="role" id="role" required>
+					<option value="" disabled selected>Please select an option...</option>
+					<option value="employ">Full time employment</option>
+					<option value="freelance">Freelance</option>
+					<option value="advise">Advising</option>
+					<option value="mentor">Mentoring</option>
+					<option value="general">General queries</option>
+				</select>
+			</div>
+
+			<div class="input">
+				<label class="body body-x-small" for="message">Message: </label>
+				<textarea name="message" id="message" rows="5" required></textarea>
+			</div>
+			<span>
+				<Button button-size="small" button-style="secondary" @click="emit('confirm')">Cancel</Button>
+				<Button button-size="small" type="submit">Send</Button>
+			</span>
+		</form>
 	</VueFinalModal>
 </template>
 
@@ -42,51 +66,47 @@ const emit = defineEmits<{
 	align-items: center;
 }
 .confirm-modal-content {
+	min-width: calc(var(--space-4xl) * 2);
+	width: calc(var(--space-8xl) * 2);
+	padding: var(--space-m);
 	display: flex;
 	flex-direction: column;
 	background-color: var(--color-sys-invert-main);
 	border-radius: var(--border-radius-xs);
 	box-shadow: var(--shadow-lg);
-	max-width: calc(var(--space-8xl) * 3);
 	overflow: hidden;
+	gap: var(--space-xs);
 	margin-inline: var(--space-l);
 	max-height: calc(100vh - var(--space-l));
 	overflow: auto;
 }
-.this-modal-btn {
-	font-size: var(--step--1);
-	margin: unset;
-}
 </style>
 <style scoped>
-.title {
-	margin-block: var(--space-s);
-	padding-inline: var(--space-xs);
+form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
 }
-
-ol,
-ul {
-	margin: 0;
-	padding-inline-start: 0;
-	list-style: none;
+.input {
+	display: flex;
+	gap: var(--space-3xs);
+	flex-direction: column;
 }
-li:nth-child(odd) {
-	background-color: var(--color-sys-dis);
+label {
+	position: relative;
+	& p {
+		color: var(--color-sys-dim);
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-end: 0;
 }
-li {
-	padding: var(--space-2xs) var(--space-s);
-	font-size: var(--step--1);
 }
 span {
-	padding: var(--space-s);
-	display: grid;
+	display: flex;
 	gap: var(--space-2xs);
-	grid-template-columns: 2fr 2fr;
-	justify-items: center;
-	align-items: center;
-	text-align: center;
-	max-height: var(--space-xl);
-	margin-block-end: env(safe-area-inset-bottom, var(--space-s));
+	justify-content: space-evenly;
+	z-index: 1000;
+	margin-block-start: var(--space-4xs);
 	div {
 		background-color: var(--color-brand-dis);
 		width: 100%;

@@ -61,6 +61,12 @@
 							url: 'https://peppersona.netlify.app/',
 							name: 'Pepperi Persona (via Notion API)',
 						},
+						// Example of an internal link, so it's missing the external icon 
+						// {
+						// 	url: '/kof',
+						// 	name: 'Kof',
+						// 	internal: true,
+						// },
 					]"
 				/>
 				<Project

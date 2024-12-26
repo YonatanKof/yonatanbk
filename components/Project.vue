@@ -49,7 +49,7 @@ const props = defineProps({
 		default: 'var(--color-brand-red-main)',
 	},
 	linkTo: {
-		type: Array as PropType<{ url: string; name: string; external?: boolean }[]>,
+		type: Array as PropType<{ url: string; name: string; internal?: boolean }[]>,
 		required: false,
 		default: () => [],
 	},
@@ -80,7 +80,7 @@ const projectClasses = computed(() => ({
 			<NuxtImg class="logo" :src="logo" placeholder />
 			<div id="links">
 				<Text v-for="link in props.linkTo" variant="body-x-small">
-					<NuxtLink :class="{ external: !link.external }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
+					<NuxtLink :class="{ 'external-icon': !link.internal }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
 				</Text>
 			</div>
 		</div>
@@ -149,37 +149,6 @@ article {
 	height: var(--space-l);
 	width: auto;
 	align-self: flex-start;
-}
-.external::after {
-	content: '';
-	display: inline-block;
-	clip-path: polygon(
-		0% 0%,
-		33.4% 0%,
-		33.4% 16.7%,
-		16.7% 16.7%,
-		16.7% 83.5%,
-		83.5% 83.5%,
-		83.5% 16.7%,
-		83.5% 33.4%,
-		83.5% 25.05%,
-		50% 57%,
-		42% 50%,
-		75% 16.7%,
-		66.8% 16.7%,
-		66.8% 0%,
-		100% 0%,
-		100% 33.4%,
-		83.5% 33.4%,
-		83.5% 66.8%,
-		100% 66.8%,
-		100% 100%,
-		0% 100%
-	);
-	background-color: var(--color-sys-dim);
-	width: calc(var(--space-2xs) * 1.25);
-	height: calc(var(--space-2xs) * 1.25);
-	margin-inline-start: var(--space-2xs);
 }
 @media (720px >= width) {
 	article {
