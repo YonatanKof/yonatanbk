@@ -15,7 +15,8 @@ const emit = defineEmits<{
 		:click-to-close="false"
 	>
 		<Text tag="h2" variant="secondary-title" class="title">Let's talk!</Text>
-		<form name="contact" method="POST" netlify>
+		<!-- <form name="contact" method="POST" netlify> -->
+		<form name="contact" action="/kof" method="POST" data-netlify="true">
 			<div class="input">
 				<label class="body body-x-small" for="name">Your name?</label>
 				<input type="text" name="name" id="name" placeholder="Don't be shy" required />
