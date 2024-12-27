@@ -16,6 +16,12 @@ export default defineNuxtConfig({
 			],
 		},
 	},
+	nitro: {
+		prerender: {
+			crawlLinks: true,
+			routes: ['/'], // Add routes with forms
+		},
+	},
 	css: ['~/assets/styles/index.css'],
 	compatibilityDate: '2024-11-01',
 	devtools: { enabled: true },
