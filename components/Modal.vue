@@ -15,47 +15,6 @@ const emit = defineEmits<{
 		:click-to-close="false"
 	>
 		<Text tag="h2" variant="secondary-title" class="title">Let's talk!</Text>
-		<!-- <form name="contact" method="POST" netlify> -->
-		<form name="contact" action="/kof" method="POST" data-netlify="true">
-			<div class="input">
-				<label class="body body-x-small" for="name">Your name?</label>
-				<input type="text" name="name" id="name" placeholder="Don't be shy" required />
-			</div>
-
-			<div class="input">
-				<label class="body body-x-small" for="email">Your email? </label>
-				<input type="email" name="email" id="email" required />
-			</div>
-
-			<div class="input">
-				<label class="body body-x-small" for="phone">
-					Your phone?
-					<p class="hint body body-x-small">Optional</p>
-				</label>
-				<input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-			</div>
-
-			<div class="input">
-				<label class="body body-x-small" for="role">Want do you want to talk about?</label>
-				<select name="role" id="role" required>
-					<option value="" disabled selected>Please select an option...</option>
-					<option value="employ">Full time employment</option>
-					<option value="freelance">Freelance</option>
-					<option value="advise">Advising</option>
-					<option value="mentor">Mentoring</option>
-					<option value="general">General queries</option>
-				</select>
-			</div>
-
-			<div class="input">
-				<label class="body body-x-small" for="message">Message: </label>
-				<textarea name="message" id="message" rows="5" required></textarea>
-			</div>
-			<span>
-				<Button button-size="small" button-style="secondary" @click="emit('confirm')">Cancel</Button>
-				<Button button-size="small" type="submit">Send</Button>
-			</span>
-		</form>
 	</VueFinalModal>
 </template>
 
@@ -99,7 +58,7 @@ label {
 		position: absolute;
 		inset-block-start: 0;
 		inset-inline-end: 0;
-}
+	}
 }
 span {
 	display: flex;
