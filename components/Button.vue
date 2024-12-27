@@ -137,7 +137,7 @@ const handleKeyup = (event: KeyboardEvent) => {
 }
 
 .button-large {
-	font-size: var(--step-3);
+	font-size: var(--step-2);
 	--clip-shift: var(--space-s);
 }
 /* Button Style */
