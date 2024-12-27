@@ -3,7 +3,7 @@
 <template>
 	<div class="wrapper">
 		<LayoutContentTop title="Send form" />
-		<form name="contact-me" method="POST" data-netlify="true">
+		<form method="POST" netlify data-netlify="true" name="contact-me" action="/success">
 			<input type="hidden" name="form-name" value="contact-me" />
 			<div>
 				<label for="name" class="label"> Your Name </label>
