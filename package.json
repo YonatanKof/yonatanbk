@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.8.1",
+    "@stefanobartoletti/nuxt-social-share": "^1.2.1",
     "nuxt": "^3.14.1592",
     "vue": "latest",
     "vue-final-modal": "^4.5.5",
