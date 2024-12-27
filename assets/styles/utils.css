@@ -94,4 +94,8 @@
 			margin-inline-start: var(--space-2xs);
 		}
 	}
+	.do-it {
+		visibility: hidden;
+		display: none;
+	}
 }
