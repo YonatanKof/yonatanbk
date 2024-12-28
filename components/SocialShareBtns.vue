@@ -1,17 +1,21 @@
 <script setup lang="ts">
-import { icons } from 'vue3-carousel';
+const props = defineProps({
+	setUrl: {
+		type: String,
+	},
+});
 </script>
 
 <template>
 	<div class="share-box">
-		<Text tag="h4" variant="heading-x-small">Share me on</Text>
+		<Text tag="h4">Share me on</Text>
 		<div class="share-buttons">
 			<SocialShare
-				v-for="network in ['facebook', 'x', 'linkedin', 'email']"
+				v-for="network in ['linkedin', 'x', 'email', 'facebook']"
 				:key="network"
 				:network="network"
-				:styled="true"
 				:icon="false"
+				:url="setUrl"
 			>
 				<template #label>{{ network }}</template>
 			</SocialShare>
@@ -20,21 +24,36 @@ import { icons } from 'vue3-carousel';
 </template>
 
 <style>
-.share-box{
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  justify-content: center;
+.share-box {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2xs);
+	justify-content: center;
 }
 .share-buttons {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	gap: var(--space-3xs);
 }
 
 .social-share-button {
-	color: #fff;
-	padding: 1rem;
+	color: var(--color-sys-main);
+	padding: 1em 1.25em;
 	border-radius: 0;
+	text-transform: capitalize;
+	font-family: var(--font-title);
+	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 20;
+	background-color: var(--color-sys-dis);
+	transition: background-color 0.3s;
+	/* border-inline-end: 2px solid var(--color-brand-red-dim); */
+	border: 1px solid var(--color-brand-red-dim);
+	&:hover {
+		background-color: var(--color-brand-red-dim);
+	}
+	&:first-child {
+		/* border-inline-start: 2px solid var(--color-brand-red-dim); */
+		/* border-inline-end: none; */
+	}
 }
 </style>
