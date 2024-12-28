@@ -28,25 +28,25 @@ const emit = defineEmits<{
 			</div>
 			<input hidden name="form-name" value="contact-me" />
 			<div class="input">
-				<label class="body body-x-small" for="name">Your name?</label>
-				<input type="text" name="name" id="name" placeholder="Don't be shy" required />
+				<label class="body body-x-small" for="name">Name</label>
+				<input type="text" name="name" id="name" required />
 			</div>
 
 			<div class="input">
-				<label class="body body-x-small" for="email">Your email? </label>
+				<label class="body body-x-small" for="email">Email </label>
 				<input type="email" name="email" id="email" required />
 			</div>
 
 			<div class="input">
 				<label class="body body-x-small" for="phone">
-					Your phone?
+					Phone
 					<p class="hint body body-x-small">Optional</p>
 				</label>
 				<input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
 			</div>
 
 			<div class="input">
-				<label class="body body-x-small" for="role">Want do you want to talk about?</label>
+				<label class="body body-x-small" for="role">Subject</label>
 				<select name="role" id="role" required>
 					<option value="" disabled selected>Please select an option...</option>
 					<option value="employ">Full time employment</option>
@@ -58,7 +58,7 @@ const emit = defineEmits<{
 			</div>
 
 			<div class="input">
-				<label class="body body-x-small" for="message">Message: </label>
+				<label class="body body-x-small" for="message">Message </label>
 				<textarea name="message" id="message" rows="5" required></textarea>
 			</div>
 			<span>
@@ -82,7 +82,7 @@ const emit = defineEmits<{
 	display: flex;
 	flex-direction: column;
 	background-color: var(--color-sys-invert-main);
-	border-radius: var(--border-radius-xs);
+	border: 2px solid var(--color-sys-main);
 	box-shadow: var(--shadow-lg);
 	overflow: hidden;
 	gap: var(--space-xs);
@@ -98,7 +98,9 @@ form {
 	gap: var(--space-xs);
 	z-index: 1000;
 }
-input, select, textarea {
+input,
+select,
+textarea {
 	min-height: var(--space-l);
 	border: 1px solid var(--color-sys-main);
 	border-radius: none;
@@ -106,10 +108,21 @@ input, select, textarea {
 	padding-block: var(--space-3xs);
 	margin: unset;
 	line-height: 1;
+	background-color: white;
+	font-family: inherit;
+	font-size: var(--step--1);
+	box-shadow: -4px 4px 0 0 var(--color-sys-dis);
 }
-select, textarea {
+select,
+textarea {
 	padding-block: var(--space-xs);
+}
+textarea {
+	resize: none;
+}
 
+select:invalid {
+	color: var(--color-sys-dim);
 }
 
 .input {
@@ -119,8 +132,10 @@ select, textarea {
 }
 label {
 	position: relative;
+	color: var(--color-sys-main);
+	font-variation-settings: 'wght' 600;
 	& p {
-		color: var(--color-sys-dim);
+		color: var(--color-brand-green-main);
 		position: absolute;
 		inset-block-start: 0;
 		inset-inline-end: 0;
