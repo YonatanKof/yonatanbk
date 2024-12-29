@@ -20,7 +20,7 @@
 
 <style scoped>
 section {
-	height: 100vh;
+	height: 100dvh;
 }
 .wrapper {
 	max-width: 768px;
