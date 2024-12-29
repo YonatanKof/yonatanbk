@@ -63,6 +63,7 @@ const emit = defineEmits<{
 
 <style scoped>
 form {
+  margin-block-start: var(--space-s);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xs);
@@ -73,7 +74,8 @@ select,
 textarea {
 	min-height: var(--space-l);
 	border: 1px solid var(--color-sys-main);
-	border-radius: none;
+	border-radius: 0;
+  -webkit-border-radius: 0 !important;
 	padding-inline: var(--space-xs);
 	padding-block: var(--space-3xs);
 	margin: unset;
@@ -82,6 +84,16 @@ textarea {
 	font-family: inherit;
 	font-size: var(--step--1);
 	box-shadow: -4px 4px 0 0 var(--color-sys-dis);
+}
+select {
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+	background-repeat: no-repeat;
+	background-position: right 8px center;
+	padding-right: 32px; /* Space for custom arrow */
+  color: var(--color-sys-main) !important;
+  min-height: 2rem !important;
 }
 select,
 textarea {
@@ -113,19 +125,10 @@ label {
 }
 span {
 	display: flex;
-	gap: var(--space-2xs);
+	gap: var(--space-xs);
 	justify-content: space-evenly;
 	z-index: 1000;
-	margin-block-start: var(--space-4xs);
-	div {
-		background-color: var(--color-brand-dis);
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: var(--border-radius-xs);
-	}
+	margin-block-start: var(--space-2xs);
 	a {
 		font-size: var(--step--1);
 	}
