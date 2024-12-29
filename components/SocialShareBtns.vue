@@ -11,7 +11,7 @@ const props = defineProps({
 		<Text tag="h4">Share me on</Text>
 		<div class="share-buttons">
 			<SocialShare
-				v-for="network in ['linkedin', 'x', 'email', 'facebook']"
+				v-for="network in ['linkedin', 'x', 'facebook', 'email']"
 				:key="network"
 				:network="network"
 				:icon="false"
@@ -43,17 +43,13 @@ const props = defineProps({
 	border-radius: 0;
 	text-transform: capitalize;
 	font-family: var(--font-title);
+	font-size: var(--step-0);
 	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 20;
 	background-color: var(--color-sys-dis);
 	transition: background-color 0.3s;
-	/* border-inline-end: 2px solid var(--color-brand-red-dim); */
 	border: 1px solid var(--color-brand-red-dim);
 	&:hover {
 		background-color: var(--color-brand-red-dim);
-	}
-	&:first-child {
-		/* border-inline-start: 2px solid var(--color-brand-red-dim); */
-		/* border-inline-end: none; */
 	}
 }
 </style>

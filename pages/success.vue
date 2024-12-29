@@ -32,13 +32,16 @@ section {
 		max-width: 576px;
 	}
 	@media (width < 640px) {
+		padding-block-start: 96px;
 		max-width: 448px;
 	}
 	@media (width < 520px) {
-		max-width: 320px;
+		padding-block-start: 64px;
+		max-width: 352px;
 	}
 	@media (width < 400px) {
-		max-width: 256px;
+		padding-block-start: 32px;
+		max-width: 320px;
 	}
 }
 .box {
@@ -58,9 +61,6 @@ section {
 	}
 	@media (width < 520px) {
 		min-height: 416px;
-	}
-	@media (width < 400px) {
-		min-height: 464px;
 	}
 }
 
