@@ -20,6 +20,10 @@
 		font-variation-settings: var(--base-font-settings);
 		font-size: 16px;
 	}
+	::selection {
+		background-color: var(--color-sys-main);
+		color: var(--color-sys-invert-main);
+	}
 	a {
 		text-decoration: none;
 		color: var(--color-focus-main);
