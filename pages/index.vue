@@ -1,3 +1,7 @@
+<script setup>
+const nuxtApp = useNuxtApp();
+nuxtApp.$pageMetaTags();
+</script>
 <template>
 	<div class="main-layout cursor-default">
 		<LayoutHeader />
