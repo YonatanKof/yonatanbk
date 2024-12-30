@@ -22,6 +22,7 @@
 	}
 	hr {
 		width: 100%;
-		border-color: var(--color-sys-dim);
+		border: unset;
+		border-block-start: 2px solid var(--color-brand-green-main);
 	}
 }

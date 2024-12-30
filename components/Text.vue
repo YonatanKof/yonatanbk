@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Define the variant type as a const array first
 const VARIANTS = [
 	'main-title',
 	'secondary-title',
@@ -12,28 +11,25 @@ const VARIANTS = [
 	'body-small',
 	'body-x-small',
 ] as const;
-// Create the type from the array values
 type Variant = (typeof VARIANTS)[number];
 
-// Define available text styles
-const TEXT_STYLES = ['color-slight', 'color-dim', 'color-dis', 'grid-size-big', 'text-end'] as const;
+const TEXT_STYLES = [
+	'color-slight',
+	'color-dim',
+	'color-dis',
+	'color-invert',
+	'grid-size-big',
+	'text-end',
+	'text-center',
+	'text-bold',
+] as const;
 type TextStyle = (typeof TEXT_STYLES)[number];
 
 const props = withDefaults(
 	defineProps<{
 		tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-		variant?:
-			| 'main-title'
-			| 'secondary-title'
-			| 'compressed-title'
-			| 'heading-small'
-			| 'heading-x-small'
-			| 'body'
-			| 'large-text'
-			| 'body-medium'
-			| 'body-small'
-			| 'body-x-small';
-		textStyle?: 'color-slight' | 'color-dim' | 'color-dis' | 'grid-size-big' | 'text-end';
+		variant?: Variant;
+		textStyle?: TextStyle | string;
 	}>(),
 	{
 		tag: 'p',
@@ -41,7 +37,6 @@ const props = withDefaults(
 	}
 );
 
-// Type-safe variant classes mapping
 const VARIANT_CLASSES: Record<Variant, string> = {
 	'main-title': 'heading-large',
 	'secondary-title': 'heading-medium',
@@ -55,11 +50,9 @@ const VARIANT_CLASSES: Record<Variant, string> = {
 	body: 'body',
 };
 
-// Compute combined classes from both variant and text styles
 const computedClasses = computed(() => {
 	const classes = [VARIANT_CLASSES[props.variant]];
 
-	// Add text style classes if provided
 	if (props.textStyle) {
 		classes.push(...props.textStyle.split(' '));
 	}
@@ -122,8 +115,7 @@ const computedClasses = computed(() => {
 	color: var(--color-sys-slight);
 }
 
-/* New style classes */
-.color-invert-main {
+.color-invert {
 	color: var(--color-sys-invert-main);
 }
 .color-slight {
@@ -140,6 +132,9 @@ const computedClasses = computed(() => {
 }
 .text-center {
 	text-align: center;
+}
+.text-bold {
+	font-variation-settings: 'wght' 600;
 }
 .grid-size-big {
 	font-size: calc(var(--grid-block) * 3);
