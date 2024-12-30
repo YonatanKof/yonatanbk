@@ -16,7 +16,16 @@ const VARIANTS = [
 type Variant = (typeof VARIANTS)[number];
 
 // Define available text styles
-const TEXT_STYLES = ['color-slight', 'color-dim', 'color-dis', 'grid-size-big', 'text-end'] as const;
+const TEXT_STYLES = [
+	'color-slight',
+	'color-dim',
+	'color-dis',
+	'color-invert',
+	'grid-size-big',
+	'text-end',
+	'text-center',
+	'text-bold',
+] as const;
 type TextStyle = (typeof TEXT_STYLES)[number];
 
 const props = withDefaults(
@@ -33,7 +42,15 @@ const props = withDefaults(
 			| 'body-medium'
 			| 'body-small'
 			| 'body-x-small';
-		textStyle?: 'color-slight' | 'color-dim' | 'color-dis' | 'grid-size-big' | 'text-end';
+		textStyle?:
+			| 'color-slight'
+			| 'color-dim'
+			| 'color-dis'
+			| 'color-invert'
+			| 'grid-size-big'
+			| 'text-end'
+			| 'text-center'
+			| 'text-bold';
 	}>(),
 	{
 		tag: 'p',
@@ -123,7 +140,7 @@ const computedClasses = computed(() => {
 }
 
 /* New style classes */
-.color-invert-main {
+.color-invert {
 	color: var(--color-sys-invert-main);
 }
 .color-slight {
@@ -140,6 +157,9 @@ const computedClasses = computed(() => {
 }
 .text-center {
 	text-align: center;
+}
+.text-bold {
+	font-variation-settings: 'wght' 600;
 }
 .grid-size-big {
 	font-size: calc(var(--grid-block) * 3);
