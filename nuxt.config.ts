@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ['@nuxt/image'],
+	modules: ['@nuxt/image', '@stefanobartoletti/nuxt-social-share'],
 	app: {
 		head: {
 			charset: 'utf-8',
@@ -16,7 +16,19 @@ export default defineNuxtConfig({
 			],
 		},
 	},
+	devServer: {
+		host: '0.0.0.0',
+	},
+	nitro: {
+		prerender: {
+			crawlLinks: true,
+			routes: ['/'], // Add routes with forms
+		},
+	},
 	css: ['~/assets/styles/index.css'],
 	compatibilityDate: '2024-11-01',
 	devtools: { enabled: true },
+	socialShare: {
+		baseUrl: process.env.URL || 'https://yonatanbk.com/', // Required
+	},
 });
