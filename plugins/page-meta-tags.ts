@@ -13,7 +13,7 @@ export default defineNuxtPlugin(() => {
 		// metaArticleAuthor = undefined,
 		metaTitleData = undefined,
 		metaDesc = `A portfolio site by ${config.public.siteOwnerName} - a full stack designer who leads design initiatives in Startups and Orgs`,
-		metaImg = '/images/YonatanBK-Social.jpg',
+		metaImg = '/images/yonatanbk-social.jpg',
 		metaImgAlt = 'Social cover image for this site',
 		metaOgType = 'website' as
 			| 'website'
