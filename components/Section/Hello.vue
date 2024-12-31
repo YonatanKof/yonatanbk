@@ -163,13 +163,13 @@ const { open, close } = useModal({
 	grid-template-rows: subgrid;
 	grid-template-columns: subgrid;
 	grid-column: 1 / -1;
-	@media (width < 1216px) {
-		grid-row: 6 / span 8;
-	}
 	@supports (background: -webkit-named-image(i)) {
 		@media (width < 1216px) {
 			grid-row: 6 / span 5;
 		}
+	}
+	@media (width < 1152px) {
+		grid-row: 6 / span 8;
 	}
 	@supports (background: -webkit-named-image(i)) {
 		@media (width < 976px) {
@@ -284,9 +284,9 @@ const { open, close } = useModal({
 
 	@media (width < 1344px) {
 		grid-column: 1 / -1;
-		grid-row: 1 / span 6;
 	}
 	@media (width < 1152px) {
+		grid-row: 1 / span 6;
 		text-align: center;
 	}
 	@media (width < 720px) {
@@ -316,6 +316,7 @@ const { open, close } = useModal({
 	}
 	@media (width < 1152px) {
 		grid-row: 7 / span 2;
+		justify-content: center;
 	}
 	@supports (background: -webkit-named-image(i)) {
 		@media (width < 976px) {
@@ -329,6 +330,7 @@ const { open, close } = useModal({
 	@media (width < 480px) {
 		grid-row: 7 / span 3;
 		grid-column: 1 / -1;
+		margin-inline: calc(var(--grid-block) * -1);
 	}
 }
 #logos-cta {
