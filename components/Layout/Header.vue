@@ -128,8 +128,9 @@ a.active {
 	font-size: 1rem;
 }
 .hide {
+	visibility: visible;
 	@media (width < 520px) {
-		display: none;
+		visibility: hidden;
 	}
 }
 </style>

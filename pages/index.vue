@@ -34,13 +34,13 @@ main {
 	z-index: 1;
 }
 .show {
-	display: none;
+	visibility: hidden;
 	position: absolute;
 	inset-inline-end: var(--space-s);
 	inset-block-end: var(--space-s);
 	z-index: 1000;
 	@media (width < 520px) {
-		display: inline;
+		visibility: visible;
 	}
 }
 </style>
