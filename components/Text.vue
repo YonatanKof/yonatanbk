@@ -79,15 +79,7 @@ const computedClasses = computed(() => {
 	line-height: 1;
 }
 .heading-small {
-	font-variation-settings: 'wght' 300, 'wdth' 96, 'opsz' 96;
-	font-size: var(--step-4);
-	line-height: 1;
-	@media (width < 976px) {
-		font-size: var(--step-3);
-	}
-}
-.heading-small {
-	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 20;
+	font-variation-settings: 'wght' 400, 'wdth' 100, 'opsz' 80;
 	font-size: var(--step-3);
 	line-height: 1;
 }
