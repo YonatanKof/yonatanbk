@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@duskmoon/vue3-typed-js": "^0.0.4",
     "@nuxt/image": "^1.8.1",
     "@stefanobartoletti/nuxt-social-share": "^1.2.1",
     "nuxt": "^3.14.1592",

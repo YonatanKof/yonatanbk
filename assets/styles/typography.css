@@ -43,4 +43,16 @@
 	.no-brake {
 		white-space: nowrap;
 	}
+	.color-brand-red {
+		color: var(--color-brand-red-contrast);
+	}
+	.color-brand-green {
+		color: var(--color-brand-green-contrast);
+	}
+	.color-brand-blue {
+		color: var(--color-brand-blue-contrast);
+	}
+	.color-brand-orange {
+		color: var(--color-brand-orange-contrast);
+	}
 }

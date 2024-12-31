@@ -4,7 +4,9 @@
 > CSS only! No SCSS!
 
 Libraries in use:
-- [Vue3-Carousel](https://vue3-carousel.ismail9k.com/)
+- [Vue3 Carousel](https://vue3-carousel.ismail9k.com/)
+- [Vue Final Modal](https://vue-final-modal.org/)
+- [vue3-typed-js](https://github.com/duskmoon314/vue3-typed-js)
 
 ### Responsiveness
 
