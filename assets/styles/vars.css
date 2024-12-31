@@ -67,23 +67,27 @@
 		--border-radius-none: unset;
 
 		/* Brand Colors */
+		--color-brand-green-contrast: color-mix(in hsl, var(--color-brand-green-main) 90%, black);
 		--color-brand-green-main: hsl(80, 90%, 33%);
 		--color-brand-green-dim: color-mix(in hsl, var(--color-brand-green-main) 40%, transparent);
 		--color-brand-green-dis: color-mix(in hsl, var(--color-brand-green-main) 10%, transparent);
 		--color-brand-green-hardly: color-mix(in hsl, var(--color-brand-green-main) 3%, transparent);
 		--color-brand-green-none: color-mix(in hsl, var(--color-brand-green-main) 0%, transparent);
+		--color-brand-orange-contrast: color-mix(in hsl, var(--color-brand-orange-main) 90%, black);
 		--color-brand-orange-main: hsl(40, 90%, 50%);
 		--color-brand-orange-dim: color-mix(in hsl, var(--color-brand-orange-main) 40%, transparent);
 		--color-brand-orange-dis: color-mix(in hsl, var(--color-brand-orange-main) 10%, transparent);
 		--color-brand-orange-hardly: color-mix(in hsl, var(--color-brand-orange-main) 3%, transparent);
 		--color-brand-orange-none: color-mix(in hsl, var(--color-brand-orange-main) 0%, transparent);
+		--color-brand-blue-contrast: color-mix(in hsl, var(--color-brand-blue-main) 90%, black);
 		--color-brand-blue-main: hsl(199, 50%, 45%);
 		--color-brand-blue-dim: color-mix(in hsl, var(--color-brand-blue-main) 40%, transparent);
 		--color-brand-blue-dis: color-mix(in hsl, var(--color-brand-blue-main) 10%, transparent);
 		--color-brand-blue-hardly: color-mix(in hsl, var(--color-brand-blue-main) 3%, transparent);
 		--color-brand-blue-none: color-mix(in hsl, var(--color-brand-blue-main) 0%, transparent);
+		--color-brand-red-contrast: color-mix(in hsl, var(--color-brand-red-main) 80%, black);
 		--color-brand-red-main: hsl(1, 40%, 50%);
-		--color-brand-red-slight: color-mix(in hsl, var(--color-brand-red-main) 80%, transparent);
+		--color-brand-red-slight: color-mix(in hsl, var(--color-brand-red-main) 90%, transparent);
 		--color-brand-red-dim: color-mix(in hsl, var(--color-brand-red-main) 40%, transparent);
 		--color-brand-red-dis: color-mix(in hsl, var(--color-brand-red-main) 10%, transparent);
 		--color-brand-red-hardly: color-mix(in hsl, var(--color-brand-red-main) 3%, transparent);
