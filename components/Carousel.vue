@@ -40,7 +40,7 @@ const isVideo = (file) => {
 						{{ slide.name }}
 					</Text>
 				</span>
-				<video loading="lazy" v-if="isVideo(slide.url)" loop muted autoplay>
+				<video v-if="isVideo(slide.url)" loop muted autoplay poster="/images/geoKof-ph.webp">
 					<source :src="slide.url" type="video/webm" />
 				</video>
 				<NuxtImg loading="lazy" v-else :src="slide.url" placeholder />
