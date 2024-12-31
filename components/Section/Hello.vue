@@ -37,9 +37,7 @@ const { open, close } = useModal({
 				<Text class="text-on-small" id="main-title-2" text-style="grid-size-big text-end" tag="h1" variant="main-title"
 					>design lead
 				</Text>
-				<Text id="flipping-message" text-style="text-end color-slight" tag="h2" variant="compressed-title">
-					Managing design Teams <span class="no-brake">in Startups and Orgs</span>
-				</Text>
+				<FlippingMessage id="flipping-message" />
 			</div>
 			<span id="logos-cta">
 				<ClientProof />
@@ -318,7 +316,6 @@ const { open, close } = useModal({
 	}
 	@media (width < 1152px) {
 		grid-row: 7 / span 2;
-		text-align: center;
 	}
 	@supports (background: -webkit-named-image(i)) {
 		@media (width < 976px) {
