@@ -36,14 +36,14 @@ const isVideo = (file) => {
 		<Slide v-for="slide in props.images" :key="slide">
 			<div class="carousel__item">
 				<span v-if="slide.name">
-					<Text tag="h4" class="hovering-text" variant="body-x-small" text-style="color-invert-main">
+					<Text tag="h4" class="hovering-text" variant="body-x-small" text-style="color-invert">
 						{{ slide.name }}
 					</Text>
 				</span>
 				<video v-if="isVideo(slide.url)" loop muted autoplay poster="/images/geoKof-ph.webp">
 					<source :src="slide.url" type="video/webm" />
 				</video>
-				<NuxtImg loading="lazy" v-else :src="slide.url" placeholder />
+				<NuxtImg loading="lazy" v-else :src="slide.url" />
 			</div>
 		</Slide>
 
