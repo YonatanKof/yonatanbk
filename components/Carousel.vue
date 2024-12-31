@@ -43,7 +43,7 @@ const isVideo = (file) => {
 				<video v-if="isVideo(slide.url)" loop muted autoplay poster="/images/geoKof-ph.webp">
 					<source :src="slide.url" type="video/webm" />
 				</video>
-				<NuxtImg loading="lazy" v-else :src="slide.url" />
+				<NuxtImg v-else :src="slide.url" />
 			</div>
 		</Slide>
 
