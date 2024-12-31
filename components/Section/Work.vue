@@ -43,7 +43,7 @@
 						'UX',
 						'User Testing',
 					]"
-					logo="/images/clients-color/Pepperi.webp"
+					logo="/images/clients-color/pepperi.webp"
 					:link-to="[
 						{
 							url: 'https://www.pepperi.com/',
@@ -106,7 +106,7 @@
 					description="Data-driven career choices made easy – A project by JCD and Ministry of Labour which includes user interviews, UX research, project scoping, UX concept and wireframes for Israel's growing market place"
 					:verticals="['Gov', 'Education', 'Life Style', 'Self Improvement']"
 					:jobs="['Research', 'User Interviews', 'UX']"
-					logo="/projects/avodata/avodata.webp"
+					logo="/images/clients-color/avodata.webp"
 					:link-to="[
 						{
 							url: 'https://avodata.labor.gov.il/',
@@ -146,7 +146,7 @@
 					description="At Matnas I've supervised daily operations and managed multiple design projects from start to finish. I lead designers, managed scoping, budgeting, stakeholder communication, and deadlines at best quality."
 					:verticals="['Native App', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop', ]"
 					:jobs="['Ideation', 'Design Manager', 'Business Development', 'Project Owner', 'Researcher', 'UX/UI Design']"
-					logo="/projects/mtns/logo.webp"
+					logo="/images/clients-color/mtns.webp"
 					:link-to="[
 						{
 							url: 'https://dribbble.com/mtns',
