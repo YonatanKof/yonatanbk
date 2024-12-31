@@ -80,7 +80,14 @@ const projectClasses = computed(() => ({
 			<NuxtImg class="logo" :src="logo" placeholder />
 			<div id="links">
 				<Text v-for="link in props.linkTo" variant="body-x-small">
-					<NuxtLink :class="{ 'external-icon': !link.internal }" :to="link.url" :key="link.name">{{ link.name }}</NuxtLink>
+					<NuxtLink
+						:class="{ 'external-icon': !link.internal }"
+						:to="link.url"
+						:target="!link.internal ? '_blank' : undefined"
+						:external="!link.internal"
+						:key="link.name"
+						>{{ link.name }}
+					</NuxtLink>
 				</Text>
 			</div>
 		</div>
