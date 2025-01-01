@@ -90,6 +90,7 @@ const computedClasses = computed(() => {
 }
 .body {
 	font-variation-settings: var(--base-font-settings);
+	font-size: var(--step-0);
 	font-family: var(--font-body);
 	line-height: 1.35;
 }
