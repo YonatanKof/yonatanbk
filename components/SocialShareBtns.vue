@@ -3,6 +3,10 @@ const props = defineProps({
 	setUrl: {
 		type: String,
 	},
+	fontSize: {
+		type: String,
+		default: 'var(--step-0)',
+	},
 });
 </script>
 
@@ -43,7 +47,7 @@ const props = defineProps({
 	border-radius: 0;
 	text-transform: capitalize;
 	font-family: var(--font-title);
-	font-size: var(--step-0);
+	font-size: v-bind(fontSize);
 	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 20;
 	background-color: var(--color-sys-dis);
 	transition: background-color 0.3s;
