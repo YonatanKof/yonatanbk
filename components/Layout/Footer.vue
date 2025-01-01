@@ -13,22 +13,26 @@ const yearMonth = new Date().toLocaleDateString('en-US', {
 				<div class="content">
 					<div class="data">
 						<BrandGeoKofXs />
-						<div class="links">
-							<nuxt-link to="https://github.com/YonatanKof/">Yonatan @ GitHub</nuxt-link>
-							<nuxt-link to="https://www.linkedin.com/in/yonatankof/">Yonatan @ Linkedin</nuxt-link>
-							<nuxt-link to="https://wwape.com/">Graphics Arts ({{ new Date().getFullYear() }})</nuxt-link>
-							<nuxt-link to="https://digital.yonatankof.com/">Design Portfolio (2018)</nuxt-link>
+						<div class="extra">
+							<Text id="info-line">
+								A website by <span class="no-brake">Yonatan Ben Knaan</span>, a full stack designer who leads design
+								initiatives in Startups and Orgs</Text
+							>
+							<SocialShareBtns font-size="var(--step--1)" />
 						</div>
 					</div>
-					<Text id="info-line" text-style="text-end"
-						> A website by <span class="no-brake">Yonatan Ben Knaan</span>, a full stack designer who leads design initiatives in Startups and Orgs</Text
-					>
+					<div class="links">
+						<nuxt-link to="https://github.com/YonatanKof/">Yonatan @ GitHub</nuxt-link>
+						<nuxt-link to="https://www.linkedin.com/in/yonatankof/">Yonatan @ Linkedin</nuxt-link>
+						<nuxt-link to="https://wwape.com/">Graphics Arts ({{ new Date().getFullYear() }})</nuxt-link>
+						<nuxt-link to="https://digital.yonatankof.com/">Design Portfolio (2018)</nuxt-link>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="color">
 			<Text text-style="color-invert text-center text-bold" variant="body-small">
-				Copyright © {{ yearMonth }}・Designed & developed by <span class="no-brake">Yonatan Ben Knaan</span>
+				Copyright © {{ yearMonth }}・Designed & Developed by <span class="no-brake">Yonatan Ben Knaan</span>
 			</Text>
 		</div>
 	</footer>
@@ -47,6 +51,7 @@ hr {
 }
 .data,
 .links,
+.extra,
 .content {
 	display: flex;
 	flex-direction: row;
@@ -55,7 +60,7 @@ hr {
 }
 .content {
 	margin-block-end: var(--space-2xl);
-	@media (width < 560px) {
+	@media (width < 600px) {
 		flex-direction: column;
 		margin-block-end: var(--space-xl);
 	}
@@ -63,22 +68,27 @@ hr {
 .data {
 	justify-content: unset;
 	gap: var(--space-s);
-	& > :first-child {
-		margin-block-start: var(--space-3xs);
-	}
+	height: max-content;
 }
+.extra,
 .links {
+	height: max-content;
 	flex-direction: column;
 	gap: var(--space-2xs);
 	min-width: max-content;
 }
-#info-line {
-	max-width: 42ch;
-	@media (width < 560px) {
+.links {
+	@media (width < 600px) {
 		margin-inline-start: calc(32px + var(--space-s));
 		margin-inline-end: var(--space-s);
-		text-align: start;
 	}
+}
+.extra {
+	min-width: unset;
+	gap: var(--space-xs);
+}
+#info-line {
+	max-width: 42ch;
 }
 .color {
 	width: 100%;
