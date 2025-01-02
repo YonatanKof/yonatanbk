@@ -1,12 +1,15 @@
 <script setup>
 import CircleHalf from '/components/Shapes/CircleHalf';
 import CircleFifth from '/components/Shapes/CircleFifth';
+import Square from '/components/Shapes/Square';
+import SquareCenter from '/components/Shapes/SquareCenter';
+import SquareLines from '/components/Shapes/SquareLines';
 const contentItems = [
 	{
 		title: 'Design Initiatives',
 		subTitle:
 			"Pushing design initiatives across teams and stakeholders can be a real challenge. But let me tell you, I've been there, done that, and emerged victorious.",
-		components: CircleHalf,
+		components: Square,
 	},
 	{
 		title: 'Product Design',
@@ -18,19 +21,19 @@ const contentItems = [
 		title: 'Brand Building',
 		subTitle:
 			"I craft brand identities that seamlessly cross interfaces and teams. Imagine for a moment how this will improve your brand's impact across the digital landscape.",
-		components: CircleHalf,
+		components: SquareLines,
 	},
 	{
 		title: 'DesignOps & Mgmt.',
 		subTitle:
 			"Using a blend of team coaching and best-in-class backlog management tools and methods to deliver results that matter, right when they're needed. The best approach to transform your team's efficiency.",
-		components: CircleFifth,
+		components: CircleHalf,
 	},
 	{
 		title: 'Execution & Dev',
 		subTitle:
 			'I bridge planning and execution through design systems, leveraging my coding skills and hands-on abilities to enhance collaboration, streamline design processes and foster a collaborative environment.',
-		components: CircleHalf,
+		components: SquareCenter,
 	},
 ];
 </script>

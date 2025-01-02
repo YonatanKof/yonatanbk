@@ -21,6 +21,15 @@ const images = [
 
 <template>
 	<main class="wrapper center-center">
+		<div class="split"></div>
+		<LayoutContentTop />
+		<div class="this-one torn-paper-bottom">
+			<ShapesSquareLines />
+			<ShapesSquareCenter />
+			<ShapesSquare />
+			<ShapesCircleFifth />
+			<ShapesCircleHalf />
+		</div>
 		<Project
 			id="pepperi"
 			highlight-color="#6E960A"
@@ -74,11 +83,6 @@ const images = [
 				},
 			]"
 		/>
-		<LayoutContentTop />
-		<div class="this-one torn-paper-bottom">
-			<ShapesCircleFifth />
-			<ShapesCircleHalf />
-		</div>
 		<OpenForWork />
 		<Text tag="h1" variant="main-title">Main Title</Text>
 		<Text tag="h2" variant="compressed-title">Compressed Title</Text>
@@ -117,12 +121,19 @@ const images = [
 </template>
 
 <style scoped>
+.split {
+	width: 100%;
+	height: 2rem;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+}
 .torn-paper-bottom {
 	--torn-paper-image: url('/images/torn-3.webp');
 	--torn-paper-bg-color: var(--color-brand-orange-main);
 }
 .this-one {
-	background-color: black;
+	background-color: var(--color-brand-red-main);
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
