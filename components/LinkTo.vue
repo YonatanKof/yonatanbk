@@ -48,12 +48,15 @@ const props = withDefaults(defineProps<LinkToProps>(), {
 		background-color: color-mix(in hsl, v-bind(highlightColor) 10%, transparent);
 		border-radius: var(--border-radius-xs);
 	}
-	.external-icon{
+	.external-icon {
 		&::after {
 			background-color: v-bind(highlightColor);
 			width: var(--space-xs);
 			height: var(--space-xs);
 		}
 	}
+}
+p {
+	max-width: 45ch;
 }
 </style>

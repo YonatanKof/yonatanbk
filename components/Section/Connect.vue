@@ -53,14 +53,12 @@ const { open, close } = useModal({
 					</div>
 					<div class="split-column">
 						<div class="split-column-content">
-							<Text tag="h2" variant="secondary-title" class="capitalize">Connect If you dare!</Text>
+							<Text tag="h2" variant="secondary-title" class="capitalize">Let's Connect!</Text>
 							<Text variant="body-medium">
 								Full-time employment, mentoring, advising, freelance, help with an existential crisis or you just want
 								to get to know me better?
 							</Text>
-							<Text variant="body-medium">
-								Feel free to connect ↓
-							</Text>
+							<Text variant="body-medium"> Feel free to connect ↓ </Text>
 						</div>
 						<div class="cta-buttons">
 							<Button
@@ -85,7 +83,7 @@ const { open, close } = useModal({
 <style scoped>
 .split {
 	display: flex;
-	gap: var(--space-m);
+	gap: var(--space-xl);
 	justify-content: space-evenly;
 	@media (width < 720px) {
 		flex-direction: column-reverse;
@@ -99,9 +97,6 @@ const { open, close } = useModal({
 	gap: var(--space-m);
 	width: 100%;
 }
-/* .split-column:nth-child(2) {
-	min-width: 380px;
-} */
 
 .split-column-list {
 	gap: var(--space-s);
@@ -113,14 +108,8 @@ const { open, close } = useModal({
 	display: flex;
 	flex-direction: row;
 	gap: calc(var(--grid-block) / 2);
-	/* justify-content: flex-end; */
-	/* & button {
-		width: calc(var(--grid-block) * 6);
-		width: 100%;
-	}
-	& a {
-		width: calc(var(--grid-block) * 8);
-		width: 100%;
-	} */
+}
+p {
+	max-width: 45ch;
 }
 </style>
