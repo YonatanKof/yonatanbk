@@ -60,6 +60,7 @@ const contentItems = [
 	color: var(--color-sys-invert-main);
 	height: 100%;
 	text-align: start;
+	padding-block-end: var(--space-3xl);
 }
 .this-text {
 	max-width: 57ch;

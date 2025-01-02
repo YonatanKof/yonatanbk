@@ -1,8 +1,8 @@
 <template>
 	<div class="frame">
 		<div v-for="index in 6" :class="`stick b-${index - 1}`">
-			<div class="container" :style="{ '--octa-gap': `${1 - (index * 0.15)}rem` }">
-				<div v-for="b in 17" class="box"></div>
+			<div class="container" :style="{ '--octa-gap': `${1.5 - (index * 0.2)}rem` }">
+				<div v-for="b in 15" class="box"></div>
 			</div>
 		</div>
 	</div>
@@ -66,7 +66,7 @@
 	display: grid;
 	width: 100%;
 	height: 100%;
-	grid-template-columns: repeat(17, 1fr);
+	grid-template-columns: repeat(15, 1fr);
 	background-color: var(--color-brand-red-main);
 	gap: var(--octa-gap);
 }
