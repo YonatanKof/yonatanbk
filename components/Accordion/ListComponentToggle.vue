@@ -51,7 +51,6 @@ const currentComponents = computed(() => {
 .component-container {
 	flex: 1;
 	overflow: hidden;
-	border-radius: var(--border-radius-md);
 }
 
 .content-component {
