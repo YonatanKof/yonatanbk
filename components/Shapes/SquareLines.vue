@@ -1,8 +1,8 @@
 <template>
 	<div class="frame">
-		<div v-for="index in 5" :class="`stick b-${index - 1}`">
-			<div class="container" :style="{ '--octa-gap': `${index / 3}rem` }">
-				<div v-for="b in 10" class="box"></div>
+		<div v-for="index in 6" :class="`stick b-${index - 1}`">
+			<div class="container" :style="{ '--octa-gap': `${1 - (index * 0.15)}rem` }">
+				<div v-for="b in 17" class="box"></div>
 			</div>
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 		clip-path: inset(10%);
 	}
 	100% {
-		clip-path: inset(5% 0%);
+		clip-path: inset(2.5%);
 	}
 }
 @keyframes c2 {
@@ -21,7 +21,7 @@
 		clip-path: inset(20%);
 	}
 	100% {
-		clip-path: inset(10% 0%);
+		clip-path: inset(5%);
 	}
 }
 @keyframes c3 {
@@ -29,7 +29,7 @@
 		clip-path: inset(30%);
 	}
 	100% {
-		clip-path: inset(15% 0%);
+		clip-path: inset(10%);
 	}
 }
 @keyframes c4 {
@@ -37,7 +37,15 @@
 		clip-path: inset(40%);
 	}
 	100% {
-		clip-path: inset(20% 0%);
+		clip-path: inset(12.5%);
+	}
+}
+@keyframes c5 {
+	0% {
+		clip-path: inset(50%);
+	}
+	100% {
+		clip-path: inset(15%);
 	}
 }
 .frame {
@@ -47,7 +55,6 @@
 	grid-template-rows: 1fr;
 	width: var(--size);
 	height: var(--size);
-	position: relative;
 }
 .stick {
 	grid-column: 1;
@@ -59,7 +66,7 @@
 	display: grid;
 	width: 100%;
 	height: 100%;
-	grid-template-columns: repeat(10, 1fr);
+	grid-template-columns: repeat(17, 1fr);
 	background-color: var(--color-brand-red-main);
 	gap: var(--octa-gap);
 }
@@ -76,6 +83,9 @@
 	animation: c3 5s ease-in-out infinite alternate;
 }
 .b-4 {
+	animation: c4 5s ease-in-out infinite alternate;
+}
+.b-5 {
 	animation: c4 5s ease-in-out infinite alternate;
 }
 </style>

@@ -21,7 +21,7 @@
 	clip-path: circle(50%);
 	position: relative;
 	overflow: hidden;
-	animation: height 10s ease-in-out infinite alternate;
+	animation: height 5s ease-in-out infinite alternate;
 	& > div {
 		position: absolute;
 		inset: 0;

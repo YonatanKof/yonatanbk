@@ -21,7 +21,7 @@ const contentItems = [
 		title: 'Brand Building',
 		subTitle:
 			"I craft brand identities that seamlessly cross interfaces and teams. Imagine for a moment how this will improve your brand's impact across the digital landscape.",
-		components: SquareLines,
+		components: SquareCenter,
 	},
 	{
 		title: 'DesignOps & Mgmt.',
@@ -33,7 +33,7 @@ const contentItems = [
 		title: 'Execution & Dev',
 		subTitle:
 			'I bridge planning and execution through design systems, leveraging my coding skills and hands-on abilities to enhance collaboration, streamline design processes and foster a collaborative environment.',
-		components: SquareCenter,
+		components: SquareLines,
 	},
 ];
 </script>

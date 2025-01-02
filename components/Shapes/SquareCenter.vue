@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div v-for="index in 25" class="box" :style="{ '--delay': `${index * 250}ms` }"></div>
+		<div v-for="index in 25" class="box" :style="{ '--delay': `${index * 50}ms` }"></div>
 	</div>
 </template>
 <style scoped>
@@ -43,7 +43,7 @@
 		border-radius: 100%;
 		inset-inline-start: -75%;
 		inset-block-start: -75%;
-		animation: scale-it 4s ease-in-out infinite alternate;
+		animation: scale-it 2.75s ease-in-out infinite alternate;
 		animation-delay: var(--delay);
 		animation-fill-mode: forwards
 	}
