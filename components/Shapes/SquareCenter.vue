@@ -1,17 +1,17 @@
 <template>
 	<div class="container">
-		<div v-for="index in 36" class="box" :style="{ '--delay': `${index * 50}ms` }"></div>
+		<div v-for="index in 25" class="box" :style="{ '--delay': `${index * 250}ms` }"></div>
 	</div>
 </template>
 <style scoped>
-@keyframes move-it {
+@keyframes scale-it {
 	0% {
-		inset-inline-start: -110%;
-		inset-block-start: -110%;
+		width: 100%;
+		height: 100%;
 	}
 	100% {
-		inset-inline-start: 60%;
-		inset-block-start: 60%;
+		width: 165%;
+		height: 165%;
 	}
 }
 .container {
@@ -19,8 +19,8 @@
 	width: var(--size);
 	height: var(--size);
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 	gap: var(--space-2xs);
 }
 .box {
@@ -37,15 +37,15 @@
 		content: '';
 		display: block;
 		position: absolute;
-		min-width: 150%;
-		min-height: 150%;
+		width: 100%;
+		height: 100%;
 		background-color: var(--color-brand-red-main);
 		border-radius: 100%;
-		inset-inline-start: -110%;
-		inset-block-start: -110%;
-		animation: move-it 7s ease-in-out infinite alternate;
+		inset-inline-start: -75%;
+		inset-block-start: -75%;
+		animation: scale-it 4s ease-in-out infinite alternate;
 		animation-delay: var(--delay);
-		/* animation-fill-mode: forwards */
+		animation-fill-mode: forwards
 	}
 }
 </style>
