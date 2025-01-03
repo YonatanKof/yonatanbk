@@ -4,6 +4,7 @@ import type { TypedOptions } from '@duskmoon/vue3-typed-js';
 
 const options: TypedOptions = {
 	strings: [
+		'<span class="text-bold color-brand-green">Delivering </span> design <span class="text-bold color-brand-orange">Innovation</span>',
 		'<span class="text-bold color-brand-green">Building</span> design <span class="text-bold color-brand-orange">Systems</span>',
 		'<span class="text-bold color-brand-blue">Leading</span> design <span class="text-bold color-brand-red">Teams</span>',
 		'<span class="text-bold color-brand-red">Managing</span> design <span class="text-bold color-brand-blue">Sprints</span>',

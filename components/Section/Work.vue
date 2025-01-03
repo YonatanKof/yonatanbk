@@ -9,7 +9,62 @@
 			/>
 			<div class="work">
 				<Project
+					id="design-systems"
+					highlight-color="var(--color-brand-red-main)"
+					:animation-time="6000"
+					:image-array="[
+						{
+							url: '/projects/design-systems/ads.webm',
+							name: 'Allotropy Design System',
+						},
+						{
+							url: '/projects/design-systems/kds.webm',
+							name: 'Kof Design System',
+						},
+						{
+							url: '/projects/design-systems/bgf.webm',
+							name: 'Brand Guide Framework',
+						},
+						{
+							url: '/projects/design-systems/tokens.webm',
+							name: 'Design Tokens In Action',
+						},
+					]"
+					title="Design Systems & Guides"
+					position="Design Lead"
+					year="2015-2025"
+					description="Building design systems before they were called this way, which are actually an extension of a brand book – therefor I also build awesome brand guides. Also, be sure to check out Pepperi project below to see an enterprise garde design system implemented using Storybook."
+					:verticals="['Design Systems', 'Brand Guides', 'Design Tokens', 'Component Libraries']"
+					:jobs="['Storybook', 'CSS', 'Figma', 'Sketch', 'Illustrator', 'Abstract', 'Notion']"
+					logo="/images/clients-color/GeoKof.webp"
+					:link-to="[
+						{
+							url: 'https://www.figma.com/community/file/1456699524814141190/allotropy-design-system',
+							name: 'Allotropy Design System (Figma)',
+						},
+						{
+							url: 'https://yonatankof.notion.site/Kof-Design-System-6648214c57cc40e4b80c4718386ec2b5?pvs=4',
+							name: 'Kof Design System (Sketch)',
+						},
+						{
+							url: 'https://yonatankof.notion.site/a7b6eaaf27ed45d3961232ad8be14995?v=53118f85dcae462ba34e484535cc1584&pvs=4',
+							name: 'Brand Guide Framework (Notion)',
+						},
+						{
+							url: 'https://wwape.com/post/design-tokens/',
+							name: 'Design Tokens In Action (WWApe)',
+						},
+						// Example of an internal link, so it's missing the external icon
+						// {
+						// 	url: '/kof',
+						// 	name: 'Kof',
+						// 	internal: true,
+						// },
+					]"
+				/>
+				<Project
 					id="pepperi"
+					order="flip"
 					highlight-color="#6E960A"
 					:image-array="[
 						{
@@ -47,31 +102,24 @@
 					:link-to="[
 						{
 							url: 'https://www.pepperi.com/',
-							name: 'Visit Pepperi site',
+							name: 'Visit Pepperi Site',
 						},
 						{
 							url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
-							name: 'Explore Pepperi DS',
+							name: 'Explore Pepperi Design System',
 						},
 						{
 							url: 'https://brand.pepperi.com/',
-							name: 'Review Pepperi brand guide',
+							name: 'Review Pepperi Brand Guide',
 						},
 						{
 							url: 'https://peppersona.netlify.app/',
 							name: 'Pepperi Persona (via Notion API)',
 						},
-						// Example of an internal link, so it's missing the external icon 
-						// {
-						// 	url: '/kof',
-						// 	name: 'Kof',
-						// 	internal: true,
-						// },
 					]"
 				/>
 				<Project
 					highlight-color="#0068F5"
-					order="flip"
 					id="avodata"
 					:animation-time="3000"
 					:image-array="[
@@ -121,6 +169,7 @@
 				<Project
 					highlight-color="#EC1F8E"
 					id="mtns"
+					order="flip"
 					:animation-time="4000"
 					:image-array="[
 						{
@@ -143,8 +192,8 @@
 					title="Matnas Interactive"
 					position="Partner"
 					year="2009-2015"
-					description="At Matnas I've supervised daily operations and managed multiple design projects from start to finish. I lead designers, managed scoping, budgeting, stakeholder communication, and deadlines at best quality."
-					:verticals="['Native App', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop', ]"
+					description="High pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts start to finish. Leading designers, managing projects scopes, budgeting, stakeholder communication, and managing deadlines at best quality."
+					:verticals="['Native App', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop']"
 					:jobs="['Ideation', 'Design Manager', 'Business Development', 'Project Owner', 'Researcher', 'UX/UI Design']"
 					logo="/images/clients-color/mtns.webp"
 					:link-to="[
