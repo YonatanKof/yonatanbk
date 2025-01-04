@@ -26,13 +26,13 @@ const contentItems = [
 	{
 		title: 'DesignOps & Mgmt.',
 		subTitle:
-			"Using a blend of team coaching, best-in-class backlog management tools, and methods, I deliver results that matter, right when they're needed.",
+			"With a blend of team coaching, best-in-class backlog management tools, and sweet soft skills, I deliver results that matter, right when they're needed.",
 		components: CircleHalf,
 	},
 	{
 		title: 'Execution & Dev',
 		subTitle:
-			'Using design systems, leveraging my coding skills and hands-on abilities – I bridge planning and execution to enhance collaboration, streamline design processes and foster a creative environment.',
+			'Leveraging my coding skills and hands-on abilities I build design systems that bridge planning and execution to enhance collaboration, streamline design processes and foster a creative environment.',
 		components: SquareLines,
 	},
 ];
