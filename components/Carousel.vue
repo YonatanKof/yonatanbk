@@ -56,20 +56,21 @@ const isVideo = (file) => {
 
 <style scoped>
 .carousel {
-	--highlight-color: v-bind(highlightColor);
+	/* --highlight-color: v-bind(highlightColor); */
+	--highlight-color:  color-mix(in hsl, v-bind(highlightColor) 90%, black);
 	--anim-time: calc(v-bind(animationTime) * 1ms);
 	--border-width: var(--space-3xs);
 	--vc-pgn-width: var(--space-2xs);
 	--vc-pgn-kof-width: var(--space-xs);
 	--vc-pgn-height: var(--space-2xs);
-	--vc-pgn-border-radius: 20px;
+	--vc-pgn-border-radius: unset;
 	--vc-pgn-background-color: var(--color-sys-invert-dim);
 	--vc-pgn-active-color: var(--color-sys-invert-main);
 	max-width: calc(var(--space-8xl) * 4);
 	background-color: var(--highlight-color);
 	height: 100%;
 	overflow: hidden;
-	border-radius: var(--border-radius-sm);
+	border-radius: unset;
 	position: relative;
 	border: var(--border-width) solid var(--highlight-color);
 	cursor: grab;
@@ -82,8 +83,10 @@ const isVideo = (file) => {
 .carousel__pagination {
 	background-color: var(--highlight-color);
 	padding-inline: 0.2em !important;
-	border-radius: 4rem;
-	bottom: var(--space-xs);
+	inset-block-end: var(--border-width);
+	inset-inline-end: var(--border-width);
+	left: unset;
+	transform: unset;
 }
 .carousel__item {
 	position: relative;
@@ -96,13 +99,13 @@ const isVideo = (file) => {
 }
 span {
 	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
+	inset-block-start: var(--border-width);
+	inset-inline-start: var(--border-width);
 	background-color: var(--highlight-color);
-	border-end-end-radius: var(--border-radius-sm);
 }
 .hovering-text {
-	padding: calc(0.3em - var(--border-width)) 0.6em 0.3em calc(0.6em - var(--border-width));
+	/* padding: calc(0.5em - var(--border-width)) 0.8em 0.5em calc(0.8em - var(--border-width)); */
+	padding: 0.4em 0.6em;
 	font-variation-settings: 'wght' 600;
 }
 </style>
