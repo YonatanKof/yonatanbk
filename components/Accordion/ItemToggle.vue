@@ -132,7 +132,10 @@ const normalizedComponents = computed(() => {
 		@touchend="handleTouchEnd"
 		@click="handleClick"
 	>
-		<Text tag="h3" variant="secondary-title" :class="{ 'dim-it': !isActive }">{{ title }}</Text>
+		<span>
+			<div class="sign" :class="{ 'sign-minus': !isActive }"></div>
+			<Text tag="h3" variant="secondary-title" :class="{ 'dim-it': !isActive }">{{ title }}</Text>
+		</span>
 		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
 		<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive">
 			{{ subTitle }}
@@ -190,7 +193,20 @@ const normalizedComponents = computed(() => {
 	transform: translateY(0);
 	margin-block-end: var(--space-m);
 }
-
+span{
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+.sign {
+	width: var(--space-s);
+	height: var(--space-s);
+	background-color: var(--color-sys-invert-slight);
+	clip-path: polygon(0% 40%, 100% 40%, 100% 60%, 0% 60%);
+}
+.sign-minus{
+	clip-path: polygon(0% 40%, 40% 40%, 40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%);
+}
 .mobile-component-container {
 	margin: 1rem 0;
 	display: flex;
