@@ -126,20 +126,23 @@ const normalizedComponents = computed(() => {
 <template>
 	<div
 		class="content-toggle"
+		:class="{ active: isActive }"
 		@mouseenter="handleMouseEnter"
 		@mouseleave="handleMouseLeave"
 		@touchstart="handleTouchStart"
 		@touchend="handleTouchEnd"
 		@click="handleClick"
 	>
-		<span>
-			<div class="sign" :class="{ 'sign-minus': !isActive }"></div>
+		<span :class="{ 'click-it': !isActive }" class="item-title">
+			<div class="sign-plus"></div>
 			<Text tag="h3" variant="secondary-title" :class="{ 'dim-it': !isActive }">{{ title }}</Text>
 		</span>
-		<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
-		<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive">
-			{{ subTitle }}
-		</Text>
+		<span class="this-spacing">
+			<AccordionProgressBar :active="isActive" :duration="duration" :isPaused="isPaused" />
+			<Text variant="body-medium" class="subtitle" :class="{ visible: isActive }" v-show="isActive">
+				{{ subTitle }}
+			</Text>
+		</span>
 
 		<!-- Mobile Component -->
 		<!-- <div v-if="isMobileView && components" class="mobile-component-container"  v-show="isActive">
@@ -161,11 +164,18 @@ const normalizedComponents = computed(() => {
 	gap: var(--space-s);
 	&:hover {
 		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLSURBVHgB7ZM5CgAgDASz4vPUx6r/i0fhgVdhJy4kEGaZLqAapjE4cZG2MypDZi7TZscFXeYLvuARgWwPANvyjBdB/LgOaOu79ooH6GUestWY8A0AAAAASUVORK5CYII=')
-				8 8,
+				2 2,
 			auto;
 	}
 }
 
+.click-it {
+	&:hover {
+		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsSURBVHgBxZMBCoAgDEW30fGqw1b3WzVqLWEyFfGBMNT/mMIQPhj+IAQgG2ZmWSXQvs4armHKnEWMSG7aPMerb1xBEK4WvF20dtBJYD/Jq7OC5g7GCBBDswPpfRFc86Cb0aWeR1A8Sct2SPYEmysyuVewiKoAAAAASUVORK5CYII=')
+				2 2,
+			auto;
+	}
+}
 .dim-it {
 	color: var(--color-sys-invert-slight);
 	font-variation-settings: 'wght' 500, 'wdth' 100, 'opsz' 12;
@@ -173,12 +183,14 @@ const normalizedComponents = computed(() => {
 	&:hover {
 		font-variation-settings: 'wght' 700, 'wdth' 100, 'opsz' 12;
 		color: var(--color-sys-invert-main);
-		cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsSURBVHgBxZMBCoAgDEW30fGqw1b3WzVqLWEyFfGBMNT/mMIQPhj+IAQgG2ZmWSXQvs4armHKnEWMSG7aPMerb1xBEK4WvF20dtBJYD/Jq7OC5g7GCBBDswPpfRFc86Cb0aWeR1A8Sct2SPYEmysyuVewiKoAAAAASUVORK5CYII=')
-				8 8,
-			auto;
 	}
 }
-
+.this-spacing {
+	padding-inline-start: calc(var(--space-s) + var(--space-xs));
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+}
 .subtitle {
 	opacity: 0;
 	height: 0;
@@ -193,19 +205,50 @@ const normalizedComponents = computed(() => {
 	transform: translateY(0);
 	margin-block-end: var(--space-m);
 }
-span{
+.item-title {
 	display: flex;
 	align-items: center;
 	gap: var(--space-xs);
 }
-.sign {
+.sign-plus {
 	width: var(--space-s);
 	height: var(--space-s);
-	background-color: var(--color-sys-invert-slight);
-	clip-path: polygon(0% 40%, 100% 40%, 100% 60%, 0% 60%);
+	background-color: var(--color-sys-invert-dim);
+	transition: clip-path 0.5s ease;
+	clip-path: polygon(
+		0% 40%,
+		40% 40%,
+		40% 0%,
+		60% 0%,
+		60% 40%,
+		100% 40%,
+		100% 60%,
+		60% 60%,
+		60% 100%,
+		40% 100%,
+		40% 60%,
+		0% 60%
+	);
 }
-.sign-minus{
-	clip-path: polygon(0% 40%, 40% 40%, 40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%);
+.content-toggle.active .sign-plus {
+	transition: clip-path 0.5s ease;
+	background-color: var(--color-sys-invert-main);
+	/* this is the Minus sign*/
+	/* It has redundant points top the transition from Plus can work*/
+	clip-path: polygon(
+		0% 40%,
+		40% 40%,
+		40% 40%,
+		60% 40%,
+		60% 40%,
+		100% 40%,
+		100% 60%,
+		60% 60%,
+		60% 60%,
+		40% 60%,
+		40% 60%,
+		0% 60%
+	);
 }
 .mobile-component-container {
 	margin: 1rem 0;

@@ -59,7 +59,7 @@ watch(() => props.isPaused, updateProgress);
 <style scoped>
 .progress-container {
 	width: 100%;
-	height: var(--space-3xs);
+	height: 2px;
 	background-color: var(--color-sys-dis);
 	border-radius: var(--border-radius-xs);
 	overflow: hidden;
