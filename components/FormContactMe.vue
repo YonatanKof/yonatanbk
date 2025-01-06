@@ -34,7 +34,7 @@ const emit = defineEmits<{
 					Phone
 					<p class="hint body body-x-small">Optional</p>
 				</label>
-				<input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+				<input type="tel" name="phone" id="phone" pattern="[0-9 ()-]*" />
 			</div>
 
 			<div class="input">

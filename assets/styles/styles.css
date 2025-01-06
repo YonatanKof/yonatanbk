@@ -1,4 +1,7 @@
 @layer styles {
+	body {
+		accent-color: var(--color-brand-orange-main);
+	  }
 	section {
 		padding: unset;
 	}
