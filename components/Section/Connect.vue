@@ -57,8 +57,8 @@ const { open, close } = useModal({
 						<div class="split-column-content">
 							<Text tag="h2" variant="secondary-title" class="capitalize">Let's Connect!</Text>
 							<Text variant="body-medium">
-								Full-time employment, mentoring, advising, freelance, help with an existential crisis or you just want
-								to get to know me better?
+								Full-time employment, mentoring, advising, freelance, request my Résumé, help with an existential crisis
+								or you just want to get to know me better?
 							</Text>
 							<Text variant="body-medium"> Feel free to connect ↓ </Text>
 						</div>
