@@ -7,6 +7,10 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
+	desc: {
+		type: String,
+		required: true,
+	},
 	position: {
 		type: String,
 		required: true,
@@ -74,7 +78,12 @@ onUnmounted(() => {
 </script>
 <template>
 	<article :class="projectClasses">
-		<Carousel v-if="!isMobileView" :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor" />
+		<Carousel
+			v-if="!isMobileView"
+			:images="imageArray"
+			:animationTime="animationTime"
+			:highlightColor="highlightColor"
+		/>
 		<div class="info">
 			<Text tag="h3" variant="secondary-title">{{ title }}</Text>
 			<div id="meta-data">
@@ -82,8 +91,15 @@ onUnmounted(() => {
 				<span class="dot"></span>
 				<Text variant="body-x-small">{{ year }}</Text>
 			</div>
+			<Text class="max-ch" tag="h6" variant="heading-x-small">{{ desc }}</Text>
 			<Text class="max-ch" variant="body-small">{{ description }}</Text>
-			<Carousel class="spacing" v-if="isMobileView" :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor" />
+			<Carousel
+				class="spacing"
+				v-if="isMobileView"
+				:images="imageArray"
+				:animationTime="animationTime"
+				:highlightColor="highlightColor"
+			/>
 			<div id="links">
 				<Text class="max-ch" tag="h6" variant="heading-x-small">Drill down</Text>
 				<Text v-for="link in props.linkTo" variant="body-x-small">
@@ -99,7 +115,7 @@ onUnmounted(() => {
 			</div>
 			<div id="verticals" class="max-ch">
 				<Text v-for="vertical in verticals" variant="body-x-small"
-				><span class="color-dimmed">#</span>{{ vertical }}</Text
+					><span class="color-dimmed">#</span>{{ vertical }}</Text
 				>
 			</div>
 			<div id="jobs" class="max-ch">
@@ -194,7 +210,7 @@ article {
 .max-ch {
 	max-width: 55ch;
 }
-.spacing{
+.spacing {
 	margin-block: var(--space-2xs);
 }
 </style>
