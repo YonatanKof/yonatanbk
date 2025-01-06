@@ -213,6 +213,9 @@
 </template>
 
 <style scoped>
+.wrapper {
+	max-width: var(--display-width-xl);
+}
 .work {
 	display: flex;
 	flex-direction: column;
