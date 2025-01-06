@@ -1,12 +1,13 @@
 <template>
 	<section id="work">
 		<div class="wrapper">
-			<LayoutContentTop
-				title="Selected Works"
-				description="As a partner in a design agency, a startup team member, a freelance, and as 
-			corporate man - I've solved all kinds of design problems and have met with all kind of 
-			projects. Here are but a few."
-			/>
+			<LayoutContentTop>
+				<template #title>Selected Works</template>
+				<template #desc>
+					As a partner in a design agency, a startup team member, a freelance, and as corporate man - I've solved all
+					kinds of design problems and have met with all kind of projects. Here are but a few.
+				</template>
+			</LayoutContentTop>
 			<div class="work">
 				<Project
 					id="design-systems"
@@ -35,7 +36,7 @@
 					year="2015-2025"
 					description="Building design systems before they were called this way, which are actually an extension of a brand book – therefor I also build awesome brand guides. Also, be sure to check out Pepperi project below to see an enterprise garde design system implemented using Storybook."
 					:verticals="['Design Systems', 'Brand Guides', 'Design Tokens', 'Component Libraries']"
-					:jobs="['Storybook', 'CSS', 'Figma', 'Sketch', 'Illustrator', 'Abstract', 'Notion']"
+					:jobs="['Storybook', 'CSS', 'Figma', 'Sketch', 'Abstract', 'Notion']"
 					logo="/images/clients-color/GeoKof.webp"
 					:link-to="[
 						{
@@ -101,16 +102,24 @@
 					logo="/images/clients-color/pepperi.webp"
 					:link-to="[
 						{
+							url: 'https://wwape.com/work/pepperi-design-system/',
+							name: 'Pepperi Design Systems Page at WWApe',
+						},
+						{
+							url: 'https://wwape.com/work/pepperi-page-builder/',
+							name: 'Web Page Builder Case Study at WWApe',
+						},
+						{
 							url: 'https://www.pepperi.com/',
-							name: 'Visit Pepperi Site',
+							name: 'Visit Pepperi Marketing Site',
 						},
 						{
 							url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
-							name: 'Explore Pepperi Design System',
+							name: 'Pepperi Design System at Storybook',
 						},
 						{
 							url: 'https://brand.pepperi.com/',
-							name: 'Review Pepperi Brand Guide',
+							name: 'Review Pepperi Brand Guide (VuePress)',
 						},
 						{
 							url: 'https://peppersona.netlify.app/',
@@ -157,12 +166,16 @@
 					logo="/images/clients-color/avodata.webp"
 					:link-to="[
 						{
-							url: 'https://avodata.labor.gov.il/',
-							name: 'Visit Avodata site',
+							url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
+							name: 'Review UX Flow',
 						},
 						{
-							url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
-							name: 'Review Avodata UX Mockups',
+							url: 'https://www.dropbox.com/scl/fi/61whvk1a2wc3o3mgjmfp3/Avodata-08-Persentation.pdf?rlkey=rv1dncksebo6r5digmsa0eere&dl=0',
+							name: 'Review Research & Findings',
+						},
+						{
+							url: 'https://avodata.labor.gov.il/',
+							name: 'Visit Avodata site',
 						},
 					]"
 				/>
@@ -194,7 +207,7 @@
 					year="2009-2015"
 					description="High pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts start to finish. Leading designers, managing projects scopes, budgeting, stakeholder communication, and managing deadlines at best quality."
 					:verticals="['Native App', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop']"
-					:jobs="['Ideation', 'Design Manager', 'Business Development', 'Project Owner', 'Researcher', 'UX/UI Design']"
+					:jobs="['Ideation', 'Design Manager', 'BizDev', 'Project Owner', 'Researcher', 'UX/UI Design']"
 					logo="/images/clients-color/mtns.webp"
 					:link-to="[
 						{

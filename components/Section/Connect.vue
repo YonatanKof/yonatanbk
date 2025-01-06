@@ -16,7 +16,9 @@ const { open, close } = useModal({
 	<section id="connect">
 		<div class="wrapper">
 			<div class="section-content">
-				<LayoutContentTop title="Let's do something extraordinary together" />
+				<LayoutContentTop :is-desc="false">
+					<template #title>Let's do something extraordinary together</template>
+				</LayoutContentTop>
 				<div class="split">
 					<div class="split-column">
 						<div class="split-column-content">
