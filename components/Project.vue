@@ -57,10 +57,24 @@ const props = defineProps({
 const projectClasses = computed(() => ({
 	[`project-${props.order}`]: true,
 }));
+const isMobileView = ref(false);
+
+function updateViewport() {
+	isMobileView.value = window.innerWidth < 800;
+}
+
+onMounted(() => {
+	updateViewport();
+	window.addEventListener('resize', updateViewport);
+});
+
+onUnmounted(() => {
+	window.removeEventListener('resize', updateViewport);
+});
 </script>
 <template>
 	<article :class="projectClasses">
-		<Carousel :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor" />
+		<Carousel v-if="!isMobileView" :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor" />
 		<div class="info">
 			<Text tag="h3" variant="secondary-title">{{ title }}</Text>
 			<div id="meta-data">
@@ -68,17 +82,10 @@ const projectClasses = computed(() => ({
 				<span class="dot"></span>
 				<Text variant="body-x-small">{{ year }}</Text>
 			</div>
-			<Text variant="body-small">{{ description }}</Text>
-			<div id="verticals">
-				<Text v-for="vertical in verticals" variant="body-x-small"
-					><span class="color-dimmed">#</span>{{ vertical }}</Text
-				>
-			</div>
-			<div id="jobs">
-				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
-			</div>
-			<NuxtImg class="logo" :src="logo" placeholder />
+			<Text class="max-ch" variant="body-small">{{ description }}</Text>
+			<Carousel class="spacing" v-if="isMobileView" :images="imageArray" :animationTime="animationTime" :highlightColor="highlightColor" />
 			<div id="links">
+				<Text class="max-ch" tag="h6" variant="heading-x-small">Drill down</Text>
 				<Text v-for="link in props.linkTo" variant="body-x-small">
 					<NuxtLink
 						:class="{ 'external-icon': !link.internal }"
@@ -90,6 +97,15 @@ const projectClasses = computed(() => ({
 					</NuxtLink>
 				</Text>
 			</div>
+			<div id="verticals" class="max-ch">
+				<Text v-for="vertical in verticals" variant="body-x-small"
+				><span class="color-dimmed">#</span>{{ vertical }}</Text
+				>
+			</div>
+			<div id="jobs" class="max-ch">
+				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
+			</div>
+			<NuxtImg class="logo" :src="logo" placeholder />
 		</div>
 	</article>
 </template>
@@ -113,7 +129,7 @@ article {
 }
 .info {
 	max-width: calc(var(--space-7xl) * 3);
-	min-width: calc(var(--space-3xl) * 4);
+	min-width: calc(var(--space-2xl) * 4);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-2xs);
@@ -139,10 +155,13 @@ article {
 	padding-block-end: var(--space-2xs);
 }
 #links {
-	margin-block-start: var(--space-xs);
+	/* margin-block-start: var(--space-xs); */
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-3xs);
+	& > :first-child {
+		margin-block: var(--space-2xs);
+	}
 }
 #verticals {
 	padding-block-start: var(--space-2xs);
@@ -157,12 +176,12 @@ article {
 	width: auto;
 	align-self: flex-start;
 }
-@media (720px >= width) {
+@media (800px >= width) {
 	article {
 		gap: var(--space-s);
 	}
 	.info {
-		min-width: unset;
+		min-width: 100%;
 	}
 	.project-default,
 	.project-flip {
@@ -171,5 +190,11 @@ article {
 	h3 {
 		font-size: var(--step-6);
 	}
+}
+.max-ch {
+	max-width: 55ch;
+}
+.spacing{
+	margin-block: var(--space-2xs);
 }
 </style>
