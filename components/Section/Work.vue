@@ -219,6 +219,15 @@
 .work {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-xl);
+	gap: var(--space-4xl);
+	@media (width < 720px) {
+		gap: var(--space-3xl);
+	}
+	@media (width < 544px) {
+		gap: var(--space-2xl);
+	}
+	@media (width < 480px) {
+		gap: var(--space-xl);
+	}
 }
 </style>

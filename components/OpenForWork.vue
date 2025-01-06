@@ -20,7 +20,7 @@
 		opacity: 1;
 	}
 	100% {
-		transform: scale(1.5);
+		transform: scale(1);
 		opacity: 0;
 	}
 }
@@ -33,6 +33,9 @@
 	position: relative;
 	backdrop-filter: blur(2px);
 	border-radius: 4rem;
+}
+.chip {
+	border: unset;
 }
 
 .pulse-wrapper {
@@ -81,4 +84,3 @@ span::after {
 	background-color: var(--color-sys-invert-slight);
 }
 </style>
-

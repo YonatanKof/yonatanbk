@@ -63,7 +63,7 @@ const emit = defineEmits<{
 
 <style scoped>
 form {
-  margin-block-start: var(--space-s);
+	margin-block-start: var(--space-s);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xs);
@@ -75,7 +75,7 @@ textarea {
 	min-height: var(--space-l);
 	border: 1px solid var(--color-sys-main);
 	border-radius: 0;
-  -webkit-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
 	padding-inline: var(--space-xs);
 	padding-block: var(--space-3xs);
 	margin: unset;
@@ -92,8 +92,8 @@ select {
 	background-repeat: no-repeat;
 	background-position: right 8px center;
 	padding-right: 32px; /* Space for custom arrow */
-  color: var(--color-sys-main) !important;
-  min-height: 2rem !important;
+	color: var(--color-sys-main) !important;
+	min-height: 2rem !important;
 }
 select,
 textarea {

@@ -12,7 +12,7 @@
 
 	.chip {
 		padding: 0.25em 0.75em;
-		border: 1px dashed var(--color-brand-red-slight);
+		background-color:  var(--color-sys-hardly);
 		border-radius: 4rem;
 	}
 	.cool-doted-bg {
@@ -36,7 +36,7 @@
 		@media (976px >= width) {
 			--side-space: var(--space-l);
 		}
-		@media (480px >= width) {
+		@media (720px >= width) {
 			--side-space: var(--space-m);
 		}
 	}
