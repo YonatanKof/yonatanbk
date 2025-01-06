@@ -6,7 +6,7 @@ const emit = defineEmits<{
 
 <template>
 	<div>
-		<Text tag="h2" variant="secondary-title" class="title">Let's talk!</Text>
+		<Text tag="h2" variant="secondary-title" class="title">Let's talk</Text>
 		<form
 			name="contact-me"
 			method="POST"

@@ -14,7 +14,7 @@ const contentItems = [
 	{
 		title: 'Hands-On & Dev',
 		subTitle:
-			'Leveraging my coding skills and hands-on abilities I build design systems that bridge planning and execution to enhance collaboration, streamline design processes and foster a creative environment.',
+			'Leveraging coding and hands-on skills, I build design systems that bridge planning and execution to enhance collaboration, streamline design processes, and foster a creative environment.',
 		components: SquareLines,
 	},
 	{
@@ -42,12 +42,14 @@ const contentItems = [
 	<section id="design" class="checked-grid-lines torn-paper-bottom">
 		<div id="secondary-messages">
 			<div class="wrapper">
+				<!-- As the name implies, this term is closely related to development and that makes sense for I'm a <nuxt-link to="https://designtechnologist.club/">design technologist</nuxt-link>.  -->
 				<LayoutContentTop>
 					<template #title> This is <span class="no-brake">full stack design</span></template>
 					<template #desc>
-						If you proficient in: UX research, hands-on design, team leadership, stakeholders & backlog mgmt. – then you're a full stack product designer<br />
-						For the last 15+ years my mission is to bridge the gap between people, businesses, and technology through
-						research, design and execution; creating elegant solutions that simplify complexity and enhance lives.
+						If you're proficient in UX research, hands-on design, team leadership, design ops, front-end development,
+						stakeholders mgmt. and backlog mgmt., then you're a full-stack product designer.<br />
+						For the last 15+ years, I bridged the gap between people, businesses, and technology through research,
+						design, and execution; creating elegant solutions that simplify complexity and enhance lives.
 					</template>
 				</LayoutContentTop>
 				<AccordionListToggle :items="contentItems" :duration="10000" />
@@ -63,10 +65,6 @@ const contentItems = [
 	height: 100%;
 	text-align: start;
 	padding-block-end: var(--space-3xl);
-}
-.this-text {
-	max-width: 60ch;
-	text-wrap: balance;
 }
 br {
 	margin-block-end: var(--space-m);

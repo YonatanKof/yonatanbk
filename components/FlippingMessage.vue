@@ -25,7 +25,7 @@ const options: TypedOptions = {
 				<Text class="typing" text-style="text-end color-slight" tag="h2" variant="compressed-title"> </Text>
 			</Typed>
 		</span>
-		<Text text-style="text-end color-slight" tag="h2" variant="compressed-title"> in startups and orgs </Text>
+		<Text text-style="text-end color-slight" tag="h2" variant="compressed-title"> for startups and orgs </Text>
 	</div>
 </template>
 
