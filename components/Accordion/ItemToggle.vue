@@ -276,7 +276,7 @@ const normalizedComponents = computed(() => {
 	opacity: 1;
 }
 
-@media (min-width: 544px) {
+@media (min-width: 624px) {
 	.mobile-component-container {
 		display: none;
 	}
