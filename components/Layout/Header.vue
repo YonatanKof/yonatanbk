@@ -61,7 +61,7 @@ watch(activeSection, (newSection) => {
 					v-for="section in ['hello', 'design', 'work', 'connect']"
 					:key="section"
 					:href="`#${section}`"
-					class="body body-small"
+					class="body body-small text-bold"
 					:class="{ active: activeSection === section }"
 					:data-section="section"
 					ref="navLinks"
@@ -105,7 +105,7 @@ div {
 }
 
 a {
-	color: var(--color-sys-slight);
+	color: var(--color-sys-dim);
 	position: relative;
 }
 
@@ -124,9 +124,7 @@ nav {
 a.active {
 	color: var(--color-sys-main);
 }
-.this-body-small {
-	font-size: 1rem;
-}
+
 .hide {
 	visibility: visible;
 	@media (width < 520px) {
