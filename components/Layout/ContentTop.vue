@@ -1,20 +1,20 @@
 <script setup lang="ts">
 defineProps({
-	title: {
-		type: String,
-		default: 'Proj name!',
-	},
-	description: {
-		type: String,
-		default: undefined,
+	isDesc: {
+		type: Boolean,
+		default: true,
 	},
 });
 </script>
 
 <template>
 	<div>
-		<Text tag="h1" variant="main-title">{{ title }}</Text>
-		<Text variant="large-text" class="this-text" i-if="description">{{ description }}</Text>
+		<Text tag="h1" variant="main-title">
+			<slot name="title">Proj name!</slot>
+		</Text>
+		<Text variant="large-text" class="this-text" v-if="isDesc">
+			<slot name="desc"></slot>
+		</Text>
 	</div>
 </template>
 
@@ -33,7 +33,7 @@ div {
 		padding-block-end: var(--space-l);
 	}
 }
-p {
-	max-width: 60ch;
+.this-text {
+	max-width: 45ch;
 }
 </style>
