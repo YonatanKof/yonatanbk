@@ -107,6 +107,9 @@ div {
 a {
 	color: var(--color-sys-dim);
 	position: relative;
+	&:hover {
+		border-block-end-color: transparent;
+	}
 }
 
 nav {

@@ -59,4 +59,9 @@ const props = withDefaults(defineProps<LinkToProps>(), {
 p {
 	max-width: 45ch;
 }
+a {
+	&:hover {
+		border-block-end-color: transparent;
+	}
+}
 </style>

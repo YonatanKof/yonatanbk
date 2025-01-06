@@ -76,7 +76,7 @@ const computedClasses = computed(() => {
 .heading-medium {
 	font-variation-settings: 'wght' 700, 'wdth' 100, 'opsz' 12;
 	font-size: var(--step-4);
-	line-height: 1;
+	line-height: 1.1;
 }
 .heading-small {
 	font-variation-settings: 'wght' 400, 'wdth' 100, 'opsz' 80;
@@ -86,7 +86,7 @@ const computedClasses = computed(() => {
 .heading-x-small {
 	font-variation-settings: 'wght' 600, 'wdth' 100, 'opsz' 20;
 	font-size: var(--step-1);
-	line-height: 1;
+	line-height: 1.25;
 }
 .body {
 	font-variation-settings: var(--base-font-settings);

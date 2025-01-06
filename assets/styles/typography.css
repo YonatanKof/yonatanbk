@@ -39,6 +39,16 @@
 			color: inherit;
 		}
 	}
+	ul {
+		padding-inline-start: var(--space-s);
+		list-style-type: disc;
+	}
+	li {
+		&::marker {
+			color: var(--color-sys-dim);
+		}
+
+	}
 	.capitalize {
 		text-transform: capitalize;
 	}

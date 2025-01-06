@@ -34,6 +34,6 @@ div {
 	}
 }
 .this-text {
-	max-width: 45ch;
+	max-width: 55ch;
 }
 </style>
