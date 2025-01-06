@@ -27,6 +27,11 @@
 	a {
 		text-decoration: none;
 		color: var(--color-focus-main);
+		border-block-end: 1px solid var(--color-focus-none);
+		transition: border-block-end-color 0.35s;
+		&:hover {
+			border-block-end-color: var(--color-focus-main);
+		}
 		&:visited {
 			text-decoration: none;
 		}
