@@ -59,13 +59,13 @@
 .stick {
 	grid-column: 1;
 	grid-row: 1;
-	width: 100%;
-	height: 100%;
+	width: var(--size);
+	height: var(--size);
 }
 .container {
 	display: grid;
-	width: 100%;
-	height: 100%;
+	width: var(--size);
+	height: var(--size);
 	grid-template-columns: repeat(15, 1fr);
 	background-color: var(--color-brand-red-main);
 	gap: var(--octa-gap);

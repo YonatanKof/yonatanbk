@@ -1,12 +1,13 @@
 <template>
 	<section id="work">
 		<div class="wrapper">
-			<LayoutContentTop
-				title="Selected Works"
-				description="As a partner in a design agency, a startup team member, a freelance, and as 
-			corporate man - I've solved all kinds of design problems and have met with all kind of 
-			projects. Here are but a few."
-			/>
+			<LayoutContentTop>
+				<template #title>Selected Works</template>
+				<template #desc>
+					As a partner in a design agency, a startup team member, a freelancer, and an executive - I've solved and
+					delivered a large and varied scope of projects. Here are just a few.
+				</template>
+			</LayoutContentTop>
 			<div class="work">
 				<Project
 					id="design-systems"
@@ -29,13 +30,18 @@
 							url: '/projects/design-systems/tokens.webm',
 							name: 'Design Tokens In Action',
 						},
+						{
+							url: '/projects/pepperi/brand.webm',
+							name: 'Pepperi Brand Guide',
+						},
 					]"
 					title="Design Systems & Guides"
+					desc="Systemize design to helps teams win"
 					position="Design Lead"
 					year="2015-2025"
-					description="Building design systems before they were called this way, which are actually an extension of a brand book – therefor I also build awesome brand guides. Also, be sure to check out Pepperi project below to see an enterprise garde design system implemented using Storybook."
-					:verticals="['Design Systems', 'Brand Guides', 'Design Tokens', 'Component Libraries']"
-					:jobs="['Storybook', 'CSS', 'Figma', 'Sketch', 'Illustrator', 'Abstract', 'Notion']"
+					description="Guiding dev and product teams to build awesome design systems, and stakeholders to craft top-notch brand books. Be sure to check out the Pepperi project below to see an enterprise-grade design system Storybook implementation."
+					:verticals="['Storybook', 'CSS', 'Figma', 'Sketch', 'Abstract', 'Notion']"
+					:jobs="['Design Systems Lead', 'Component Architecture', 'Documentation', 'Design Operations']"
 					logo="/images/clients-color/GeoKof.webp"
 					:link-to="[
 						{
@@ -54,12 +60,14 @@
 							url: 'https://wwape.com/post/design-tokens/',
 							name: 'Design Tokens In Action (WWApe)',
 						},
-						// Example of an internal link, so it's missing the external icon
-						// {
-						// 	url: '/kof',
-						// 	name: 'Kof',
-						// 	internal: true,
-						// },
+						{
+							url: 'https://wwape.com/work/pepperi-design-system/',
+							name: 'Pepperi Design Systems Page (WWApe)',
+						},
+						{
+							url: 'https://brand.pepperi.com/',
+							name: 'Pepperi Brand Guide (VuePress)',
+						},
 					]"
 				/>
 				<Project
@@ -86,11 +94,13 @@
 					]"
 					title="Pepperi"
 					position="Head of Design"
+					desc="PaaS for B2B Wholesale Commerce"
 					year="2018-2024"
-					description="Lead webapp across various roles, designing new products, managing requirements, backlogs and design system, conducting research, while supporting marketing, brand and professional services team."
+					description="At Pepperi, I led and executed the design of multiple products and design initiatives of the webapp platform and other functions in the company. Held various roles, managed requirements, backlogs, and design system, conducted research, while supporting marketing, brand, and PS teams."
 					:verticals="['B2B', 'E-commerce', 'Storefront', 'No Code Editor', 'Webpage Builder']"
 					:jobs="[
 						'Research',
+						'Design Systems Lead',
 						'Competitive Analysis',
 						'Stakeholder Mgmt.',
 						'Backlog Mgmt.',
@@ -101,16 +111,24 @@
 					logo="/images/clients-color/pepperi.webp"
 					:link-to="[
 						{
+							url: 'https://wwape.com/work/pepperi-page-builder/',
+							name: 'Web Page Builder Case Study (WWApe)',
+						},
+						{
+							url: 'https://wwape.com/work/pepperi-design-system/',
+							name: 'Pepperi Design Systems Page (WWApe)',
+						},
+						{
 							url: 'https://www.pepperi.com/',
-							name: 'Visit Pepperi Site',
+							name: 'Visit Pepperi Marketing Site',
 						},
 						{
 							url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
-							name: 'Explore Pepperi Design System',
+							name: 'Pepperi Design System at Storybook',
 						},
 						{
 							url: 'https://brand.pepperi.com/',
-							name: 'Review Pepperi Brand Guide',
+							name: 'Pepperi Brand Guide (VuePress)',
 						},
 						{
 							url: 'https://peppersona.netlify.app/',
@@ -149,20 +167,25 @@
 						},
 					]"
 					title="Avodata"
+					desc="Data-driven career choices platform"
 					position="Freelance"
 					year="2018"
-					description="Data-driven career choices made easy – A project by JCD and Ministry of Labour which includes user interviews, UX research, project scoping, UX concept and wireframes for Israel's growing market place"
-					:verticals="['Gov', 'Education', 'Life Style', 'Self Improvement']"
-					:jobs="['Research', 'User Interviews', 'UX']"
+					description="A project for JDC and the Ministry of Labour which includes user interviews, UX concept and research, project scoping, and wireframes. With this, we raised significant funds and partners to build a tool for Israel's growing marketplace."
+					:verticals="['Gov', 'Education', 'Lifestyle', 'Self Improvement']"
+					:jobs="['UX Research', 'User Interviews', 'Project Scoping', 'UX', 'Wireframing']"
 					logo="/images/clients-color/avodata.webp"
 					:link-to="[
 						{
-							url: 'https://avodata.labor.gov.il/',
-							name: 'Visit Avodata site',
+							url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
+							name: 'Review UX Flow',
 						},
 						{
-							url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
-							name: 'Review Avodata UX Mockups',
+							url: 'https://www.dropbox.com/scl/fi/61whvk1a2wc3o3mgjmfp3/Avodata-08-Persentation.pdf?rlkey=rv1dncksebo6r5digmsa0eere&dl=0',
+							name: 'Review Research & Findings',
+						},
+						{
+							url: 'https://avodata.labor.gov.il/',
+							name: 'Visit Avodata site',
 						},
 					]"
 				/>
@@ -190,11 +213,12 @@
 						},
 					]"
 					title="Matnas Interactive"
+					desc="Product Design & Ideation Design Agency"
 					position="Partner"
 					year="2009-2015"
-					description="High pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts start to finish. Leading designers, managing projects scopes, budgeting, stakeholder communication, and managing deadlines at best quality."
-					:verticals="['Native App', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop']"
-					:jobs="['Ideation', 'Design Manager', 'Business Development', 'Project Owner', 'Researcher', 'UX/UI Design']"
+					description="High-pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts from start to finish. This included overseeing project scopes and stakeholder communications."
+					:verticals="['Native Apps', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop']"
+					:jobs="['Ideation', 'Design Manager', 'BizDev', 'Project Owner', 'Researcher', 'UX/UI Design']"
 					logo="/images/clients-color/mtns.webp"
 					:link-to="[
 						{
@@ -213,9 +237,21 @@
 </template>
 
 <style scoped>
+.wrapper {
+	max-width: var(--display-width-xl);
+}
 .work {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-xl);
+	gap: var(--space-4xl);
+	@media (width < 720px) {
+		gap: var(--space-3xl);
+	}
+	@media (width < 544px) {
+		gap: var(--space-2xl);
+	}
+	@media (width < 480px) {
+		gap: var(--space-xl);
+	}
 }
 </style>

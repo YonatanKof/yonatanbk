@@ -58,7 +58,7 @@ const currentComponents = computed(() => {
 	opacity: 0;
 	transform: scale(1.1);
 	transition: all 0.3s ease;
-	@media (width < 544px) {
+	@media (width < 624px) {
 		display: none;
 	}
 }

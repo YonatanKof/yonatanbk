@@ -6,7 +6,7 @@ const emit = defineEmits<{
 
 <template>
 	<div>
-		<Text tag="h2" variant="secondary-title" class="title">Let's talk!</Text>
+		<Text tag="h2" variant="secondary-title" class="title">Let's talk</Text>
 		<form
 			name="contact-me"
 			method="POST"
@@ -34,7 +34,7 @@ const emit = defineEmits<{
 					Phone
 					<p class="hint body body-x-small">Optional</p>
 				</label>
-				<input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+				<input type="tel" name="phone" id="phone" pattern="[0-9 ()-]*" />
 			</div>
 
 			<div class="input">
@@ -63,7 +63,7 @@ const emit = defineEmits<{
 
 <style scoped>
 form {
-  margin-block-start: var(--space-s);
+	margin-block-start: var(--space-s);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-xs);
@@ -75,7 +75,7 @@ textarea {
 	min-height: var(--space-l);
 	border: 1px solid var(--color-sys-main);
 	border-radius: 0;
-  -webkit-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
 	padding-inline: var(--space-xs);
 	padding-block: var(--space-3xs);
 	margin: unset;
@@ -92,8 +92,8 @@ select {
 	background-repeat: no-repeat;
 	background-position: right 8px center;
 	padding-right: 32px; /* Space for custom arrow */
-  color: var(--color-sys-main) !important;
-  min-height: 2rem !important;
+	color: var(--color-sys-main) !important;
+	min-height: 2rem !important;
 }
 select,
 textarea {

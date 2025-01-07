@@ -82,7 +82,7 @@ onUnmounted(() => {
 	@media (width < 720px) {
 		gap: var(--space-l);
 	}
-	@media (width < 544px) {
+	@media (width < 624px) {
 		grid-template-columns: 1fr;
 		padding-block-end: var(--space-2xl);
 	}
