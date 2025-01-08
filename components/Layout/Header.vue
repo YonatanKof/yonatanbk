@@ -132,6 +132,7 @@ a.active {
 	visibility: visible;
 	@media (width < 520px) {
 		visibility: hidden;
+		display: none;
 	}
 }
 </style>

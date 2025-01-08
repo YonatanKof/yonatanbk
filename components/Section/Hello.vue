@@ -19,7 +19,7 @@ const { open, close } = useModal({
 				<div id="avatar">
 					<NuxtImg src="/images/kof-pic.webp" placeholder />
 					<Text tag="h2" variant="compressed-title" text-style="color-slight"
-						>Yonatan <span class="no-brake">Ben Knaan,</span>
+						>Yonatan <span class="no-brake">Ben Knaan</span>
 					</Text>
 				</div>
 				<Text class="text-on-big" id="main-title-1" tag="h1" variant="main-title" text-style="grid-size-big"

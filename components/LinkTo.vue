@@ -50,7 +50,6 @@ const props = withDefaults(defineProps<LinkToProps>(), {
 	}
 	.external-icon {
 		&::after {
-			background-color: v-bind(highlightColor);
 			width: var(--space-xs);
 			height: var(--space-xs);
 		}
