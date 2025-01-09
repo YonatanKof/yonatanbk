@@ -40,7 +40,7 @@ div {
 		padding-block-end: var(--space-l);
 	}
 }
-max-ch {
+.max-ch {
 	max-width: 55ch;
 }
 </style>
