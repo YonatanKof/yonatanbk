@@ -7,7 +7,7 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
-	desc: {
+	subTitle: {
 		type: String,
 		required: true,
 	},
@@ -91,7 +91,7 @@ onUnmounted(() => {
 				<span class="dot"></span>
 				<Text variant="body-x-small">{{ year }}</Text>
 			</div>
-			<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ desc }}</Text>
+			<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ subTitle }}</Text>
 			<Text class="max-ch" variant="body-small">{{ description }}</Text>
 			<Carousel
 				class="spacing"
