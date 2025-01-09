@@ -213,7 +213,7 @@
 						},
 					]"
 					title="Matnas Interactive"
-					desc="Product Design & Ideation Design Agency"
+					desc="Design Agency, UX/UI and Product Ideation"
 					position="Partner"
 					year="2009-2015"
 					description="High-pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts from start to finish. This included overseeing project scopes and stakeholder communications."

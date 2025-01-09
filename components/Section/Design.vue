@@ -43,11 +43,13 @@ const contentItems = [
 		<div id="secondary-messages">
 			<div class="wrapper">
 				<!-- As the name implies, this term is closely related to development and that makes sense for I'm a <nuxt-link to="https://designtechnologist.club/">design technologist</nuxt-link>.  -->
-				<LayoutContentTop>
-					<template #title> This is <span class="no-brake">full stack</span> design</template>
+				<LayoutContentTop isDescIi>
+					<template #title> What is full stack design?</template>
 					<template #desc>
 						If you're proficient in UX research, hands-on design, team leadership, design ops, front-end development,
-						stakeholders mgmt. and backlog mgmt., then you're a full-stack product designer.<br />
+						stakeholders mgmt. and backlog mgmt., then you're a full-stack product designer.
+					</template>
+					<template #desc-ii>
 						For the last 15+ years, I bridged the gap between people, businesses, and technology through research,
 						design, and execution; creating elegant solutions that simplify complexity and enhance lives.
 					</template>

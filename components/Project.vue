@@ -101,7 +101,7 @@ onUnmounted(() => {
 				:highlightColor="highlightColor"
 			/>
 			<div id="links">
-				<Text class="max-ch" tag="h6" variant="heading-x-small">Drill down</Text>
+				<Text class="max-ch" tag="h6" variant="heading-x-small">Explore project</Text>
 				<Text v-for="link in props.linkTo" variant="body-x-small">
 					<NuxtLink
 						:class="{ 'external-icon': !link.internal }"
