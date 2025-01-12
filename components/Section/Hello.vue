@@ -43,15 +43,21 @@ const { open, close } = useModal({
 				<ClientProof />
 				<div class="cta-buttons">
 					<Button
-						style="padding-inline: unset"
+						aria-label="Find me on LinkedIn"
+						class="btn-linkedin"
 						button-style="secondary"
 						tag="a"
 						href="https://www.linkedin.com/in/yonatankof/"
 						target="_blank"
+						:isIconEnd="true"
 					>
-						Hit me on Linkedin
+						Find me on
+						<template #icon-end>
+							<IconLinkedin />
+						</template>
 					</Button>
-					<Button :onClick="open">Contact Me</Button>
+
+					<Button class="btn-form" :onClick="open">Contact Me</Button>
 				</div>
 			</span>
 		</div>
@@ -386,68 +392,78 @@ const { open, close } = useModal({
 	display: flex;
 	flex-direction: row;
 	gap: calc(var(--grid-block) / 2);
-	& button {
-		width: calc(var(--grid-block) * 6);
+	& .btn-linkedin {
+		width: calc(var(--grid-block) * 7);
+		padding-inline: unset;
 	}
-	& a {
-		width: calc(var(--grid-block) * 8);
+	& .btn-form {
+		width: calc(var(--grid-block) * 7);
+		padding-inline: unset;
 	}
-	@media (width < 720px) {
-		align-self: flex-end;
-		& button {
-			width: calc(var(--grid-block) * 11);
+	/* @media (width < 1152px) {
+		& .btn-form {
+			width: calc(var(--grid-block) * 7);
 		}
 		& a {
+			width: calc(var(--grid-block) * 4);
+		}
+	} */
+	@media (width < 720px) {
+		align-self: flex-end;
+		& .btn-form {
+			width: calc(var(--grid-block) * 11);
+		}
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 11);
 		}
 	}
 	@media (width < 640px) {
-		& button {
+		& .btn-form {
 			width: calc(var(--grid-block) * 10);
 		}
-		& a {
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 10);
 		}
 	}
 	@media (width < 600px) {
-		& button {
+		& .btn-form {
 			width: calc(var(--grid-block) * 9);
 		}
-		& a {
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 9);
 		}
 	}
 	@media (width < 560px) {
-		& button {
+		& .btn-form {
 			width: calc(var(--grid-block) * 8);
 		}
-		& a {
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 8);
 		}
 	}
 	@media (width < 520px) {
-		& button {
+		& .btn-form {
 			width: calc(var(--grid-block) * 7);
 		}
-		& a {
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 7);
 		}
 	}
 	@media (width < 480px) {
 		flex-direction: column-reverse;
 		gap: calc(var(--grid-block) / 3);
-		& button {
+		& .btn-form {
 			width: calc(var(--grid-block) * 13);
 		}
-		& a {
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 13);
 		}
 	}
 	@media (width < 380px) {
-		& button {
+		& .btn-form {
 			width: calc(var(--grid-block) * 11);
 		}
-		& a {
+		& .btn-linkedin {
 			width: calc(var(--grid-block) * 11);
 		}
 	}
