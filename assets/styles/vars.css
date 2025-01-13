@@ -32,31 +32,43 @@
 		/* Grid block */
 		/* Found in: */
 		/* Button.vue, ClientProof.vue, Text.vue, YonatanBenKnaan.vue, Cross.vue */
-		--grid-block: var(--space-l);
+		--grid-block: calc(var(--space-l) * 1.1);
 		@media (width < 1344px) {
-			--grid-block: calc(var(--space-l) * 0.95);
+			--grid-block: calc(var(--space-l) * 1);
 		}
 		@media (width < 1216px) {
-			--grid-block: calc(var(--space-l) * 0.9);
+			/* --grid-block: calc(var(--space-l) * 0.95); */
 		}
 		@media (width < 1152px) {
+			--grid-block: calc(var(--space-l) * 0.95);
+		}
+		/* @media (width < 1056px) {
+			--grid-block: calc(var(--space-l) * 0.85);
+		} */
+		@media (width < 960px) {
 			--grid-block: calc(var(--space-l) * 0.85);
 		}
-		@media (width < 1056px) {
-			--grid-block: calc(var(--space-l) * 0.8);
+		/* @media (width < 800px) {
+			--grid-block: calc(var(--space-l) * 0.85);
+		} */
+		@media (width < 784px) {
+			--grid-block: calc(var(--space-l) * 0.80);
 		}
-		@media (width < 960px) {
+		@media (width < 760px) {
 			--grid-block: calc(var(--space-l) * 0.75);
 		}
-		@media (width < 896px) {
+		@media (width < 640px) {
 			--grid-block: calc(var(--space-l) * 0.7);
 		}
-		@media (width < 768px) {
+		@media (width < 600px) {
 			--grid-block: calc(var(--space-l) * 0.65);
 		}
-		/* @media (width < 704px) {
-			--grid-block: calc(var(--space-l) * 0.75);
-		} */
+		@media (width < 480px) {
+			--grid-block: calc(var(--space-l) * 0.6);
+		}
+		@media (width < 440px) {
+			--grid-block: calc(var(--space-l) * 0.55);
+		}
 	}
 
 	:root {
