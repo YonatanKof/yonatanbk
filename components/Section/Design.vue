@@ -47,7 +47,9 @@ const contentItems = [
 					<template #title> Define <span class="no-brake">full stack</span> product design</template>
 					<template #desc>
 						If you're proficient in UX research, hands-on design, team leadership, design ops, front-end development,
-						stakeholders mgmt. and backlog mgmt., then you're a full-stack product designer.<br />
+						stakeholders mgmt. and backlog mgmt., then you're a full-stack product designer.
+					</template>
+					<template #desc-ii>
 						For the last 15+ years, I bridged the gap between people, businesses, and technology through research,
 						design, and execution; creating elegant solutions that simplify complexity and enhance lives.
 					</template>

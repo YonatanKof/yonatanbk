@@ -22,6 +22,7 @@ const TEXT_STYLES = [
 	'text-end',
 	'text-center',
 	'text-bold',
+	'text-balance',
 ] as const;
 type TextStyle = (typeof TEXT_STYLES)[number];
 
@@ -128,6 +129,9 @@ const computedClasses = computed(() => {
 }
 .text-bold {
 	font-variation-settings: 'wght' 600;
+}
+.text-balance {
+	text-wrap: balance;
 }
 .grid-size-big {
 	font-size: calc(var(--grid-block) * 3);

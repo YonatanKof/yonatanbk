@@ -7,7 +7,7 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
-	desc: {
+	subTitle: {
 		type: String,
 		required: true,
 	},
@@ -85,13 +85,13 @@ onUnmounted(() => {
 			:highlightColor="highlightColor"
 		/>
 		<div class="info">
-			<Text tag="h3" variant="secondary-title">{{ title }}</Text>
+			<Text tag="h3" variant="secondary-title" text-style="text-balance">{{ title }}</Text>
 			<div id="meta-data">
 				<Text variant="body-x-small">{{ position }}</Text>
 				<span class="dot"></span>
 				<Text variant="body-x-small">{{ year }}</Text>
 			</div>
-			<Text class="max-ch" tag="h6" variant="heading-x-small">{{ desc }}</Text>
+			<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ subTitle }}</Text>
 			<Text class="max-ch" variant="body-small">{{ description }}</Text>
 			<Carousel
 				class="spacing"
@@ -101,7 +101,7 @@ onUnmounted(() => {
 				:highlightColor="highlightColor"
 			/>
 			<div id="links">
-				<Text class="max-ch" tag="h6" variant="heading-x-small">Drill down</Text>
+				<Text class="max-ch" tag="h6" variant="heading-x-small">Explore project</Text>
 				<Text v-for="link in props.linkTo" variant="body-x-small">
 					<NuxtLink
 						:class="{ 'external-icon': !link.internal }"
@@ -113,14 +113,14 @@ onUnmounted(() => {
 					</NuxtLink>
 				</Text>
 			</div>
-			<div id="verticals" class="max-ch">
+			<!-- <div id="verticals" class="max-ch">
 				<Text v-for="vertical in verticals" variant="body-x-small"
 					><span class="color-dimmed">#</span>{{ vertical }}</Text
 				>
-			</div>
-			<div id="jobs" class="max-ch">
+			</div> -->
+			<!-- <div id="jobs" class="max-ch">
 				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
-			</div>
+			</div> -->
 			<NuxtImg class="logo" :src="logo" placeholder />
 		</div>
 	</article>
@@ -188,6 +188,7 @@ article {
 	gap: var(--space-2xs);
 }
 .logo {
+	padding-block-start: var(--space-2xs);
 	height: var(--space-l);
 	width: auto;
 	align-self: flex-start;

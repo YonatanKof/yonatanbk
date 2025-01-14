@@ -10,69 +10,7 @@
 			</LayoutContentTop>
 			<div class="work">
 				<Project
-					id="design-systems"
-					highlight-color="var(--color-brand-red-main)"
-					:animation-time="6000"
-					:image-array="[
-						{
-							url: '/projects/design-systems/ads.webm',
-							name: 'Allotropy Design System',
-						},
-						{
-							url: '/projects/design-systems/kds.webm',
-							name: 'Kof Design System',
-						},
-						{
-							url: '/projects/design-systems/bgf.webm',
-							name: 'Brand Guide Framework',
-						},
-						{
-							url: '/projects/design-systems/tokens.webm',
-							name: 'Design Tokens In Action',
-						},
-						{
-							url: '/projects/pepperi/brand.webm',
-							name: 'Pepperi Brand Guide',
-						},
-					]"
-					title="Design Systems & Guides"
-					desc="Systemize design to helps teams win"
-					position="Design Lead"
-					year="2015-2025"
-					description="Guiding dev and product teams to build awesome design systems, and stakeholders to craft top-notch brand books. Be sure to check out the Pepperi project below to see an enterprise-grade design system Storybook implementation."
-					:verticals="['Storybook', 'CSS', 'Figma', 'Sketch', 'Abstract', 'Notion']"
-					:jobs="['Design Systems Lead', 'Component Architecture', 'Documentation', 'Design Operations']"
-					logo="/images/clients-color/GeoKof.webp"
-					:link-to="[
-						{
-							url: 'https://www.figma.com/community/file/1456699524814141190/allotropy-design-system',
-							name: 'Allotropy Design System (Figma)',
-						},
-						{
-							url: 'https://yonatankof.notion.site/Kof-Design-System-6648214c57cc40e4b80c4718386ec2b5?pvs=4',
-							name: 'Kof Design System (Sketch)',
-						},
-						{
-							url: 'https://yonatankof.notion.site/a7b6eaaf27ed45d3961232ad8be14995?v=53118f85dcae462ba34e484535cc1584&pvs=4',
-							name: 'Brand Guide Framework (Notion)',
-						},
-						{
-							url: 'https://wwape.com/post/design-tokens/',
-							name: 'Design Tokens In Action (WWApe)',
-						},
-						{
-							url: 'https://wwape.com/work/pepperi-design-system/',
-							name: 'Pepperi Design Systems Page (WWApe)',
-						},
-						{
-							url: 'https://brand.pepperi.com/',
-							name: 'Pepperi Brand Guide (VuePress)',
-						},
-					]"
-				/>
-				<Project
 					id="pepperi"
-					order="flip"
 					highlight-color="#6E960A"
 					:image-array="[
 						{
@@ -94,9 +32,9 @@
 					]"
 					title="Pepperi"
 					position="Head of Design"
-					desc="PaaS for B2B Wholesale Commerce"
+					sub-title="PaaS for B2B Wholesale Commerce"
 					year="2018-2024"
-					description="At Pepperi, I led and executed the design of multiple products and design initiatives of the webapp platform and other functions in the company. Held various roles, managed requirements, backlogs, and design system, conducted research, while supporting marketing, brand, and PS teams."
+					description="As complex as it gets: Order Mgmt. Systems, Storefront, CRM, Dashboard, Back Office, User Configurator, Page Builder, Themes and more. At Pepperi, I led and executed research and design of multiple products and initiatives of our web platform. Moreover, I've managed requirements, backlogs, stakeholder interface and our awesome design system. Besides our amazing product team, I've also supported marketing, brand, and PS teams."
 					:verticals="['B2B', 'E-commerce', 'Storefront', 'No Code Editor', 'Webpage Builder']"
 					:jobs="[
 						'Research',
@@ -137,6 +75,68 @@
 					]"
 				/>
 				<Project
+					id="design-systems"
+					order="flip"
+					highlight-color="var(--color-brand-red-main)"
+					:animation-time="6000"
+					:image-array="[
+						{
+							url: '/projects/design-systems/ads.webm',
+							name: 'Allotropy Design System',
+						},
+						{
+							url: '/projects/design-systems/kds.webm',
+							name: 'Kof Design System',
+						},
+						{
+							url: '/projects/design-systems/bgf.webm',
+							name: 'Brand Guide Framework',
+						},
+						{
+							url: '/projects/design-systems/tokens.webm',
+							name: 'Design Tokens In Action',
+						},
+						{
+							url: '/projects/pepperi/brand.webm',
+							name: 'Pepperi Brand Guide',
+						},
+					]"
+					title="Design Systems & Guides"
+					sub-title="Systemize design to helps teams win"
+					position="Design Lead"
+					year="2015-2025"
+					description="Guiding dev and product teams to build awesome design systems, and stakeholders to craft top-notch brand books. Be sure to check out the Pepperi project below to see an enterprise-grade design system Storybook implementation."
+					:verticals="['Storybook', 'CSS', 'Figma', 'Sketch', 'Abstract', 'Notion']"
+					:jobs="['Design Systems Lead', 'Component Architecture', 'Documentation', 'Design Operations']"
+					logo="/images/clients-color/GeoKof.webp"
+					:link-to="[
+						{
+							url: 'https://www.figma.com/community/file/1456699524814141190/allotropy-design-system',
+							name: 'Allotropy Design System (Figma)',
+						},
+						{
+							url: 'https://yonatankof.notion.site/Kof-Design-System-6648214c57cc40e4b80c4718386ec2b5?pvs=4',
+							name: 'Kof Design System (Sketch)',
+						},
+						{
+							url: 'https://yonatankof.notion.site/a7b6eaaf27ed45d3961232ad8be14995?v=53118f85dcae462ba34e484535cc1584&pvs=4',
+							name: 'Brand Guide Framework (Notion)',
+						},
+						{
+							url: 'https://wwape.com/post/design-tokens/',
+							name: 'Design Tokens In Action (WWApe)',
+						},
+						{
+							url: 'https://wwape.com/work/pepperi-design-system/',
+							name: 'Pepperi Design Systems Page (WWApe)',
+						},
+						{
+							url: 'https://brand.pepperi.com/',
+							name: 'Pepperi Brand Guide (VuePress)',
+						},
+					]"
+				/>
+				<Project
 					highlight-color="#0068F5"
 					id="avodata"
 					:animation-time="3000"
@@ -167,7 +167,7 @@
 						},
 					]"
 					title="Avodata"
-					desc="Data-driven career choices platform"
+					sub-title="Data-driven career choices platform"
 					position="Freelance"
 					year="2018"
 					description="A project for JDC and the Ministry of Labour which includes user interviews, UX concept and research, project scoping, and wireframes. With this, we raised significant funds and partners to build a tool for Israel's growing marketplace."
@@ -180,12 +180,12 @@
 							name: 'Review UX Flow',
 						},
 						{
-							url: 'https://www.dropbox.com/scl/fi/61whvk1a2wc3o3mgjmfp3/Avodata-08-Persentation.pdf?rlkey=rv1dncksebo6r5digmsa0eere&dl=0',
-							name: 'Review Research & Findings',
+							url: 'https://www.dropbox.com/scl/fi/61whvk1a2wc3o3mgjmfp3/Avodata-User-interviews-and-findings.pdf.pdf?rlkey=rv1dncksebo6r5digmsa0eere&st=b8j1tbzx&dl=0',
+							name: 'Review User Interviews & Findings',
 						},
 						{
 							url: 'https://avodata.labor.gov.il/',
-							name: 'Visit Avodata site',
+							name: 'Visit Avodata Site',
 						},
 					]"
 				/>
@@ -213,7 +213,7 @@
 						},
 					]"
 					title="Matnas Interactive"
-					desc="Product Design & Ideation Design Agency"
+					sub-title="Design Agency, UX/UI and Product Ideation"
 					position="Partner"
 					year="2009-2015"
 					description="High-pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts from start to finish. This included overseeing project scopes and stakeholder communications."
