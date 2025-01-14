@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<LinkToProps>(), {
 </script>
 
 <template>
-	<nuxt-link class="link-to" :to="href">
+	<nuxt-link class="link-to" :to="href" target="_blank">
 		<Text tag="h5" variant="heading-x-small" class="external-icon">{{ title }}</Text>
 		<Text variant="body-small">{{ description }}</Text>
 	</nuxt-link>
