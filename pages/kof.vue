@@ -116,6 +116,38 @@ const images = [
 				<Text tag="h3" variant="compressed-title">Download File</Text>
 				<Button tag="a" href="/misc/CV-YonatanBenKnaan-2024.pdf" target="_blank"> Download CV </Button>
 			</div>
+			<div>
+				<Button buttonSize="small" :isIconEnd="true">
+					With icon
+					<template #icon-end>
+						<IconLinkedin />
+					</template>
+				</Button>
+				<Button :isIconEnd="true">
+					With icon
+					<template #icon-end>
+						<IconLinkedin />
+					</template>
+				</Button>
+				<Button buttonSize="large" :isIconEnd="true">
+					With icon
+					<template #icon-end>
+						<IconLinkedin />
+					</template>
+				</Button>
+				<Button
+					button-style="secondary"
+					tag="a"
+					href="https://www.linkedin.com/in/yonatankof/"
+					target="_blank"
+					 :isIconEnd="true"
+				>
+					My Linkedin
+					<template #icon-end>
+						<IconLinkedin />
+					</template>
+				</Button>
+			</div>
 		</section>
 	</main>
 </template>
