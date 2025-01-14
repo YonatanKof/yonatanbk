@@ -150,8 +150,11 @@ const { open, close } = useModal({
 		--grid-num: 19;
 		--grid-num-height: 36;
 	}
-	@media (width < 380px) {
+	@media (width < 440px) {
 		--grid-num: 17;
+	}
+	@media (width < 380px) {
+		--grid-num: 15;
 	}
 	/* @media (width < 340px) {
 		--grid-num: 15;
@@ -242,12 +245,11 @@ const { open, close } = useModal({
 		margin-inline-start: calc(var(--grid-block) * -2);
 	} */
 	@media (width < 560px) {
-		/* margin-inline-start: calc(var(--grid-block) * -1.25); */
 		grid-column: 1 / -1;
 	}
-	/* @media (width < 380px) {
-		grid-column: 2 / -1;
-	} */
+	@media (width < 440px) {
+		margin-inline-start: calc(var(--grid-block) * -1);
+	}
 }
 #main-title-1 {
 	grid-row: 3 / span 3;
@@ -288,8 +290,8 @@ const { open, close } = useModal({
 		grid-row: 3 / span 6;
 		grid-column: 3 / -6;
 	}
-	@media (width < 380px) {
-		grid-column: 3 / -2;
+	@media (width < 440px) {
+		grid-column: 2 / -4;
 	}
 	&::before {
 		content: '';
@@ -333,8 +335,8 @@ const { open, close } = useModal({
 		grid-column: 3 / -3;
 		margin-inline: unset;
 	}
-	@media (width < 380px) {
-		grid-column: 3 / -2;
+	@media (width < 440px) {
+		grid-column: 2 / -1;
 	}
 }
 #flipping-message {
@@ -399,10 +401,9 @@ const { open, close } = useModal({
 		grid-column: 3 / -3;
 		grid-row: 20 / span 12;
 	}
-	/* @media (width < 380px) {
-		grid-column: 3 / -3;
-		grid-row: 18 / span 11;
-	} */
+	@media (width < 440px) {
+		grid-column: 2 / -2;
+	}
 }
 .client-section {
 	max-width: calc(var(--grid-block) * 16);
@@ -499,6 +500,14 @@ const { open, close } = useModal({
 			width: calc(var(--grid-block) * 15);
 		}
 	}
+	/* @media (width < 440px) {
+		& .btn-form {
+			width: calc(var(--grid-block) * 14);
+		}
+		& .btn-linkedin {
+			width: calc(var(--grid-block) * 14);
+		}
+	} */
 	@media (width < 380px) {
 		& .btn-form {
 			width: calc(var(--grid-block) * 13);
@@ -507,13 +516,5 @@ const { open, close } = useModal({
 			width: calc(var(--grid-block) * 13);
 		}
 	}
-	/* @media (width < 340px) {
-		& .btn-form {
-			width: calc(var(--grid-block) * 13);
-		}
-		& .btn-linkedin {
-			width: calc(var(--grid-block) * 13);
-		}
-	} */
 }
 </style>
