@@ -15,11 +15,13 @@ const props = withDefaults(
 		target?: string;
 		// Add click handler prop
 		onClick?: () => void;
+		isIconEnd?: boolean;
 	}>(),
 	{
 		tag: 'button',
 		buttonSize: 'medium',
 		buttonStyle: 'primary',
+		isIconEnd: false,
 	}
 );
 
@@ -33,6 +35,7 @@ const buttonClasses = computed(() => ({
 	button: true,
 	[SIZE_CLASSES[props.buttonSize]]: true,
 	[`button-${props.buttonStyle}`]: true,
+	'has-icon-end': props.isIconEnd,
 }));
 
 // Handle click events
@@ -51,6 +54,9 @@ const handleKeyup = (event: KeyboardEvent) => {
 <template>
 	<component :is="tag" :class="buttonClasses" :href="href" :target="target" @click="handleClick" @keyup="handleKeyup">
 		<slot />
+		<span class="icon-end" v-if="isIconEnd">
+			<slot name="icon-end"></slot>
+		</span>
 	</component>
 </template>
 
@@ -128,17 +134,27 @@ const handleKeyup = (event: KeyboardEvent) => {
 .button-small {
 	font-size: var(--step-0);
 	--clip-shift: var(--space-2xs);
-	padding: 1.1em 1.4em;
+	& > span {
+		width: calc(var(--step-0) * 1.25);
+		height: calc(var(--step-0) * 1.25);
+	}
 }
 
 .button-medium {
 	font-size: var(--step-1);
-	font-size: calc(var(--grid-block)/1.5);
+	& > span {
+		width: calc(var(--step-1) * 1.25);
+		height: calc(var(--step-1) * 1.25);
+	}
 }
 
 .button-large {
 	font-size: var(--step-2);
 	--clip-shift: var(--space-s);
+	& > span {
+		width: calc(var(--step-2) * 1.25);
+		height: calc(var(--step-2) * 1.25);
+	}
 }
 /* Button Style */
 
@@ -169,5 +185,13 @@ const handleKeyup = (event: KeyboardEvent) => {
 }
 a {
 	color: var(--color-sys-main);
+	border: unset;
+	box-sizing: border-box;
+}
+.icon-end {
+	margin-inline-start: 0.5em;
+}
+.has-icon-end {
+	padding-inline-end: 1em;
 }
 </style>

@@ -7,12 +7,16 @@ const props = defineProps({
 		type: String,
 		default: 'var(--step-0)',
 	},
+	textStyle: {
+		type: String,
+		default: 'var(--color-sys-main)',
+	},
 });
 </script>
 
 <template>
 	<div class="share-box">
-		<Text tag="h4">Share me on</Text>
+		<Text tag="h4" :style="`color:` +  textStyle">Share me on</Text>
 		<div class="share-buttons">
 			<SocialShare
 				v-for="network in ['linkedin', 'x', 'facebook', 'email']"
@@ -42,7 +46,7 @@ const props = defineProps({
 }
 
 .social-share-button {
-	color: var(--color-sys-main);
+	color: v-bind(textStyle);
 	padding: 0.8em 1.1em;
 	border-radius: 0;
 	text-transform: capitalize;

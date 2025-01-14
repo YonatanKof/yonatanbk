@@ -12,7 +12,7 @@ export default defineNuxtPlugin(() => {
 		metaSiteName = config.public.siteName,
 		// metaArticleAuthor = undefined,
 		metaTitleData = undefined,
-		metaDesc = `A portfolio site by ${config.public.siteOwnerName} - a full stack designer who leads design initiatives in Startups and Orgs`,
+		metaDesc = `A portfolio site by ${config.public.siteOwnerName} - a full stack product designer who leads design initiatives in startups and orgs`,
 		metaImg = '/images/yonatanbk-social.jpg',
 		metaImgAlt = 'Social cover image for this site',
 		metaOgType = 'website' as
@@ -43,10 +43,6 @@ export default defineNuxtPlugin(() => {
 			titleTemplate: (titleChunk) => {
 				return titleChunk ? `${titleChunk} - ` + metaTitle : metaTitle;
 			},
-			meta: [
-				{ name: 'description', content: 'My amazing site.' },
-				{ name: 'description', content: 'My amazing site.' },
-			],
 			htmlAttrs: { lang: 'en' },
 			link: [
 				{
@@ -63,7 +59,7 @@ export default defineNuxtPlugin(() => {
 		useSeoMeta({
 			author: metaAuthor,
 			description: () => metaDesc,
-			keywords: 'design, ux, ui, full stack design, developer, branding, design lead, product design, startup, org, yonatan ben knaan',
+			keywords: 'design, ux, ui, full stack, full-stack product design, developer, design lead, product design, startup, org, yonatan ben knaan',
 			// articleAuthor: metaArticleAuthor,
 			articlePublishedTime: metaPublishedTime,
 			articleModifiedTime: metaModifiedTime,
