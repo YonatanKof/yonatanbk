@@ -1,6 +1,6 @@
 const siteOwnerNameHere = 'Yonatan Ben Knaan';
 const baseUrlHere = process.env.DEPLOY_PRIME_URL;
-const SiteNameHere = 'A Full Stack Design Lead';
+const SiteNameHere = 'A full stack product designer';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
