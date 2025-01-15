@@ -67,6 +67,17 @@ function updateViewport() {
 	isMobileView.value = window.innerWidth < 800;
 }
 
+const isModalOpen = ref(false);
+
+const openModal = () => {
+	isModalOpen.value = true;
+};
+
+const handleConfirm = () => {
+	// Handle the confirm action
+	isModalOpen.value = false;
+};
+
 onMounted(() => {
 	updateViewport();
 	window.addEventListener('resize', updateViewport);
@@ -100,28 +111,46 @@ onUnmounted(() => {
 				:animationTime="animationTime"
 				:highlightColor="highlightColor"
 			/>
-			<div id="links">
-				<Text class="max-ch" tag="h6" variant="heading-x-small">Explore project</Text>
-				<Text v-for="link in props.linkTo" variant="body-x-small">
-					<NuxtLink
-						:class="{ 'external-icon': !link.internal }"
-						:to="link.url"
-						:target="!link.internal ? '_blank' : undefined"
-						:external="!link.internal"
-						:key="link.name"
-						>{{ link.name }}
-					</NuxtLink>
-				</Text>
-			</div>
-			<!-- <div id="verticals" class="max-ch">
-				<Text v-for="vertical in verticals" variant="body-x-small"
-					><span class="color-dimmed">#</span>{{ vertical }}</Text
+			<!-- Modal Open BTN -->
+			<Button class="modal-open-btn" button-size="x-small" button-style="secondary" @click="openModal">
+				Extra Info Here
+			</Button>
+			<!-- Modal -->
+			<Modal :click-to-close="true" :esc-to-close="true" :modal-width="2.5" v-model="isModalOpen">
+				<Text variant="body-medium"
+					>Feeling adventurous? Want to explore <span class="text-bold">{{ title }}</span> more? Please follow the links
+					below.</Text
 				>
-			</div> -->
-			<!-- <div id="jobs" class="max-ch">
-				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
-			</div> -->
-			<NuxtImg class="logo" :src="logo" placeholder />
+				<!-- <Text class="max-ch" tag="h4" variant="heading-small">{{ title }}</Text> -->
+				<!-- <hr /> -->
+				<!-- <Text class="max-ch" tag="h5" variant="heading-x-small">Related Links</Text> -->
+				<div id="links">
+					<Text v-for="link in props.linkTo" variant="body-x-small">
+						<NuxtLink
+							:class="{ 'external-icon': !link.internal }"
+							:to="link.url"
+							:target="!link.internal ? '_blank' : undefined"
+							:external="!link.internal"
+							:key="link.name"
+							>{{ link.name }}
+						</NuxtLink>
+					</Text>
+				</div>
+				<!-- <Text class="max-ch" tag="h5" variant="heading-x-small">Verticals</Text>
+				<div id="verticals" class="max-ch">
+					<Text v-for="vertical in verticals" variant="body-x-small"
+					><span class="color-dimmed">#</span>{{ vertical }}</Text
+					>
+				</div> -->
+				<!-- <Text class="max-ch" tag="h5" variant="heading-x-small">Jobs</Text>
+				<div id="jobs" class="max-ch">
+					<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
+				</div> -->
+				<span class="modal-close-btn">
+					<NuxtImg class="logo" :src="logo" placeholder />
+					<Button button-size="x-small" button-style="secondary" @click="handleConfirm">Close</Button>
+				</span>
+			</Modal>
 		</div>
 	</article>
 </template>
@@ -154,7 +183,8 @@ article {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	gap: var(--space-2xs);
+	gap: var(--space-4xs) var(--space-2xs);
+	flex-wrap: wrap;
 	& > span {
 		clip-path: circle(50%);
 		background-color: var(--color-sys-dis);
@@ -175,12 +205,8 @@ article {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-3xs);
-	& > :first-child {
-		margin-block: var(--space-2xs);
-	}
 }
 #verticals {
-	padding-block-start: var(--space-2xs);
 	column-gap: var(--space-xs);
 	row-gap: var(--space-3xs);
 }
@@ -213,5 +239,15 @@ article {
 }
 .spacing {
 	margin-block: var(--space-2xs);
+}
+.modal-open-btn {
+	width: max-content;
+	margin-block-start: var(--space-xs);
+}
+.modal-close-btn {
+	display: flex;
+	justify-content: space-between;
+	z-index: 1000;
+	gap: var(--space-m);
 }
 </style>
