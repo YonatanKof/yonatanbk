@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const BUTTON_SIZES = ['small', 'medium', 'large'] as const;
+const BUTTON_SIZES = ['x-small', 'small', 'medium', 'large'] as const;
 type ButtonSize = (typeof BUTTON_SIZES)[number];
 
 const BUTTON_STYLES = ['primary', 'secondary', 'ghost', 'subtle'] as const;
@@ -26,9 +26,10 @@ const props = withDefaults(
 );
 
 const SIZE_CLASSES: Record<ButtonSize, string> = {
-	large: 'button-large',
+	'x-small': 'button-x-small',
 	small: 'button-small',
 	medium: 'button-medium',
+	large: 'button-large',
 };
 
 const buttonClasses = computed(() => ({
@@ -131,6 +132,15 @@ const handleKeyup = (event: KeyboardEvent) => {
 	}
 }
 /* Button Size */
+.button-x-small {
+	padding: 0.8em 1em;
+	font-size: var(--step--1);
+	--clip-shift: var(--space-2xs);
+	& > span {
+		width: calc(var(--step-0) * 1.25);
+		height: calc(var(--step-0) * 1.25);
+	}
+}
 .button-small {
 	font-size: var(--step-0);
 	--clip-shift: var(--space-2xs);
