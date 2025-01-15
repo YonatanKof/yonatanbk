@@ -1,15 +1,14 @@
-<script setup>
-import { useModal } from 'vue-final-modal';
-import Modal from '~/components/Modal.vue';
+<script setup lang="ts">
+const isModalOpen = ref(false);
 
-const { open, close } = useModal({
-	component: Modal,
-	attrs: {
-		onConfirm() {
-			close();
-		},
-	},
-});
+const openModal = () => {
+	isModalOpen.value = true;
+};
+
+const handleConfirm = () => {
+	// Handle the confirm action
+	isModalOpen.value = false;
+};
 </script>
 
 <template>
@@ -63,7 +62,10 @@ const { open, close } = useModal({
 						</template>
 					</Button>
 
-					<Button class="btn-form" :onClick="open">Contact Me</Button>
+					<Button class="btn-form" @click="openModal">Contact Me</Button>
+					<Modal v-model="isModalOpen">
+						<FormContactMe @confirm="handleConfirm" />
+					</Modal>
 				</div>
 			</span>
 		</div>
