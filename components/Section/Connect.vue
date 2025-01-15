@@ -1,15 +1,14 @@
 <script setup>
-import { useModal } from 'vue-final-modal';
-import Modal from '~/components/Modal.vue';
+const isModalOpen = ref(false);
 
-const { open, close } = useModal({
-	component: Modal,
-	attrs: {
-		onConfirm() {
-			close();
-		},
-	},
-});
+const openModal = () => {
+	isModalOpen.value = true;
+};
+
+const handleConfirm = () => {
+	// Handle the confirm action
+	isModalOpen.value = false;
+};
 </script>
 
 <template>
@@ -64,16 +63,24 @@ const { open, close } = useModal({
 						</div>
 						<div class="cta-buttons">
 							<Button
+								aria-label="Find me on LinkedIn"
 								button-size="small"
+								class="btn-linkedin"
 								button-style="secondary"
 								tag="a"
 								href="https://www.linkedin.com/in/yonatankof/"
 								target="_blank"
+								:isIconEnd="true"
 							>
-								Link to Linkedin
+								Find me on
+								<template #icon-end>
+									<IconLinkedin />
+								</template>
 							</Button>
-
-							<Button button-size="small" :onClick="open">Contact Me</Button>
+							<Button button-size="small" class="btn-form" @click="openModal">Contact Me</Button>
+							<Modal v-model="isModalOpen">
+								<FormContactMe @confirm="handleConfirm" />
+							</Modal>
 						</div>
 					</div>
 				</div>
