@@ -365,10 +365,13 @@ const handleConfirm = () => {
 		margin-inline: calc(var(--grid-block) * -1);
 	}
 	@media (width < 560px) {
-		justify-content: center;
+		justify-content: start;
 		grid-row: 7 / -1;
-		grid-column: 1 / -1;
+		grid-column: 4 / -1;
 		height: calc(var(--grid-block) * 2);
+	}
+	@media (width < 440px) {
+		grid-column: 3 / -1;
 	}
 }
 #logos-cta {
