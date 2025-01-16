@@ -13,7 +13,7 @@ defineProps({
 
 <template>
 	<div>
-		<Text tag="h1" variant="main-title" text-style="text-balance">
+		<Text tag="h2" variant="main-title" text-style="text-balance">
 			<slot name="title">Proj name!</slot>
 		</Text>
 		<Text variant="large-text" class="max-ch" v-if="isDesc">

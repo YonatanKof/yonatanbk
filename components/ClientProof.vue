@@ -63,7 +63,9 @@ onMounted(() => {
 <template>
 	<div class="client-section">
 		<ShapesCross v-for="index in 4" class="cross" :class="`cross-${index}`" />
-		<Text class="client-title color-slight" tag="h4" variant="body-small">Among my clients and initiatives</Text>
+		<Text class="client-title" text-style="color-slight" tag="h4" variant="body-small"
+			>Among my clients and initiatives</Text
+		>
 
 		<div class="logo-container" ref="containerRef">
 			<div class="logo-scroll" :style="scrollStyle">
@@ -114,6 +116,12 @@ onMounted(() => {
 	justify-self: stretch;
 	align-self: stretch;
 	line-height: calc(var(--grid-block) * 1);
+	@media (width < 800px) {
+		font-size: var(--step--2);
+	}
+	@media (width < 560px) {
+		font-size: var(--step--3);
+	}
 }
 
 .logo-container {
@@ -136,7 +144,7 @@ onMounted(() => {
 
 .client-logo {
 	/* height: 2rem; 64px → 4rem */
-	height: var(--grid-block); 
+	height: var(--grid-block);
 	width: auto;
 	object-fit: contain;
 	flex-shrink: 0;
