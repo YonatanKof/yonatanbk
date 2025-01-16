@@ -10,6 +10,7 @@
 			</LayoutContentTop>
 			<div class="work">
 				<Project
+					slug="pepperi"
 					id="pepperi"
 					highlight-color="#6E960A"
 					:image-array="[
@@ -75,6 +76,7 @@
 					]"
 				/>
 				<Project
+					slug="design-systems"
 					id="design-systems"
 					order="flip"
 					highlight-color="var(--color-brand-red-main)"
@@ -138,6 +140,7 @@
 				/>
 				<Project
 					highlight-color="#0068F5"
+					slug="avodata"
 					id="avodata"
 					:animation-time="3000"
 					:image-array="[
@@ -191,6 +194,7 @@
 				/>
 				<Project
 					highlight-color="#EC1F8E"
+					slug="mtns"
 					id="mtns"
 					order="flip"
 					:animation-time="4000"

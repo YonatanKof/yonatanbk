@@ -3,6 +3,10 @@ const PROJECT_ORDER = ['default', 'flip'] as const;
 type ProjectOrder = (typeof PROJECT_ORDER)[number];
 
 const props = defineProps({
+	slug: {
+		type: String,
+		required: true,
+	},
 	title: {
 		type: String,
 		required: true,
@@ -77,53 +81,55 @@ onUnmounted(() => {
 });
 </script>
 <template>
-	<article :class="projectClasses">
-		<Carousel
-			v-if="!isMobileView"
-			:images="imageArray"
-			:animationTime="animationTime"
-			:highlightColor="highlightColor"
-		/>
-		<div class="info">
-			<Text tag="h3" variant="secondary-title" text-style="text-balance">{{ title }}</Text>
-			<div id="meta-data">
-				<Text variant="body-x-small">{{ position }}</Text>
-				<span class="dot"></span>
-				<Text variant="body-x-small">{{ year }}</Text>
-			</div>
-			<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ subTitle }}</Text>
-			<Text class="max-ch" variant="body-small">{{ description }}</Text>
+	<nuxt-link class="link-to" :to="`project/${slug}`">
+		<article :class="projectClasses">
 			<Carousel
-				class="spacing"
-				v-if="isMobileView"
+				v-if="!isMobileView"
 				:images="imageArray"
 				:animationTime="animationTime"
 				:highlightColor="highlightColor"
 			/>
-			<div id="links">
-				<Text class="max-ch" tag="h6" variant="heading-x-small">Explore project</Text>
-				<Text v-for="link in props.linkTo" variant="body-x-small">
-					<NuxtLink
-						:class="{ 'external-icon': !link.internal }"
-						:to="link.url"
-						:target="!link.internal ? '_blank' : undefined"
-						:external="!link.internal"
-						:key="link.name"
-						>{{ link.name }}
-					</NuxtLink>
-				</Text>
-			</div>
-			<!-- <div id="verticals" class="max-ch">
+			<div class="info">
+				<Text tag="h3" variant="secondary-title" text-style="text-balance">{{ title }}</Text>
+				<div id="meta-data">
+					<Text variant="body-x-small">{{ position }}</Text>
+					<span class="dot"></span>
+					<Text variant="body-x-small">{{ year }}</Text>
+				</div>
+				<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ subTitle }}</Text>
+				<Text class="max-ch" variant="body-small">{{ description }}</Text>
+				<Carousel
+					class="spacing"
+					v-if="isMobileView"
+					:images="imageArray"
+					:animationTime="animationTime"
+					:highlightColor="highlightColor"
+				/>
+				<div id="links">
+					<Text class="max-ch" tag="h6" variant="heading-x-small">Explore project</Text>
+					<Text v-for="link in props.linkTo" variant="body-x-small">
+						<NuxtLink
+							:class="{ 'external-icon': !link.internal }"
+							:to="link.url"
+							:target="!link.internal ? '_blank' : undefined"
+							:external="!link.internal"
+							:key="link.name"
+							>{{ link.name }}
+						</NuxtLink>
+					</Text>
+				</div>
+				<!-- <div id="verticals" class="max-ch">
 				<Text v-for="vertical in verticals" variant="body-x-small"
 					><span class="color-dimmed">#</span>{{ vertical }}</Text
 				>
 			</div> -->
-			<!-- <div id="jobs" class="max-ch">
+				<!-- <div id="jobs" class="max-ch">
 				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
 			</div> -->
-			<NuxtImg class="logo" :src="logo" placeholder />
-		</div>
-	</article>
+				<NuxtImg class="logo" :src="logo" placeholder />
+			</div>
+		</article>
+	</nuxt-link>
 </template>
 
 <style scoped>
@@ -213,5 +219,13 @@ article {
 }
 .spacing {
 	margin-block: var(--space-2xs);
+}
+.link-to {
+	color: inherit;
+	border: unset;
+	transition: transform 0.25s ease-in-out;
+	&:hover {
+		transform: translateY(calc(var(--space-2xs) * -1));
+	}
 }
 </style>
