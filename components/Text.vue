@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const VARIANTS = [
 	'main-title',
+	'main-s-title',
 	'secondary-title',
 	'compressed-title',
 	'heading-small',
@@ -40,6 +41,7 @@ const props = withDefaults(
 
 const VARIANT_CLASSES: Record<Variant, string> = {
 	'main-title': 'heading-large',
+	'main-s-title': 'heading-s-large',
 	'secondary-title': 'heading-medium',
 	'compressed-title': 'heading-small',
 	'heading-small': 'heading-small',
@@ -72,6 +74,11 @@ const computedClasses = computed(() => {
 .heading-large {
 	font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96;
 	font-size: var(--step-8);
+	line-height: 1;
+}
+.heading-s-large {
+	font-variation-settings: 'wght' 800, 'wdth' 100, 'opsz' 96;
+	font-size: var(--step-6);
 	line-height: 1;
 }
 .heading-medium {
