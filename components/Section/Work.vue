@@ -15,16 +15,20 @@
 					highlight-color="#6E960A"
 					:image-array="[
 						{
+							url: '/projects/pepperi/pepperi-survey-builder.webm',
+							name: 'Survey Builder',
+						},
+						{
 							url: '/projects/pepperi/design-systems.webm',
-							name: 'Design Systems',
+							name: 'Pepperi Design Systems',
 						},
 						{
 							url: '/projects/pepperi/pepperi-personas.webm',
-							name: 'User Personas',
+							name: 'User Personas Initiative',
 						},
 						{
 							url: '/projects/pepperi/brand.webm',
-							name: 'Brand Guide',
+							name: 'Pepperi Brand Guide',
 						},
 						{
 							url: '/projects/pepperi/pepperi-page-builder-vid.webm',
@@ -32,7 +36,7 @@
 						},
 					]"
 					title="Pepperi"
-					position="Head of Design"
+					position="Product Design Lead"
 					sub-title="PaaS for B2B Wholesale Commerce"
 					year="2018-2024"
 					description="As complex as it gets: Order Mgmt. Systems, Storefront, CRM, Dashboard, Back Office, User Configurator, Page Builder, Themes and more. At Pepperi, I led and executed research and design of multiple products and initiatives of our web platform. Moreover, I've managed requirements, backlogs, stakeholder interface and our awesome design system. Besides our amazing product team, I've also supported marketing, brand, and PS teams."
@@ -54,16 +58,12 @@
 							name: 'Web Page Builder Case Study (WWApe)',
 						},
 						{
+							url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
+							name: 'Pepperi Design System (Storybook)',
+						},
+						{
 							url: 'https://wwape.com/work/pepperi-design-system/',
 							name: 'Pepperi Design Systems Page (WWApe)',
-						},
-						{
-							url: 'https://www.pepperi.com/',
-							name: 'Visit Pepperi Marketing Site',
-						},
-						{
-							url: 'https://60ae3e9eff8e4c003b2f90d4-tpugnwjzfy.chromatic.com/?path=/docs/pepperi-design-system--page',
-							name: 'Pepperi Design System at Storybook',
 						},
 						{
 							url: 'https://brand.pepperi.com/',
@@ -72,6 +72,10 @@
 						{
 							url: 'https://peppersona.netlify.app/',
 							name: 'Pepperi Persona (via Notion API)',
+						},
+						{
+							url: 'https://www.pepperi.com/',
+							name: 'Visit Pepperi Site',
 						},
 					]"
 				/>
@@ -105,7 +109,7 @@
 					]"
 					title="Design Systems & Guides"
 					sub-title="Systemize design to helps teams win"
-					position="Design Lead"
+					position="Product Design Lead"
 					year="2015-2025"
 					description="Guiding dev and product teams to build awesome design systems, and stakeholders to craft top-notch brand books. Be sure to check out the Pepperi project below to see an enterprise-grade design system Storybook implementation."
 					:verticals="['Storybook', 'CSS', 'Figma', 'Sketch', 'Abstract', 'Notion']"
@@ -171,20 +175,20 @@
 					]"
 					title="Avodata"
 					sub-title="Data-driven career choices platform"
-					position="Freelance"
+					position="UX Researcher"
 					year="2018"
 					description="A project for JDC and the Ministry of Labour which includes user interviews, UX concept and research, project scoping, and wireframes. With this, we raised significant funds and partners to build a tool for Israel's growing marketplace."
 					:verticals="['Gov', 'Education', 'Lifestyle', 'Self Improvement']"
 					:jobs="['UX Research', 'User Interviews', 'Project Scoping', 'UX', 'Wireframing']"
 					logo="/images/clients-color/avodata.webp"
 					:link-to="[
-						{
-							url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
-							name: 'Review UX Flow',
-						},
+						// {
+						// 	url: 'https://projects.invisionapp.com/share/6KOHWPXSFJZ#/screens/324972866',
+						// 	name: 'Review UX Flow',
+						// },
 						{
 							url: 'https://www.dropbox.com/scl/fi/61whvk1a2wc3o3mgjmfp3/Avodata-User-interviews-and-findings.pdf.pdf?rlkey=rv1dncksebo6r5digmsa0eere&st=b8j1tbzx&dl=0',
-							name: 'Review User Interviews & Findings',
+							name: 'Review User Interviews & Findings (PDF)',
 						},
 						{
 							url: 'https://avodata.labor.gov.il/',
@@ -218,7 +222,7 @@
 					]"
 					title="Matnas Interactive"
 					sub-title="Design Agency, UX/UI and Product Ideation"
-					position="Partner"
+					position="Design Manager & Co-Partner"
 					year="2009-2015"
 					description="High-pace design studio and agency, where I supervised daily operations, managed design teams and multiple accounts from start to finish. This included overseeing project scopes and stakeholder communications."
 					:verticals="['Native Apps', 'WebApps', 'E-commerce', 'Education', 'Branding', 'Desktop']"
@@ -226,12 +230,12 @@
 					logo="/images/clients-color/mtns.webp"
 					:link-to="[
 						{
-							url: 'https://dribbble.com/mtns',
-							name: 'Selected projects (Dribbble)',
-						},
-						{
 							url: 'https://www.flickr.com/photos/matnas/albums/',
 							name: 'History in pics (Flickr)',
+						},
+						{
+							url: 'https://dribbble.com/mtns',
+							name: 'Selected projects (Dribbble)',
 						},
 					]"
 				/>

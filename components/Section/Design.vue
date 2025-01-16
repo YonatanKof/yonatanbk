@@ -8,33 +8,33 @@ const contentItems = [
 	{
 		title: 'Product Design',
 		subTitle:
-			"We all know complex products have major design problems. But that's cool, my passion is transforming challenges into multi-teams, user-friendly solutions that just work.",
+			"Even simple products present complex design challenges. Managing needs, scope, priorities, teams, stakeholders — and we haven't talked about the main dish: research, UX, UI, and implementation. And I haven't mentioned what follows like QA, measurements, iterations, and all that jazz. This is where I thrive – transforming the process complexity into user-friendly solution that work.",
 		components: CircleFifth,
 	},
 	{
-		title: 'Hands-On & Dev',
+		title: 'Hands-On Design',
 		subTitle:
-			'Leveraging coding and hands-on skills, I build design systems that bridge planning and execution to enhance collaboration, streamline design processes, and foster a creative environment.',
+			"With total control over design tools and methods, I deliver blazing fast, pixel-perfect results that matter, right when they're needed. Leveraging dev skills and intimate knowledge of complex systems, I build design systems that developers actually use, and that bridge the gap between planning and execution, enhance collaboration, streamline design processes, and foster a creative environment.",
 		components: SquareLines,
 	},
 	{
 		title: 'Design Initiatives',
 		subTitle:
-			"Pushing design initiatives across teams and stakeholders can be a real challenge. But let me tell you, I've been there, done that, and emerged victorious - and when design wins everybody wins.",
+			"Pushing design initiatives across an org can be a real challenge – even if it comes from mgmt., let alone if it's a design-driven one. The way we push, manage and implement these initiatives is what makes or breaks the design in a company. Using proper backlog mgmt. to keep my eyes on the prize, and coaching methods for good vibes – I make design initiatives happen.",
 		components: Square,
 	},
-	{
-		title: 'DesignOps & Mgmt.',
-		subTitle:
-			"With a blend of team coaching, best-in-class backlog management tools, and sweet soft skills, I deliver results that matter, right when they're needed.",
-		components: CircleHalf,
-	},
-	{
-		title: 'Brand Building',
-		subTitle:
-			"Experienced in crafting brand identities that cross interfaces and teams, greatly improving a brand's impact across the digital landscape.",
-		components: SquareCenter,
-	},
+	// {
+	// 	title: 'DesignOps & Mgmt.',
+	// 	subTitle:
+	// 		"With a blend of team coaching, best-in-class backlog management tools, and sweet soft skills, I deliver results that matter, right when they're needed.",
+	// 	components: CircleHalf,
+	// },
+	// {
+	// 	title: 'Brand Building',
+	// 	subTitle:
+	// 		"Experienced in crafting brand identities that cross interfaces and teams, greatly improving a brand's impact across the digital landscape.",
+	// 	components: SquareCenter,
+	// },
 ];
 </script>
 
@@ -49,11 +49,13 @@ const contentItems = [
 						If you're proficient in UX research, hands-on design, team leadership, design ops, front-end development,
 						stakeholders mgmt. and backlog mgmt., then you're a full-stack product designer.
 					</template>
-					<template #desc-ii>
-						For the last 15+ years, I bridged the gap between people, businesses, and technology through research,
-						design, and execution; creating elegant solutions that simplify complexity and enhance lives.
-					</template>
 				</LayoutContentTop>
+				<Text class="space" tag="h3" variant="main-s-title"> What I bring to the mix </Text>
+				<Text variant="large-text" class="max-ch">
+					For the last 15+ years, I bridged the gap between people, businesses, and technology through research, design,
+					and execution; creating elegant solutions that simplify complexity and enhance lives.
+				</Text>
+
 				<AccordionListToggle :items="contentItems" :duration="10000" />
 			</div>
 		</div>
@@ -70,5 +72,19 @@ const contentItems = [
 }
 br {
 	margin-block-end: var(--space-m);
+}
+.space {
+	margin-block-end: var(--space-s);
+	text-wrap: balance;
+}
+.max-ch {
+	max-width: 55ch;
+	padding-block-end: var(--space-xl);
+	@media (width < 640px) {
+		padding-block-end: var(--space-l);
+	}
+	@media (width < 544px) {
+		padding-block-end: var(--space-m);
+	}
 }
 </style>

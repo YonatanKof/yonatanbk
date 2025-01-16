@@ -27,5 +27,6 @@
 		width: 100%;
 		border: unset;
 		border-block-start: 2px solid var(--color-brand-green-main);
+		margin: unset;
 	}
 }

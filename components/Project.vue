@@ -71,6 +71,17 @@ function updateViewport() {
 	isMobileView.value = window.innerWidth < 800;
 }
 
+const isModalOpen = ref(false);
+
+const openModal = () => {
+	isModalOpen.value = true;
+};
+
+const handleConfirm = () => {
+	// Handle the confirm action
+	isModalOpen.value = false;
+};
+
 onMounted(() => {
 	updateViewport();
 	window.addEventListener('resize', updateViewport);
@@ -81,32 +92,43 @@ onUnmounted(() => {
 });
 </script>
 <template>
-	<nuxt-link class="link-to" :to="`project/${slug}`">
-		<article :class="projectClasses">
+	<article :class="projectClasses">
+		<Carousel
+			v-if="!isMobileView"
+			:images="imageArray"
+			:animationTime="animationTime"
+			:highlightColor="highlightColor"
+		/>
+		<div class="info">
+			<Text tag="h3" variant="secondary-title" text-style="text-balance">{{ title }}</Text>
+			<div id="meta-data">
+				<Text variant="body-x-small">{{ position }}</Text>
+				<span class="dot"></span>
+				<Text variant="body-x-small">{{ year }}</Text>
+			</div>
+			<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ subTitle }}</Text>
+			<Text class="max-ch" variant="body-small">{{ description }}</Text>
 			<Carousel
-				v-if="!isMobileView"
+				class="spacing"
+				v-if="isMobileView"
 				:images="imageArray"
 				:animationTime="animationTime"
 				:highlightColor="highlightColor"
 			/>
-			<div class="info">
-				<Text tag="h3" variant="secondary-title" text-style="text-balance">{{ title }}</Text>
-				<div id="meta-data">
-					<Text variant="body-x-small">{{ position }}</Text>
-					<span class="dot"></span>
-					<Text variant="body-x-small">{{ year }}</Text>
-				</div>
-				<Text class="max-ch" tag="h6" variant="heading-x-small" text-style="text-balance">{{ subTitle }}</Text>
-				<Text class="max-ch" variant="body-small">{{ description }}</Text>
-				<Carousel
-					class="spacing"
-					v-if="isMobileView"
-					:images="imageArray"
-					:animationTime="animationTime"
-					:highlightColor="highlightColor"
-				/>
+			<!-- Modal Open BTN -->
+			<!-- <Button class="modal-open-btn" button-size="x-small" button-style="secondary" @click="openModal">
+				Extra Info Here
+			</Button> -->
+			<!-- Modal -->
+			<!-- <Modal :click-to-close="true" :esc-to-close="true" :modal-width="2.5" v-model="isModalOpen">
+				<Text variant="body-medium"
+					>Feeling adventurous? Want to explore <span class="text-bold">{{ title }}</span> more? Please follow the links
+					below.</Text
+				>
+				<Text class="max-ch" tag="h4" variant="heading-small">{{ title }}</Text>
+				<hr />
+				<Text class="max-ch" tag="h5" variant="heading-x-small">Related Links</Text>
 				<div id="links">
-					<Text class="max-ch" tag="h6" variant="heading-x-small">Explore project</Text>
 					<Text v-for="link in props.linkTo" variant="body-x-small">
 						<NuxtLink
 							:class="{ 'external-icon': !link.internal }"
@@ -118,18 +140,24 @@ onUnmounted(() => {
 						</NuxtLink>
 					</Text>
 				</div>
-				<!-- <div id="verticals" class="max-ch">
-				<Text v-for="vertical in verticals" variant="body-x-small"
+				<Text class="max-ch" tag="h5" variant="heading-x-small">Verticals</Text>
+				<div id="verticals" class="max-ch">
+					<Text v-for="vertical in verticals" variant="body-x-small"
 					><span class="color-dimmed">#</span>{{ vertical }}</Text
-				>
-			</div> -->
-				<!-- <div id="jobs" class="max-ch">
-				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
-			</div> -->
-				<NuxtImg class="logo" :src="logo" placeholder />
-			</div>
-		</article>
-	</nuxt-link>
+					>
+				</div>
+				<Text class="max-ch" tag="h5" variant="heading-x-small">Jobs</Text>
+				<div id="jobs" class="max-ch">
+					<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
+				</div>
+				<span class="modal-close-btn">
+					<NuxtImg class="logo" :src="logo" placeholder />
+					<Button button-size="x-small" button-style="secondary" @click="handleConfirm">Close</Button>
+				</span>
+			</Modal> -->
+			<NuxtImg class="logo" :src="logo" placeholder />
+		</div>
+	</article>
 </template>
 
 <style scoped>
@@ -160,7 +188,8 @@ article {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	gap: var(--space-2xs);
+	gap: var(--space-4xs) var(--space-2xs);
+	flex-wrap: wrap;
 	& > span {
 		clip-path: circle(50%);
 		background-color: var(--color-sys-dis);
@@ -181,12 +210,8 @@ article {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-3xs);
-	& > :first-child {
-		margin-block: var(--space-2xs);
-	}
 }
 #verticals {
-	padding-block-start: var(--space-2xs);
 	column-gap: var(--space-xs);
 	row-gap: var(--space-3xs);
 }
