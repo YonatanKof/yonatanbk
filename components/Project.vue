@@ -115,6 +115,29 @@ onUnmounted(() => {
 				:animationTime="animationTime"
 				:highlightColor="highlightColor"
 			/>
+			<div id="verticals" class="max-ch">
+				<Text v-for="vertical in verticals" variant="body-x-small"
+					><span class="color-dimmed">#</span>{{ vertical }}</Text
+				>
+			</div>
+
+			<div id="jobs" class="max-ch">
+				<Text class="chip" v-for="job in jobs" variant="body-x-small">{{ job }}</Text>
+			</div>
+			<Text class="max-ch" tag="h5" variant="heading-x-small">Related Links</Text>
+			<div id="links">
+				<Text v-for="link in props.linkTo" variant="body-x-small">
+					<NuxtLink
+						:class="{ 'external-icon': !link.internal }"
+						:to="link.url"
+						:target="!link.internal ? '_blank' : undefined"
+						:external="!link.internal"
+						:key="link.name"
+						>{{ link.name }}
+					</NuxtLink>
+				</Text>
+			</div>
+
 			<!-- Modal Open BTN -->
 			<!-- <Button class="modal-open-btn" button-size="x-small" button-style="secondary" @click="openModal">
 				Extra Info Here
