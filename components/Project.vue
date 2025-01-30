@@ -3,6 +3,10 @@ const PROJECT_ORDER = ['default', 'flip'] as const;
 type ProjectOrder = (typeof PROJECT_ORDER)[number];
 
 const props = defineProps({
+	slug: {
+		type: String,
+		required: true,
+	},
 	title: {
 		type: String,
 		required: true,
@@ -241,14 +245,12 @@ article {
 .spacing {
 	margin-block: var(--space-2xs);
 }
-.modal-open-btn {
-	width: max-content;
-	margin-block-start: var(--space-xs);
-}
-.modal-close-btn {
-	display: flex;
-	justify-content: space-between;
-	z-index: 1000;
-	gap: var(--space-m);
+.link-to {
+	color: inherit;
+	border: unset;
+	transition: transform 0.25s ease-in-out;
+	&:hover {
+		transform: translateY(calc(var(--space-2xs) * -1));
+	}
 }
 </style>
