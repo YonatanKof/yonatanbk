@@ -56,7 +56,7 @@ const contentItems = [
 					and execution; creating elegant solutions that simplify complexity and enhance lives.
 				</Text>
 
-				<AccordionListToggle :items="contentItems" :duration="10000" />
+				<AccordionListToggle :items="contentItems" :duration="10000" hydrate-on-idle/>
 			</div>
 		</div>
 	</section>

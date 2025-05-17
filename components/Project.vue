@@ -92,7 +92,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-	<article :class="projectClasses">
+	<article :class="projectClasses" hydrate-on-idle>
 		<Carousel
 			v-if="!isMobileView"
 			:images="imageArray"
