@@ -5,7 +5,6 @@
 			linear-gradient(45deg, transparent 75%, var(--color-brand-orange-dim) 75%),
 			linear-gradient(-45deg, transparent 75%, var(--color-brand-orange-dim) 75%);
 		background-size: 32px 32px;
-		background-position: 0 0, 0 16px, 16px -16px, -16px 0px;
 		background-position: 50% 0, 50% 16px, calc(50% + 16px) -16px, calc(50% - 16px) 0px;
 		background-color: #f5f5f5;
 	}
