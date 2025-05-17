@@ -69,7 +69,7 @@ watch(activeSection, (newSection) => {
 					{{ formatText(section) }}
 				</a>
 			</nav>
-			<OpenForWork class="hide" />
+			<OpenForWork class="hide" :isOpenForWork="false"/>
 		</span>
 	</header>
 </template>

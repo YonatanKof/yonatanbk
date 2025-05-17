@@ -1,7 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+	isOpenForWork: {
+		type: Boolean,
+		default: true,
+	},
+});
+</script>
 
 <template>
-	<div class="open">
+	<div v-if="isOpenForWork" class="open">
 		<div class="pulse-wrapper">
 			<span></span>
 		</div>
