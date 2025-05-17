@@ -15,7 +15,7 @@ const images = [
 	'/images/projects/ui-control/list.webp',
 	'/images/projects/ui-control/menu.webp',
 	'/images/projects/ui-control/slag.webp',
-	'/images/YonatanBK-Social.jpg',
+	'/images/yonatan-bk-social.jpg',
 ];
 </script>
 
