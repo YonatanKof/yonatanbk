@@ -1,8 +1,9 @@
 @import url('reset.css') layer(reset);
+@import url('vue-final-modal/style.css') layer(vue-final-modal);
 @import url('typography.css') layer(typography);
 @import url('vars.css') layer(vars);
 @import url('utopia.css') layer(utopia);
 @import url('utils.css') layer(utils);
 @import url('styles.css') layer(styles);
 
-@layer reset, typography, vars, utopia, styles;
+@layer reset, vue-final-modal, typography, vars, utopia, styles;

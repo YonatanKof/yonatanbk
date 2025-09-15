@@ -1,33 +1,106 @@
 @layer utils {
 	.transparent-bg {
-		background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
-			linear-gradient(-45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%),
-			linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.1) 75%),
-			linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.1) 75%);
-		background-size: 40px 40px;
-		background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+		background-image: linear-gradient(45deg, var(--color-brand-orange-dim) 25%, transparent 25%),
+			linear-gradient(-45deg, var(--color-brand-orange-dim) 25%, transparent 25%),
+			linear-gradient(45deg, transparent 75%, var(--color-brand-orange-dim) 75%),
+			linear-gradient(-45deg, transparent 75%, var(--color-brand-orange-dim) 75%);
+		background-size: 32px 32px;
+		background-position: 50% 0, 50% 16px, calc(50% + 16px) -16px, calc(50% - 16px) 0px;
 		background-color: #f5f5f5;
 	}
-	.checked-grid-lines {
-		background-image: linear-gradient(to right, var(--color-brand-red-dis) 1px, transparent 1px),
-			linear-gradient(to bottom, var(--color-brand-red-dis) 1px, transparent 1px);
-		background-size: 20px 20px;
-		/* background-color: white; */
+
+	.chip {
+		padding: 0.25em 0.75em;
+		background-color: var(--color-sys-hardly);
+		border-radius: 4rem;
 	}
 	.cool-doted-bg {
-		background-color: var(--color-sys-invert-highlight-slight);
-		backdrop-filter: blur(4px);
-		background-image: radial-gradient(var(--color-sys-invert-highlight) 1px, transparent 1px);
+		background-image: radial-gradient(var(--color-brand-red-dis) 1px, transparent 1px);
 		background-size: 3px 3px;
 	}
-	.section {
-        min-height: calc(100vh - var(--header-height));
-        scroll-snap-align: start;
-		padding-block-start: var(--header-height);
-	}
-	.section-content {
-		padding: var(--space-m);
+
+	.center-center {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: center; /* Horizontal */
+		align-items: center;
+	}
+	.wrapper {
+		margin-inline: auto;
+		max-width: var(--display-width-lg);
+		padding-inline-start: calc(max(var(--side-space), env(safe-area-inset-left)));
+		padding-inline-end: calc(max(var(--side-space), env(safe-area-inset-right)));
+		padding-block-start: calc(var(--header-height) + var(--side-space));
+		padding-block-end: var(--side-space);
+		@media (976px >= width) {
+			--side-space: var(--space-l);
+		}
+		@media (720px >= width) {
+			--side-space: var(--space-m);
+		}
+	}
+	.color-slight {
+		color: var(--color-sys-slight);
+	}
+	.color-dimmed {
+		color: var(--color-sys-dim);
+	}
+	.torn-paper-bottom {
+		--torn-paper-image: url('/images/torn-2.webp');
+		--torn-paper-bg-color: var(--color-sys-invert-main);
+		padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+		position: relative;
+		&::after {
+			content: '';
+			pointer-events: none;
+			position: absolute;
+			inset: 0;
+			background-color: var(--torn-paper-bg-color);
+			mask-image: var(--torn-paper-image);
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			mask-position: bottom;
+		}
+	}
+	.external-icon {
+		&::after {
+			content: '';
+			display: inline-block;
+			/* clip-path: polygon(
+				0% 0%,
+				33.4% 0%,
+				33.4% 16.7%,
+				16.7% 16.7%,
+				16.7% 83.5%,
+				83.5% 83.5%,
+				83.5% 16.7%,
+				83.5% 33.4%,
+				83.5% 25.05%,
+				50% 57%,
+				42% 50%,
+				75% 16.7%,
+				66.8% 16.7%,
+				66.8% 0%,
+				100% 0%,
+				100% 33.4%,
+				83.5% 33.4%,
+				83.5% 66.8%,
+				100% 66.8%,
+				100% 100%,
+				0% 100%
+			); */
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACTSURBVHgB7dZbCoAgEIXhYytyR7mUdm74ljE1Ohd9mQM9Bf0fRGECUDG3xNyfet6BzQtAW31d1juJRtfzBHBxV8BI3A3wFS9YAPiLwxvAxV0BI3E3wGjcBTATJ6cBqOMagElcCjCLSwDZMi4BtF1WcSngiShQTvMVZCiXiCh35tOu68WRLAAB2A6g/gNLF69gO+AGWQawzb6qWBwAAAAASUVORK5CYII=');
+			background-size: contain;
+			background-repeat: no-repeat;
+			/* background-color: var(--color-sys-dim); */
+			opacity: 0.5;
+			width: calc(var(--space-2xs) * 1.25);
+			height: calc(var(--space-2xs) * 1.25);
+			margin-inline-start: var(--space-3xs);
+		}
+	}
+	.do-it {
+		visibility: hidden;
+		display: none;
 	}
 }

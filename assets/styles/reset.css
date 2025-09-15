@@ -101,4 +101,63 @@
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
+	/* Reset default button styles */
+	button,
+	input[type='button'],
+	input[type='submit'],
+	input[type='reset'] {
+		/* Remove default styling */
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+		font: inherit;
+		color: inherit;
+		line-height: normal;
+		cursor: pointer;
+		outline: none;
+
+		/* Fix for mobile Safari */
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		/* Prevent text selection */
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		/* Remove tap highlight on mobile */
+		-webkit-tap-highlight-color: transparent;
+
+		/* Disable default focus styles */
+		&:focus {
+			outline: none;
+			box-shadow: none;
+		}
+
+		/* Disable default disabled styles */
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.6;
+		}
+
+		/* Remove extra padding in Firefox */
+		&::-moz-focus-inner {
+			border: 0;
+			padding: 0;
+		}
+	}
+
+	/* Optional: Reset button styles for iOS */
+	@supports (-webkit-touch-callout: none) {
+		button,
+		input[type='button'],
+		input[type='submit'],
+		input[type='reset'] {
+			/* Remove iOS rounded corners */
+			border-radius: 0;
+		}
+	}
 }

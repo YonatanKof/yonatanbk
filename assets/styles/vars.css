@@ -1,9 +1,18 @@
 @layer vars {
+	/* The screen sizes predefined by `@nuxt/image`:
+      'xs': 320,
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      'xxl': 1536,
+      '2xl': 1536
+ */
 	:root {
 		--display-width-3xl: 1920px;
 		--display-width-2xl: 1408px;
 		--display-width-xl: 1280px;
-		--display-width-lg: 960px;
+		--display-width-lg: 1024px;
 		--display-width-md: 880px;
 		--display-width-sm: 720px;
 		--display-width-xs: 544px;
@@ -12,10 +21,57 @@
 
 	:root {
 		/* Sizes */
-		--header-height: var(--space-3xl);
+		--header-height: calc(var(--grid-block) * 3);
 		--header-plus-height: calc(var(--space-3xl) + var(--space-m));
 		--scroll-padding-block: 7rem;
+		--shape-size: calc(var(--step-8) * 4.5);
+		--side-space: var(--space-xl);
+	}
+	
+	:root {
+		/* Grid block */
+		/* Found in: */
+		/* Button.vue, ClientProof.vue, Text.vue, YonatanBenKnaan.vue, Cross.vue */
+		--grid-block: calc(var(--space-l) * 1.1);
+		@media (width < 1344px) {
+			--grid-block: calc(var(--space-l) * 1);
+		}
+		@media (width < 1216px) {
+			/* --grid-block: calc(var(--space-l) * 0.95); */
+		}
+		@media (width < 1152px) {
+			--grid-block: calc(var(--space-l) * 0.95);
+		}
+		/* @media (width < 1056px) {
+			--grid-block: calc(var(--space-l) * 0.85);
+		} */
+		@media (width < 960px) {
+			--grid-block: calc(var(--space-l) * 0.85);
+		}
+		/* @media (width < 800px) {
+			--grid-block: calc(var(--space-l) * 0.85);
+		} */
+		@media (width < 784px) {
+			--grid-block: calc(var(--space-l) * 0.80);
+		}
+		@media (width < 760px) {
+			--grid-block: calc(var(--space-l) * 0.75);
+		}
+		@media (width < 640px) {
+			--grid-block: calc(var(--space-l) * 0.7);
+		}
+		@media (width < 600px) {
+			--grid-block: calc(var(--space-l) * 0.65);
+		}
+		@media (width < 480px) {
+			--grid-block: calc(var(--space-l) * 0.6);
+		}
+		@media (width < 440px) {
+			--grid-block: calc(var(--space-l) * 0.55);
+		}
+	}
 
+	:root {
 		/* Borders */
 		--border-radius-md: var(--space-xs);
 		--border-radius-sm: var(--space-2xs);
@@ -23,28 +79,45 @@
 		--border-radius-none: unset;
 
 		/* Brand Colors */
+		--color-brand-green-contrast: color-mix(in hsl, var(--color-brand-green-main) 90%, black);
 		--color-brand-green-main: hsl(80, 90%, 33%);
+		--color-brand-green-dim: color-mix(in hsl, var(--color-brand-green-main) 40%, transparent);
+		--color-brand-green-dis: color-mix(in hsl, var(--color-brand-green-main) 10%, transparent);
+		--color-brand-green-hardly: color-mix(in hsl, var(--color-brand-green-main) 3%, transparent);
+		--color-brand-green-none: color-mix(in hsl, var(--color-brand-green-main) 0%, transparent);
+		--color-brand-orange-contrast: color-mix(in hsl, var(--color-brand-orange-main) 90%, black);
 		--color-brand-orange-main: hsl(40, 90%, 50%);
+		--color-brand-orange-dim: color-mix(in hsl, var(--color-brand-orange-main) 40%, transparent);
+		--color-brand-orange-dis: color-mix(in hsl, var(--color-brand-orange-main) 10%, transparent);
+		--color-brand-orange-hardly: color-mix(in hsl, var(--color-brand-orange-main) 3%, transparent);
+		--color-brand-orange-none: color-mix(in hsl, var(--color-brand-orange-main) 0%, transparent);
+		--color-brand-blue-contrast: color-mix(in hsl, var(--color-brand-blue-main) 90%, black);
 		--color-brand-blue-main: hsl(199, 50%, 45%);
+		--color-brand-blue-dim: color-mix(in hsl, var(--color-brand-blue-main) 40%, transparent);
+		--color-brand-blue-dis: color-mix(in hsl, var(--color-brand-blue-main) 10%, transparent);
+		--color-brand-blue-hardly: color-mix(in hsl, var(--color-brand-blue-main) 3%, transparent);
+		--color-brand-blue-none: color-mix(in hsl, var(--color-brand-blue-main) 0%, transparent);
+		--color-brand-red-contrast: color-mix(in hsl, var(--color-brand-red-main) 80%, black);
 		--color-brand-red-main: hsl(1, 40%, 50%);
-		--color-brand-red-slight: color-mix(in hsl, var(--color-brand-red-main) 80%, transparent);
+		--color-brand-red-slight: color-mix(in hsl, var(--color-brand-red-main) 90%, transparent);
 		--color-brand-red-dim: color-mix(in hsl, var(--color-brand-red-main) 40%, transparent);
 		--color-brand-red-dis: color-mix(in hsl, var(--color-brand-red-main) 10%, transparent);
 		--color-brand-red-hardly: color-mix(in hsl, var(--color-brand-red-main) 3%, transparent);
 		--color-brand-red-none: color-mix(in hsl, var(--color-brand-red-main) 0%, transparent);
 
 		/* Colors */
-		--color-black-main: hsl(180, 25%, 5%);
+		--color-black-main: hsl(0, 0%, 0%);
 		--color-black-slight: color-mix(in hsl, var(--color-black-main) 80%, transparent);
-		--color-black-dim: color-mix(in hsl, var(--color-black-main) 40%, transparent);
-		--color-black-dis: color-mix(in hsl, var(--color-black-main) 10%, transparent);
-		--color-black-hardly: color-mix(in hsl, var(--color-black-main) 3%, transparent);
+		--color-black-dim: color-mix(in hsl, var(--color-black-main) 50%, transparent);
+		--color-black-dis: color-mix(in hsl, var(--color-black-main) 15%, transparent);
+		--color-black-hardly: color-mix(in hsl, var(--color-black-main) 5%, transparent);
 		--color-black-none: color-mix(in hsl, var(--color-black-main) 0%, transparent);
 
 		--color-sys-main: hsl(180, 0%, 10%);
 		--color-sys-slight: color-mix(in hsl, var(--color-sys-main) 80%, transparent);
-		--color-sys-dim: color-mix(in hsl, var(--color-sys-main) 40%, transparent);
-		--color-sys-dis: color-mix(in hsl, var(--color-sys-main) 10%, transparent);
+		--color-sys-dim: color-mix(in hsl, var(--color-sys-main) 50%, transparent);
+		--color-sys-dis: color-mix(in hsl, var(--color-sys-main) 15%, transparent);
+		--color-sys-hardly: color-mix(in hsl, var(--color-sys-main) 5%, transparent);
 		--color-sys-none: color-mix(in hsl, var(--color-sys-main) 0%, transparent);
 
 		--color-sys-invert-highlight: color-mix(in hsl, var(--color-sys-invert-main) 0%, white);
@@ -97,6 +170,8 @@
 		0 0.2rem 0.2rem var(--color-shadow), 
 		0 0.4rem 0.4rem var(--color-shadow),
 		0 0.8rem 0.8rem var(--color-shadow);
+		--shadow-md-hard: 0 0.2rem 0.2rem var(--color-sys-dis), 0 0.4rem 0.4rem var(--color-sys-dis),
+			0 0.8rem 0.8rem var(--color-sys-dis);
 		/* prettier-ignore */
 		--shadow-lg-even: 
 		0 0 0.5rem var(--color-shadow), 
@@ -107,5 +182,10 @@
 		0 0.25rem 0.5rem var(--color-shadow), 
 		0 0.75rem 1.5rem var(--color-shadow),
 		0 1rem 2rem var(--color-shadow);
+		/* prettier-ignore */
+		--shadow-lg-hard: 
+		0 0.25rem 0.5rem var(--color-sys-dis), 
+		0 0.75rem 1.5rem var(--color-sys-dis),
+		0 1rem 2rem var(--color-sys-dis);
 	}
 }

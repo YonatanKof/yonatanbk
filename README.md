@@ -1,75 +1,27 @@
-# Nuxt Minimal Starter
+# Yonatan Ben Knaan portfolio website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+> New! New! New!  
+> CSS only! No SCSS!
 
-## Setup
+Libraries in use:
+- [Vue3 Carousel](https://vue3-carousel.ismail9k.com/)
+- [Vue Final Modal](https://vue-final-modal.org/)
+- [vue3-typed-js](https://github.com/duskmoon314/vue3-typed-js)
 
-Make sure to install dependencies:
+### Responsiveness
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```css
+:root {
+	--display-width-3xl: 1920px;
+	--display-width-2xl: 1408px;
+	--display-width-xl: 1280px;
+	--display-width-lg: 1024px;
+	--display-width-md: 880px;
+	--display-width-sm: 720px;
+	--display-width-xs: 544px;
+	--display-width-2xs: 426px;
+}
+@media (width <= 666px) {
+	/* Selected 666 and below */
+}
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
